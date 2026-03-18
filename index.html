@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Tunisian Institute for Marketing Nonsense</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0d0d0d;
+      --paper: #f5f0e8;
+      --accent1: #e83a2f;
+      --accent2: #f5a623;
+      --accent3: #2563eb;
+      --accent4: #16a34a;
+      --muted: #7a7265;
+      --border: #d9d0be;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.6;
+    }
+
+    /* ─── MARQUEE TICKER ─── */
+    .ticker {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 8px 0;
+      overflow: hidden;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: marquee 35s linear infinite;
+    }
+    .ticker-inner span { margin: 0 40px; }
+    .ticker-inner span::before { content: '◆  '; color: var(--accent1); }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      border-bottom: 2px solid var(--ink);
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      max-width: 200px;
+      line-height: 1.3;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent1);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--ink);
+      color: var(--paper) !important;
+      padding: 9px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent1); }
+    .nav-cta::after { display: none !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 80px 48px 60px;
+      border-bottom: 2px solid var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent1);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-label::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--accent1); }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 7vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent1);
+      font-family: 'Libre Baskerville', serif;
+    }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .hero-stat span {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-divider { width: 1px; height: 50px; background: var(--border); }
+    .hero-deco {
+      position: absolute;
+      right: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 220px;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--border);
+      letter-spacing: -0.05em;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* ─── LAYOUT ─── */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .main-col {
+      padding: 64px 48px;
+      border-right: 2px solid var(--ink);
+    }
+    .side-col {
+      padding: 64px 32px;
+    }
+
+    /* ─── SECTION HEADERS ─── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .section-header h2 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── FEATURED ARTICLE (BIG) ─── */
+    .article-featured {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 2px solid var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .article-featured .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--accent1);
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .article-featured h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .article-featured h3 a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-featured h3 a:hover { color: var(--accent1); }
+    .article-featured p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .article-thumb {
+      aspect-ratio: 4/3;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .article-featured:hover .article-thumb img { transform: scale(1.05); }
+
+    /* ─── ARTICLE GRID (smaller) ─── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .article-card-img { width: 100%; aspect-ratio: 16/9; overflow: hidden; border: 2px solid var(--ink); margin-bottom: 14px; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+    .article-card:hover .article-card-img img { transform: scale(1.04); }
+    .article-card {
+      border-top: 2px solid var(--ink);
+      padding-top: 20px;
+    }
+    .article-card .num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .article-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .article-card h3 a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-card h3 a:hover { color: var(--accent1); }
+    .article-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .read-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .read-link:hover { color: var(--accent1); }
+    .article-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* ─── SIDEBAR ─── */
+
+    /* About */
+    .about-box {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid var(--border);
+    }
+    .author-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--paper);
+      border: 3px solid var(--ink);
+    }
+    .about-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .about-box .role {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent1);
+      margin-bottom: 14px;
+    }
+    .about-box p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* Newsletter */
+    .newsletter-box {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 28px 24px;
+      margin-bottom: 40px;
+    }
+    .newsletter-box .nl-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+    .newsletter-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .newsletter-box p {
+      font-size: 12px;
+      line-height: 1.65;
+      color: #b0a898;
+      margin-bottom: 20px;
+    }
+    .nl-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nl-form input {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--paper);
+      padding: 11px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .nl-form input::placeholder { color: #7a7265; }
+    .nl-form input:focus { border-color: var(--accent2); }
+    .nl-form button {
+      background: var(--accent1);
+      color: var(--paper);
+      border: none;
+      padding: 12px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .nl-form button:hover { background: var(--accent2); }
+    .nl-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: #7a7265;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    /* Tags */
+    .tags-box h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .tag-pill:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 60px 48px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand p {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .footer-brand span {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #7a7265;
+    }
+    .footer-col h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7a7265;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--accent2); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      color: #7a7265;
+    }
+    .footer-bottom p strong { color: var(--accent2); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-title { animation: fadeUp 0.7s ease both; }
+    .hero-sub { animation: fadeUp 0.7s 0.15s ease both; }
+    .hero-meta { animation: fadeUp 0.7s 0.3s ease both; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 48px 24px 40px; }
+      .hero-deco { display: none; }
+      .layout { grid-template-columns: 1fr; }
+      .main-col { padding: 40px 24px; border-right: none; }
+      .side-col { padding: 40px 24px; border-top: 2px solid var(--ink); }
+      .article-featured { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 40px 24px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>The Tunisian Institute for Marketing Nonsense</span>
+      <span>Brand strategy & advertising effectiveness</span>
+      <span>Behavioral economics applied to Tunisia</span>
+      <span>The untold stories of Tunisian brands</span>
+      <span>Est. 2025 · Slim El Fatmi</span>
+      <span>The Tunisian Institute for Marketing Nonsense</span>
+      <span>Brand strategy & advertising effectiveness</span>
+      <span>Behavioral economics applied to Tunisia</span>
+      <span>The untold stories of Tunisian brands</span>
+      <span>Est. 2025 · Slim El Fatmi</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <ul class="nav-links">
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+    <a class="nav-cta" href="#newsletter">Subscribe</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Dispatches from the Tunisian marketing trenches</div>
+    <h1 class="hero-title">Telling the<br><em>untold stories</em><br>of Tunisian brands.</h1>
+    <p class="hero-sub">Sharp analysis of advertising effectiveness, brand strategy, and consumer psychology — applied to the market nobody else is studying seriously.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <strong>22+</strong>
+        <span>Articles</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <strong>2025</strong>
+        <span>Est.</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <strong>1</strong>
+        <span>Market</span>
+      </div>
+    </div>
+    <div class="hero-deco" aria-hidden="true">TI</div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- MAIN COL -->
+    <main class="main-col" id="articles">
+
+      <div class="section-header">
+        <h2>Featured Articles</h2>
+      </div>
+
+      <!-- FEATURED 1 -->
+      <article class="article-featured">
+        <div>
+          <span class="tag">Latest</span>
+          <h3><a href="fast-food.html">The Psychological Laws Governing Tunisia's Fast Food And Why Nobody Talks About Them</a></h3>
+          <p class="article-date">March 5, 2026</p>
+          <p>Survivorship bias, the MAYA principle, cognitive fluency — fast food success in Tunisia isn't about the fries. It's about a set of psychological laws operating completely in the open, that somehow nobody in the industry has bothered to name.</p>
+          <a href="fast-food.html" class="read-link">Read Article →</a>
+        </div>
+        <div class="article-thumb">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhP1EwW8emXiNt4MWTYzjBwhI0tsrSaLtb0Q3SHGL1SXu_j5QO9D2u2k-FH56KmJ-80NabHNamxZVdxMrkmSFvSg0R9KUzXk8SfrrsIwJ3VKZ0cXZnHKLBOxfj5P-2E5ycRp-Pwo4dIxXSKNCa5QN7YAX9vv-wA-x9cUTLcJOrP0sEy7Vx1ds3HRIjxUqSK/s1104/51c02aa13f5cec700701dbc4ba356a28.jpg" alt="Fast Food Psychology" loading="lazy"/>
+        </div>
+      </article>
+
+      <!-- FEATURED 2 -->
+      <article class="article-featured">
+        <div class="article-thumb">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6nvfi_Z83qjCpZhHwvUDkMc_O-Rdi7hxKrSRxg98oQn4IBJHsPaE9dXi6kllAS8X-DnSdx8BVaLlo2KRAvWgErt0bKF-VqUzyP9YZ_lNklAx0ImNc92so1BQM1kV_7dEFQyh7_u5G777lHgWYmLW0NeBjVYB4T2azWcGGXh187w6bgr4Ksoy97la8KyJ-/s447/images%20(14).jpeg" alt="Yoyo Story" loading="lazy"/>
+        </div>
+        <div>
+          <span class="tag" style="background: var(--accent3);">Brand Study</span>
+          <h3><a href="yoyo.html">Tunisia's Most Underrated Marketing Genius: The Yoyo Story</a></h3>
+          <p class="article-date">February 20, 2026</p>
+          <p>There is a peculiar blindness that afflicts people trained in conventional marketing. They look at a business and immediately ask: what is the product? Yoyo commits none of these errors. And that is why it is extraordinary.</p>
+          <a href="yoyo.html" class="read-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- ARTICLE GRID -->
+      <div class="section-header" style="margin-top: 16px;">
+        <h2>Recent Writing</h2>
+      </div>
+      <div class="articles-grid">
+
+        <article class="article-card">
+          <div class="article-card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim6pxUqVGRg0raOSP8pgPd7O_5rCWLNlv3Rscx_GsQ1BgkwV3kxRfXzEKVZztiIQdji6okv0MgyPkO_Nfs-q1_3kIAUB5z2OL4KGYznn6H4H06N6wGznRbWki7UZCqrkwxlhAJA9zS1wtzW4Ap3vm5bZco4vU_YQwkdw_IN9g7MCxzipQ-yOx1EjlVU696/s917/a44a6086cd0bcbfda7c37f22f29b1694.jpg" alt="Trust Gap" loading="lazy"/></div>
+          <div class="num">03 — Feb 2026</div>
+          <h3><a href="trust-gap.html">Exploiting the Trust Gap: What Tunisian Facebook Groups Reveal About the Future of Marketing</a></h3>
+          <p>I've spent the last few months obsessed with Tunisian Facebook groups. Not in a healthy way. What started as casual curiosity turned into watching a live experiment in manufactured social proof.</p>
+          <a href="trust-gap.html" class="read-link">Read →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtHSU4b8YJB8dNPUFgXWK5D8SfxjD8yV-7RyoLFxuFb04Cf69-5l4E6kx9tU-8IdwjpUZ0g6hHKn8-QGl05tU-RMvpxtw49T7S4XYH3yO9x1d9jRp50ytDstRWPjdAAFRki39W9bbesTcgQ8rmY8_ZMR26SP4sa2eYA_puBUIV5eA6T1g607HzFceSI_M/s736/5dc162cb4a9bfd0f0fae8664b5960939.jpg" alt="Magnificent Middle" loading="lazy"/></div>
+          <div class="num">04 — Feb 2026</div>
+          <h3><a href="magnificent-middle.html">The Magnificent Middle: Tunisia's Accidental Revolution in Consumer Choice</a></h3>
+          <p>Conventional wisdom says win on price or win on premium. The brands actually winning in Tunisia right now are doing neither. I've been watching them print money from the adequate middle.</p>
+          <a href="magnificent-middle.html" class="read-link">Read →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihyx04zy54GiEa_sNiRgpRhfLFu6ATuVjUhMqD8DKDTpjsaYdsuC8AbpM85ZXYXvJae3VO-ERfZ1k9MEaCcQCcRLE3rCcIrhpRmMBWL7t9IbzdoPITGb-U-Dt7pPliAN0kmNhRWx4WI2UIjLM2ygbXz0yfRFdUjLQLbLO1tOf_Oxu_T62kN0pm2TbLw8DV/s736/8f53f63a05ce4575517475df73886d73.jpg" alt="100 Tunisian Ads" loading="lazy"/></div>
+          <div class="num">05 — Jan 2026</div>
+          <h3><a href="100-ads.html">I Watched 100 Tunisian Commercials and What I Found Will Surprise You</a></h3>
+          <p>A theory about Tunisian TV advertising that came to me sideways, through a circuitous route involving pregnant women, Finnish birds, and Renaissance Florence.</p>
+          <a href="100-ads.html" class="read-link">Read →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-2F1icBkjNf_AJGJ7fqPEijuMYYyP3DnKTjsFN6zPel5GiumhFOFqo2dbAQsNj2o9c_rMK3PWuVQJHRB2EeHBbwstQp2gf1cDp2QMcg5VNXgrjnvEdDqsGXL-bPEX34qhILTiiXiB2oo-dchmtz0DO2OgGRJcrRdDJJSojRxMZrVbFyHyvW2oEtPG6Z0b/s1024/Gemini_Generated_Image_312ib7312ib7312i.png" alt="Zag Moment" loading="lazy"/></div>
+          <div class="num">06 — Jan 2026</div>
+          <h3><a href="zag-moment.html">Tunisia's Zag Moment: Why Quality Is the New Disruption</a></h3>
+          <p>Pick up a 2-liter water bottle in any Tunisian supermarket. You can't, can you? The plastic has become so gossamer-thin the bottle crumples the moment you apply pressure. This is strategically catastrophic.</p>
+          <a href="zag-moment.html" class="read-link">Read →</a>
+        </article>
+
+      </div>
+
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="https://elfatmislim.blogspot.com" target="_blank" class="read-link" style="font-size: 12px; padding: 14px 32px; background: var(--ink); color: var(--paper); border: none; display: inline-block; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s;">View All Articles on Blogspot →</a>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="side-col">
+
+      <!-- ABOUT -->
+      <div class="about-box" id="about">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <h2>About</h2>
+        </div>
+        <div class="author-avatar">SE</div>
+        <h3>Slim El Fatmi</h3>
+        <div class="role">Marketing Strategist & Writer</div>
+        <p>I write about advertising effectiveness, brand strategy, and behavioral economics — all through the lens of the Tunisian market. I apply frameworks from Ritson, Binet, Field, and Orlando Wood to the brands most analysts overlook. This blog is the record of what I find.</p>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter-box" id="newsletter">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week. No fluff.</h3>
+        <p>Join readers who want sharp marketing analysis applied to the markets that matter to them, not the ones that are safe to write about.</p>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com" />
+          <button type="button" onclick="handleSubscribe(this)">Subscribe</button>
+        </div>
+        <p class="nl-note">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <!-- TAGS -->
+      <div class="tags-box">
+        <h4>Topics</h4>
+        <div class="tags-list">
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Tunisian Brands</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Advertising</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Behavioral Economics</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Brand Strategy</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Consumer Psychology</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Fast Food</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">Trust</a>
+          <a class="tag-pill" href="https://elfatmislim.blogspot.com" target="_blank">CPG</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>The Tunisian Institute for Marketing Nonsense</p>
+        <span>Telling the untold stories of Tunisian brands — one insight at a time. By Slim El Fatmi.</span>
+      </div>
+      <div class="footer-col">
+        <h4>Writing</h4>
+        <ul>
+          <li><a href="fast-food.html">Fast Food Psychology</a></li>
+          <li><a href="yoyo.html">The Yoyo Story</a></li>
+          <li><a href="trust-gap.html">The Trust Gap</a></li>
+          <li><a href="100-ads.html">100 Tunisian Ads</a></li>
+          <li><a href="https://elfatmislim.blogspot.com" target="_blank">All Articles →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://elfatmislim.blogspot.com" target="_blank">Blogspot</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <strong>Slim El Fatmi</strong>. All rights reserved.</p>
+      <p>The Tunisian Institute for Marketing Nonsense</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubscribe(btn) {
+      const input = btn.previousElementSibling;
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = '#e83a2f';
+        input.focus();
+        return;
+      }
+      input.style.borderColor = '#16a34a';
+      btn.textContent = '✓ You\'re in.';
+      btn.style.background = '#16a34a';
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>
