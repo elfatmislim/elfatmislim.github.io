@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Tunisian Institute for Marketing Nonsense</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    /* TICKER */
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    /* NAV */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-links{display:flex;gap:32px;list-style:none;}
+    .nav-links a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;position:relative;padding-bottom:2px;}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent1);transition:width 0.25s;}
+    .nav-links a:hover::after{width:100%;}
+    .nav-cta{background:var(--ink);color:var(--paper)!important;padding:9px 20px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .nav-cta:hover{background:var(--accent1);}
+    .nav-cta::after{display:none!important;}
+    /* HERO */
+    .hero{padding:80px 48px 60px;border-bottom:2px solid var(--ink);position:relative;overflow:hidden;}
+    .hero-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent1);margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+    .hero-label::before{content:'';display:inline-block;width:30px;height:1px;background:var(--accent1);}
+    .hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(48px,7vw,96px);line-height:0.95;letter-spacing:-0.02em;max-width:900px;margin-bottom:32px;animation:fadeUp 0.7s ease both;}
+    .hero-title em{font-style:italic;color:var(--accent1);font-family:'Libre Baskerville',serif;}
+    .hero-sub{font-size:17px;line-height:1.7;color:var(--muted);max-width:520px;margin-bottom:40px;animation:fadeUp 0.7s 0.15s ease both;}
+    .hero-meta{display:flex;gap:40px;align-items:center;animation:fadeUp 0.7s 0.3s ease both;}
+    .hero-stat strong{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:36px;line-height:1;}
+    .hero-stat span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+    .hero-divider{width:1px;height:50px;background:var(--border);}
+    .hero-deco{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-weight:800;font-size:220px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--border);letter-spacing:-0.05em;user-select:none;pointer-events:none;opacity:0.6;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    /* LAYOUT */
+    .main-layout{display:grid;grid-template-columns:1fr 300px;border-bottom:2px solid var(--ink);}
+    .articles-col{padding:56px 48px;border-right:2px solid var(--ink);}
+    .sidebar-col{padding:56px 28px;}
+    /* SECTION HEADER */
+    .section-header{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+    .section-header h2{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
+    .section-header::after{content:'';flex:1;height:1px;background:var(--border);}
+    /* ARTICLE GRID */
+    .articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;}
+    .article-card{border-top:2px solid var(--ink);padding-top:18px;}
+    .card-img-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--border);margin-bottom:14px;}
+    .card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s ease;}
+    .article-card:hover .card-img-wrap img{transform:scale(1.04);}
+    .card-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+    .card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:3px 8px;}
+    .card-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.05em;}
+    .article-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;letter-spacing:-0.01em;}
+    .article-card h3 a{color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .article-card h3 a:hover{color:var(--accent1);}
+    .article-card p{font-size:12px;line-height:1.65;color:var(--muted);margin-bottom:12px;}
+    .read-link{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:color 0.2s;}
+    .read-link:hover{color:var(--accent1);}
+    /* SIDEBAR */
+    .about-box{margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+    .author-avatar{width:60px;height:60px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--paper);margin-bottom:14px;}
+    .about-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px;}
+    .about-box .role{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent1);margin-bottom:12px;}
+    .about-box p{font-size:12px;line-height:1.7;color:var(--muted);}
+    .nl-box{background:var(--ink);color:var(--paper);padding:24px 20px;margin-bottom:32px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .tags-box h4{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+    .tags-list{display:flex;flex-wrap:wrap;gap:8px;}
+    .tag-pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all 0.2s;text-decoration:none;}
+    .tag-pill:hover{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+    /* FOOTER */
+    footer{background:var(--ink);color:var(--paper);padding:56px 48px 28px;}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .footer-brand p{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;line-height:1.2;margin-bottom:14px;}
+    .footer-brand span{font-size:13px;line-height:1.7;color:#7a7265;}
+    .footer-col h4{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#7a7265;margin-bottom:14px;}
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{margin-bottom:8px;}
+    .footer-col ul li a{color:var(--paper);text-decoration:none;font-size:13px;transition:color 0.2s;}
+    .footer-col ul li a:hover{color:var(--accent2);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+    .footer-bottom p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.05em;color:#7a7265;}
+    .footer-bottom p strong{color:var(--accent2);}
+    /* RESPONSIVE */
+    @media(max-width:900px){nav{padding:16px 24px;}.nav-links{display:none;}.hero{padding:48px 24px 40px;}.hero-deco{display:none;}.main-layout{grid-template-columns:1fr;}.articles-col{padding:36px 24px;border-right:none;}.sidebar-col{padding:36px 24px;border-top:2px solid var(--ink);}.articles-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;gap:28px;}footer{padding:40px 24px 24px;}}
+  </style>
+</head>
+<body>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="#">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <ul class="nav-links"><li><a href="#articles">Articles</a></li><li><a href="#about">About</a></li><li><a href="#newsletter">Newsletter</a></li></ul>
+    <a class="nav-cta" href="#newsletter">Subscribe</a>
+  </nav>
+  <section class="hero">
+    <div class="hero-label">Dispatches from the Tunisian marketing trenches</div>
+    <h1 class="hero-title">Telling the<br><em>untold stories</em><br>of Tunisian brands.</h1>
+    <p class="hero-sub">Sharp analysis of advertising effectiveness, brand strategy, and consumer psychology — applied to the market nobody else is studying seriously.</p>
+    <div class="hero-meta">
+      <div class="hero-stat"><strong>22+</strong><span>Articles</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><strong>2025</strong><span>Est.</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><strong>1</strong><span>Market</span></div>
+    </div>
+    <div class="hero-deco" aria-hidden="true">TI</div>
+  </section>
+  <div class="main-layout">
+    <main class="articles-col" id="articles">
+      <div class="section-header"><h2>All Articles</h2></div>
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhP1EwW8emXiNt4MWTYzjBwhI0tsrSaLtb0Q3SHGL1SXu_j5QO9D2u2k-FH56KmJ-80NabHNamxZVdxMrkmSFvSg0R9KUzXk8SfrrsIwJ3VKZ0cXZnHKLBOxfj5P-2E5ycRp-Pwo4dIxXSKNCa5QN7YAX9vv-wA-x9cUTLcJOrP0sEy7Vx1ds3HRIjxUqSK/s1104/51c02aa13f5cec700701dbc4ba356a28.jpg" alt="The Psychological Laws Governing Tunisia's Fast Food" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Fast Food</span><span class="card-date">Mar 5, 2026</span></div>
+          <h3><a href="fast-food.html">The Psychological Laws Governing Tunisia's Fast Food</a></h3>
+          <p>Survivorship bias, MAYA, cognitive fluency — fast food success in Tunisia isn't about the fries. It's about psychological laws that nobody has bothered to name.</p>
+          <a href="fast-food.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6nvfi_Z83qjCpZhHwvUDkMc_O-Rdi7hxKrSRxg98oQn4IBJHsPaE9dXi6kllAS8X-DnSdx8BVaLlo2KRAvWgErt0bKF-VqUzyP9YZ_lNklAx0ImNc92so1BQM1kV_7dEFQyh7_u5G777lHgWYmLW0NeBjVYB4T2azWcGGXh187w6bgr4Ksoy97la8KyJ-/s447/images%20(14).jpeg" alt="Tunisia's Most Underrated Marketing Genius: The Yoyo Story" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#2563eb">Brand Study</span><span class="card-date">Feb 20, 2026</span></div>
+          <h3><a href="yoyo.html">Tunisia's Most Underrated Marketing Genius: The Yoyo Story</a></h3>
+          <p>There is a peculiar blindness that afflicts people trained in conventional marketing. Yoyo commits none of these errors. And that is why it is extraordinary.</p>
+          <a href="yoyo.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim6pxUqVGRg0raOSP8pgPd7O_5rCWLNlv3Rscx_GsQ1BgkwV3kxRfXzEKVZztiIQdji6okv0MgyPkO_Nfs-q1_3kIAUB5z2OL4KGYznn6H4H06N6wGznRbWki7UZCqrkwxlhAJA9zS1wtzW4Ap3vm5bZco4vU_YQwkdw_IN9g7MCxzipQ-yOx1EjlVU696/s917/a44a6086cd0bcbfda7c37f22f29b1694.jpg" alt="Exploiting the Trust Gap: What Tunisian Facebook Groups Reveal" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#2563eb">Trust</span><span class="card-date">Feb 13, 2026</span></div>
+          <h3><a href="trust-gap.html">Exploiting the Trust Gap: What Tunisian Facebook Groups Reveal</a></h3>
+          <p>Tunisia has all the machinery of modern consumer capitalism but it's missing the invisible infrastructure that prevents the whole system from devouring itself.</p>
+          <a href="trust-gap.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtHSU4b8YJB8dNPUFgXWK5D8SfxjD8yV-7RyoLFxuFb04Cf69-5l4E6kx9tU-8IdwjpUZ0g6hHKn8-QGl05tU-RMvpxtw49T7S4XYH3yO9x1d9jRp50ytDstRWPjdAAFRki39W9bbesTcgQ8rmY8_ZMR26SP4sa2eYA_puBUIV5eA6T1g607HzFceSI_M/s736/5dc162cb4a9bfd0f0fae8664b5960939.jpg" alt="The Magnificent Middle: Tunisia's Accidental Revolution" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#16a34a">Consumer Behavior</span><span class="card-date">Feb 7, 2026</span></div>
+          <h3><a href="magnificent-middle.html">The Magnificent Middle: Tunisia's Accidental Revolution</a></h3>
+          <p>The brands winning aren't the premium players or the budget disruptors, but something altogether more interesting — the adequate middle. And they're absolutely printing money.</p>
+          <a href="magnificent-middle.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihyx04zy54GiEa_sNiRgpRhfLFu6ATuVjUhMqD8DKDTpjsaYdsuC8AbpM85ZXYXvJae3VO-ERfZ1k9MEaCcQCcRLE3rCcIrhpRmMBWL7t9IbzdoPITGb-U-Dt7pPliAN0kmNhRWx4WI2UIjLM2ygbXz0yfRFdUjLQLbLO1tOf_Oxu_T62kN0pm2TbLw8DV/s736/8f53f63a05ce4575517475df73886d73.jpg" alt="I Watched 100 Tunisian Commercials and What I Found Will Surprise You" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#7c3aed">Advertising</span><span class="card-date">Jan 21, 2026</span></div>
+          <h3><a href="100-ads.html">I Watched 100 Tunisian Commercials and What I Found Will Surprise You</a></h3>
+          <p>72–78% of Tunisian ads are left-brain dominant. Only 5–8% can be classified as right-brain dominant. If Tunisian TV advertising were a democracy, the right brain would have lost its deposit.</p>
+          <a href="100-ads.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDJjlexEqCXnzzQWSGXGMw7AhhUusfD0TbYbNw9KbhdXXTY4Ej6l1OnHkcSY62tFOroSSXbgvq-z2eYuw-1D14yvDjYsZMS6fWjgGUM7znugNvywNEMaQb3G-X26nIxqQOyYyd9WJKM903WWga-ghJWs-gaNnMjU2TIUSU6QQfvaPeRpQtGaWv6sGWE7mE/s447/images.png" alt="The Infinix Heist: How a Nobody Brand Conquered Tunisia" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#0d9488">Brand Strategy</span><span class="card-date">Jan 15, 2026</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2026/01/the-infinix-heist-how-nobody-brand.html" target="_blank">The Infinix Heist: How a Nobody Brand Conquered Tunisia</a></h3>
+          <p>In 2018, a phone brand you'd never heard of quietly entered Tunisia. No fanfare. No celebrity endorsements. Just phones aimed at kids, sold online. That brand was Infinix.</p>
+          <a href="https://elfatmislim.blogspot.com/2026/01/the-infinix-heist-how-nobody-brand.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-2F1icBkjNf_AJGJ7fqPEijuMYYyP3DnKTjsFN6zPel5GiumhFOFqo2dbAQsNj2o9c_rMK3PWuVQJHRB2EeHBbwstQp2gf1cDp2QMcg5VNXgrjnvEdDqsGXL-bPEX34qhILTiiXiB2oo-dchmtz0DO2OgGRJcrRdDJJSojRxMZrVbFyHyvW2oEtPG6Z0b/s1024/Gemini_Generated_Image_312ib7312ib7312i.png" alt="Tunisia's Zag Moment: Why Quality Is the New Disruption" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#0d9488">Brand Strategy</span><span class="card-date">Jan 17, 2026</span></div>
+          <h3><a href="zag-moment.html">Tunisia's Zag Moment: Why Quality Is the New Disruption</a></h3>
+          <p>Pick up a 2-liter water bottle in any Tunisian supermarket. You can't, can you? The plastic has become so gossamer-thin it crumples. This is strategically catastrophic.</p>
+          <a href="zag-moment.html" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhP1EwW8emXiNt4MWTYzjBwhI0tsrSaLtb0Q3SHGL1SXu_j5QO9D2u2k-FH56KmJ-80NabHNamxZVdxMrkmSFvSg0R9KUzXk8SfrrsIwJ3VKZ0cXZnHKLBOxfj5P-2E5ycRp-Pwo4dIxXSKNCa5QN7YAX9vv-wA-x9cUTLcJOrP0sEy7Vx1ds3HRIjxUqSK/s1104/51c02aa13f5cec700701dbc4ba356a28.jpg" alt="The Peculiar Economics of Maestro: Winning Shelf Space, Losing Minds" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Brand</span><span class="card-date">Dec 19, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/12/maestro-is-getting-crushed-and-its.html" target="_blank">The Peculiar Economics of Maestro: Winning Shelf Space, Losing Minds</a></h3>
+          <p>Maestro did everything 'right' according to traditional business strategy. It's killing them. The autopsy of a brand that optimized itself into irrelevance.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/12/maestro-is-getting-crushed-and-its.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim6pxUqVGRg0raOSP8pgPd7O_5rCWLNlv3Rscx_GsQ1BgkwV3kxRfXzEKVZztiIQdji6okv0MgyPkO_Nfs-q1_3kIAUB5z2OL4KGYznn6H4H06N6wGznRbWki7UZCqrkwxlhAJA9zS1wtzW4Ap3vm5bZco4vU_YQwkdw_IN9g7MCxzipQ-yOx1EjlVU696/s917/a44a6086cd0bcbfda7c37f22f29b1694.jpg" alt="Why Tutto Sport's Discount Strategy Is Killing the Brand" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#0d9488">Brand Strategy</span><span class="card-date">Oct 18, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/10/why-tutto-sports-discount-strategy-is.html" target="_blank">Why Tutto Sport's Discount Strategy Is Killing the Brand</a></h3>
+          <p>Tutto Sport is stuck. And if they don't wake up soon, they're going to discount themselves into oblivion — a masterclass in how NOT to position a retail brand.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/10/why-tutto-sports-discount-strategy-is.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtHSU4b8YJB8dNPUFgXWK5D8SfxjD8yV-7RyoLFxuFb04Cf69-5l4E6kx9tU-8IdwjpUZ0g6hHKn8-QGl05tU-RMvpxtw49T7S4XYH3yO9x1d9jRp50ytDstRWPjdAAFRki39W9bbesTcgQ8rmY8_ZMR26SP4sa2eYA_puBUIV5eA6T1g607HzFceSI_M/s736/5dc162cb4a9bfd0f0fae8664b5960939.jpg" alt="The Great Marketing Myth: Why Lloyd's Famous Ads Are Failing" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#7c3aed">Advertising</span><span class="card-date">Aug 26, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/the-great-marketing-myth-why-lloyds.html" target="_blank">The Great Marketing Myth: Why Lloyd's Famous Ads Are Failing</a></h3>
+          <p>Lloyd has produced some of the most engaging insurance advertising you'll see anywhere and yet completely forgotten that the point of marketing is to actually sell something.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/the-great-marketing-myth-why-lloyds.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihyx04zy54GiEa_sNiRgpRhfLFu6ATuVjUhMqD8DKDTpjsaYdsuC8AbpM85ZXYXvJae3VO-ERfZ1k9MEaCcQCcRLE3rCcIrhpRmMBWL7t9IbzdoPITGb-U-Dt7pPliAN0kmNhRWx4WI2UIjLM2ygbXz0yfRFdUjLQLbLO1tOf_Oxu_T62kN0pm2TbLw8DV/s736/8f53f63a05ce4575517475df73886d73.jpg" alt="The Honey Seller Who Understood Psychology Better Than Most Marketing Directors" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#16a34a">Consumer Psychology</span><span class="card-date">Aug 21, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/the-honey-seller-who-understood.html" target="_blank">The Honey Seller Who Understood Psychology Better Than Most Marketing Directors</a></h3>
+          <p>Sometimes the most interesting business stories come from people who've never read a marketing textbook. They just watch their customers carefully and trust their instincts.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/the-honey-seller-who-understood.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-2F1icBkjNf_AJGJ7fqPEijuMYYyP3DnKTjsFN6zPel5GiumhFOFqo2dbAQsNj2o9c_rMK3PWuVQJHRB2EeHBbwstQp2gf1cDp2QMcg5VNXgrjnvEdDqsGXL-bPEX34qhILTiiXiB2oo-dchmtz0DO2OgGRJcrRdDJJSojRxMZrVbFyHyvW2oEtPG6Z0b/s1024/Gemini_Generated_Image_312ib7312ib7312i.png" alt="The Everyman's Dilemma: How Hamadi Abid Lost Its Soul" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Brand</span><span class="card-date">Aug 15, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/the-everymans-dilemma-how-hamadi-abid.html" target="_blank">The Everyman's Dilemma: How Hamadi Abid Lost Its Soul</a></h3>
+          <p>Most brands fail not because they can't grow, but because they don't know when to stop changing. They mistake evolution for revolution.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/the-everymans-dilemma-how-hamadi-abid.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDJjlexEqCXnzzQWSGXGMw7AhhUusfD0TbYbNw9KbhdXXTY4Ej6l1OnHkcSY62tFOroSSXbgvq-z2eYuw-1D14yvDjYsZMS6fWjgGUM7znugNvywNEMaQb3G-X26nIxqQOyYyd9WJKM903WWga-ghJWs-gaNnMjU2TIUSU6QQfvaPeRpQtGaWv6sGWE7mE/s447/images.png" alt="From Zero to Hero: How Peak Sports Ate the Competition for Breakfast" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#0d9488">Brand Strategy</span><span class="card-date">Aug 10, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/from-zero-to-hero-how-peak-sports-ate.html" target="_blank">From Zero to Hero: How Peak Sports Ate the Competition for Breakfast</a></h3>
+          <p>Peak Sports landed in Tunisia in 2017 with a strategy that would make most brand managers break out in cold sweats. Instead of competing head-to-head, they embraced being the unknown newcomer.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/from-zero-to-hero-how-peak-sports-ate.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim6pxUqVGRg0raOSP8pgPd7O_5rCWLNlv3Rscx_GsQ1BgkwV3kxRfXzEKVZztiIQdji6okv0MgyPkO_Nfs-q1_3kIAUB5z2OL4KGYznn6H4H06N6wGznRbWki7UZCqrkwxlhAJA9zS1wtzW4Ap3vm5bZco4vU_YQwkdw_IN9g7MCxzipQ-yOx1EjlVU696/s917/a44a6086cd0bcbfda7c37f22f29b1694.jpg" alt="The Poultry Wars: Trust, Disgust, and Brand Strategy" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#16a34a">Consumer Psychology</span><span class="card-date">Aug 8, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/the-poultry-wars-tunisian-case-study-in.html" target="_blank">The Poultry Wars: Trust, Disgust, and Brand Strategy</a></h3>
+          <p>If you want a masterclass in how brand strategy works at the most fundamental human level, forget tech unicorns and luxury fashion houses. Look at chicken.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/the-poultry-wars-tunisian-case-study-in.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtHSU4b8YJB8dNPUFgXWK5D8SfxjD8yV-7RyoLFxuFb04Cf69-5l4E6kx9tU-8IdwjpUZ0g6hHKn8-QGl05tU-RMvpxtw49T7S4XYH3yO9x1d9jRp50ytDstRWPjdAAFRki39W9bbesTcgQ8rmY8_ZMR26SP4sa2eYA_puBUIV5eA6T1g607HzFceSI_M/s736/5dc162cb4a9bfd0f0fae8664b5960939.jpg" alt="The Tuna Wars: What I Learned About Human Irrationality from Stalking Supermarket Shelves" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#16a34a">Consumer Behavior</span><span class="card-date">Aug 4, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/08/the-tuna-wars-what-i-learned-about.html" target="_blank">The Tuna Wars: What I Learned About Human Irrationality from Stalking Supermarket Shelves</a></h3>
+          <p>There's a war happening in Tunisian supermarkets. A quiet, vicious little war. The Tunisian tuna market is teaching us things about consumer behavior that Harvard Business School case studies can only dream of.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/08/the-tuna-wars-what-i-learned-about.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihyx04zy54GiEa_sNiRgpRhfLFu6ATuVjUhMqD8DKDTpjsaYdsuC8AbpM85ZXYXvJae3VO-ERfZ1k9MEaCcQCcRLE3rCcIrhpRmMBWL7t9IbzdoPITGb-U-Dt7pPliAN0kmNhRWx4WI2UIjLM2ygbXz0yfRFdUjLQLbLO1tOf_Oxu_T62kN0pm2TbLw8DV/s736/8f53f63a05ce4575517475df73886d73.jpg" alt="The Lilas Lunacy: A Behavioural Economics Dissection" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Brand Failure</span><span class="card-date">Jul 21, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/07/the-lilas-lunacy-behavioural-economics.html" target="_blank">The Lilas Lunacy: A Behavioural Economics Dissection</a></h3>
+          <p>Lilas spent decades mastering household product positioning, only to discover that expertise in toilet paper manufacturing doesn't automatically translate to beauty industry credibility.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/07/the-lilas-lunacy-behavioural-economics.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-2F1icBkjNf_AJGJ7fqPEijuMYYyP3DnKTjsFN6zPel5GiumhFOFqo2dbAQsNj2o9c_rMK3PWuVQJHRB2EeHBbwstQp2gf1cDp2QMcg5VNXgrjnvEdDqsGXL-bPEX34qhILTiiXiB2oo-dchmtz0DO2OgGRJcrRdDJJSojRxMZrVbFyHyvW2oEtPG6Z0b/s1024/Gemini_Generated_Image_312ib7312ib7312i.png" alt="The Decathlon Deception: How a French Retailer Cracked Tunisia's Trust Code" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#0d9488">Brand Strategy</span><span class="card-date">Jul 20, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/07/the-decathlon-deception-how-french.html" target="_blank">The Decathlon Deception: How a French Retailer Cracked Tunisia's Trust Code</a></h3>
+          <p>Decathlon succeeded in Tunisia not by making people more athletic, but by making them think less. They solved the paralysis of choice.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/07/the-decathlon-deception-how-french.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDJjlexEqCXnzzQWSGXGMw7AhhUusfD0TbYbNw9KbhdXXTY4Ej6l1OnHkcSY62tFOroSSXbgvq-z2eYuw-1D14yvDjYsZMS6fWjgGUM7znugNvywNEMaQb3G-X26nIxqQOyYyd9WJKM903WWga-ghJWs-gaNnMjU2TIUSU6QQfvaPeRpQtGaWv6sGWE7mE/s447/images.png" alt="Designing the Mousetrap: How Aziza Wins Without Saying a Word" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#2563eb">Retail</span><span class="card-date">Jul 14, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/07/in-bustling-neighborhoods-of-tunisia.html" target="_blank">Designing the Mousetrap: How Aziza Wins Without Saying a Word</a></h3>
+          <p>Aziza has created one of the most sophisticated applications of habit-forming psychology I've encountered in retail — whether by design or happy accident.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/07/in-bustling-neighborhoods-of-tunisia.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim6pxUqVGRg0raOSP8pgPd7O_5rCWLNlv3Rscx_GsQ1BgkwV3kxRfXzEKVZztiIQdji6okv0MgyPkO_Nfs-q1_3kIAUB5z2OL4KGYznn6H4H06N6wGznRbWki7UZCqrkwxlhAJA9zS1wtzW4Ap3vm5bZco4vU_YQwkdw_IN9g7MCxzipQ-yOx1EjlVU696/s917/a44a6086cd0bcbfda7c37f22f29b1694.jpg" alt="Death by a Thousand Cuts: How Chocoline Destroyed Its Own Brand Magic" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Brand Failure</span><span class="card-date">Jul 13, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/07/death-by-thousand-cuts-how-chocoline.html" target="_blank">Death by a Thousand Cuts: How Chocoline Destroyed Its Own Brand Magic</a></h3>
+          <p>Chocoline didn't just dominate its category — it became the category. Then, having achieved this pinnacle of brand success, it systematically destroyed everything that made it special.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/07/death-by-thousand-cuts-how-chocoline.html" target="_blank" class="read-link">Read →</a>
+        </article>
+        <article class="article-card">
+          <div class="card-img-wrap"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtHSU4b8YJB8dNPUFgXWK5D8SfxjD8yV-7RyoLFxuFb04Cf69-5l4E6kx9tU-8IdwjpUZ0g6hHKn8-QGl05tU-RMvpxtw49T7S4XYH3yO9x1d9jRp50ytDstRWPjdAAFRki39W9bbesTcgQ8rmY8_ZMR26SP4sa2eYA_puBUIV5eA6T1g607HzFceSI_M/s736/5dc162cb4a9bfd0f0fae8664b5960939.jpg" alt="Gaucho's Marketing Missteps: A Masterclass in How NOT to Build a Brand" loading="lazy"/></div>
+          <div class="card-meta"><span class="card-tag" style="background:#e83a2f">Brand Failure</span><span class="card-date">Jul 12, 2025</span></div>
+          <h3><a href="https://elfatmislim.blogspot.com/2025/07/gauchos-marketing-missteps-masterclass.html" target="_blank">Gaucho's Marketing Missteps: A Masterclass in How NOT to Build a Brand</a></h3>
+          <p>For years, Gaucho had it all figured out. A simple, powerful positioning: 'Gaucho yighlib il jou3.' Then the marketing department seemingly lost their collective minds.</p>
+          <a href="https://elfatmislim.blogspot.com/2025/07/gauchos-marketing-missteps-masterclass.html" target="_blank" class="read-link">Read →</a>
+        </article>
+      </div>
+    </main>
+    <aside class="sidebar-col">
+      <div class="about-box" id="about">
+        <div class="sidebar-label">About</div>
+        <div class="author-avatar">SE</div>
+        <h3>Slim El Fatmi</h3>
+        <div class="role">Marketing Strategist &amp; Writer</div>
+        <p>I write about advertising effectiveness, brand strategy, and behavioral economics — all through the lens of the Tunisian market. Applying frameworks from Ritson, Binet, Field, and Orlando Wood to the brands most analysts overlook.</p>
+      </div>
+      <div class="nl-box" id="newsletter">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week. No fluff.</h3>
+        <p>Sharp marketing analysis applied to the markets that matter — not the ones that are safe to write about.</p>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com"/>
+          <button onclick="handleSubscribe(this)">Subscribe</button>
+        </div>
+      </div>
+      <div class="tags-box">
+        <h4>Topics</h4>
+        <div class="tags-list">
+          <a class="tag-pill" href="#">Tunisian Brands</a>
+          <a class="tag-pill" href="#">Advertising</a>
+          <a class="tag-pill" href="#">Behavioral Economics</a>
+          <a class="tag-pill" href="#">Brand Strategy</a>
+          <a class="tag-pill" href="#">Consumer Psychology</a>
+          <a class="tag-pill" href="#">Brand Failure</a>
+          <a class="tag-pill" href="#">Fast Food</a>
+          <a class="tag-pill" href="#">Retail</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><p>The Tunisian Institute for Marketing Nonsense</p><span>Telling the untold stories of Tunisian brands — one insight at a time. By Slim El Fatmi.</span></div>
+      <div class="footer-col"><h4>Recent</h4><ul>
+        <li><a href="fast-food.html">Fast Food Psychology</a></li>
+        <li><a href="yoyo.html">The Yoyo Story</a></li>
+        <li><a href="trust-gap.html">The Trust Gap</a></li>
+        <li><a href="100-ads.html">100 Tunisian Ads</a></li>
+        <li><a href="magnificent-middle.html">The Magnificent Middle</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="https://elfatmislim.blogspot.com" target="_blank">Blogspot</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 <strong>Slim El Fatmi</strong>. All rights reserved.</p><p>The Tunisian Institute for Marketing Nonsense</p></div>
+  </footer>
+  <script>function handleSubscribe(btn){const input=btn.previousElementSibling;const email=input.value.trim();if(!email||!email.includes('@')){input.style.borderColor='#e83a2f';input.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
+</body>
+</html>
