@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tunisia's Most Underrated Marketing Genius: The Yoyo Story — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d0d0d;
+      --paper: #f5f0e8;
+      --accent1: #e83a2f;
+      --accent2: #f5a623;
+      --accent3: #2563eb;
+      --accent4: #16a34a;
+      --muted: #7a7265;
+      --border: #d9d0be;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Libre Baskerville', Georgia, serif; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.6; }
+    .ticker { background: var(--ink); color: var(--paper); padding: 8px 0; overflow: hidden; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: marquee 35s linear infinite; }
+    .ticker-inner span { margin: 0 40px; }
+    .ticker-inner span::before { content: '◆  '; color: var(--accent1); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; border-bottom: 2px solid var(--ink); position: sticky; top: 0; background: var(--paper); z-index: 100; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; max-width: 200px; line-height: 1.3; }
+    .nav-back { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-back:hover { color: var(--accent1); }
+    .article-hero { padding: 72px 48px 56px; border-bottom: 2px solid var(--ink); max-width: 860px; }
+    .article-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--paper); padding: 5px 12px; display: inline-block; margin-bottom: 24px; }
+    .article-hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .article-hero h1 em { font-style: italic; color: var(--accent1); font-family: 'Libre Baskerville', serif; }
+    .article-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .article-meta span { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .article-meta .dot { color: var(--border); }
+    .article-meta .author { color: var(--ink); font-weight: 500; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; }
+    .article-body { padding: 64px 56px 80px 48px; border-right: 2px solid var(--ink); }
+    .article-body p { font-size: 17px; line-height: 1.85; margin-bottom: 28px; color: #1a1a1a; }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; margin: 56px 0 20px; padding-top: 40px; border-top: 2px solid var(--ink); }
+    .article-body h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; margin: 32px 0 14px; }
+    .article-img { margin: 40px 0; border: 2px solid var(--ink); overflow: hidden; }
+    .article-img img { width: 100%; display: block; transition: transform 0.4s ease; }
+    .article-img:hover img { transform: scale(1.02); }
+    .article-img figcaption { padding: 10px 16px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--border); }
+    .pull-quote { margin: 48px 0; padding: 32px 40px; border-left: 4px solid var(--accent1); background: rgba(232,58,47,0.04); }
+    .pull-quote p { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 20px !important; line-height: 1.6 !important; color: var(--ink) !important; margin: 0 !important; }
+    .article-sidebar { padding: 64px 32px; }
+    .sidebar-section { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .sidebar-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .sidebar-author { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; color: var(--paper); flex-shrink: 0; }
+    .author-info strong { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; display: block; }
+    .author-info span { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent1); }
+    .sidebar-section p { font-size: 13px; line-height: 1.7; color: var(--muted); }
+    .related-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .related-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-item a { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px; line-height: 1.3; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+    .related-item a:hover { color: var(--accent1); }
+    .related-item .rel-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 4px; }
+    .nl-box { background: var(--ink); color: var(--paper); padding: 24px 20px; }
+    .nl-box .nl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+    .nl-box h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.25; margin-bottom: 8px; }
+    .nl-box p { font-size: 12px; line-height: 1.6; color: #b0a898; margin-bottom: 16px; }
+    .nl-form { display: flex; flex-direction: column; gap: 8px; }
+    .nl-form input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--paper); padding: 10px 12px; font-family: 'DM Mono', monospace; font-size: 12px; outline: none; }
+    .nl-form input::placeholder { color: #7a7265; }
+    .nl-form button { background: var(--accent1); color: var(--paper); border: none; padding: 11px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .nl-form button:hover { background: var(--accent2); }
+    .article-footer { border-top: 2px solid var(--ink); padding: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .article-footer p { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: var(--muted); }
+    .back-btn { background: var(--ink); color: var(--paper); padding: 12px 28px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .back-btn:hover { background: var(--accent1); }
+    @media (max-width: 860px) { nav { padding: 16px 24px; } .article-hero { padding: 48px 24px 40px; } .article-layout { grid-template-columns: 1fr; } .article-body { padding: 40px 24px; border-right: none; } .article-sidebar { padding: 40px 24px; border-top: 2px solid var(--ink); } .article-footer { padding: 32px 24px; } .pull-quote { padding: 24px; } }
+
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;flex-shrink:0;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+
+</style>
+</head>
+<body>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>The Tunisian Institute for Marketing Nonsense</span>
+      <span>Brand strategy &amp; advertising effectiveness</span>
+      <span>Behavioral economics applied to Tunisia</span>
+      <span>The untold stories of Tunisian brands</span>
+      <span>Est. 2025 · Slim El Fatmi</span>
+      <span>The Tunisian Institute for Marketing Nonsense</span>
+      <span>Brand strategy &amp; advertising effectiveness</span>
+      <span>Behavioral economics applied to Tunisia</span>
+      <span>The untold stories of Tunisian brands</span>
+      <span>Est. 2025 · Slim El Fatmi</span>
+    </div>
+  </div>
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#2563eb">Brand Study</span>
+    <h1>Tunisia's Most Underrated Marketing Genius: The Yoyo Story</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span class="dot">·</span>
+      <span>February 20, 2026</span>
+      <span class="dot">·</span>
+      <span>15 min read</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6nvfi_Z83qjCpZhHwvUDkMc_O-Rdi7hxKrSRxg98oQn4IBJHsPaE9dXi6kllAS8X-DnSdx8BVaLlo2KRAvWgErt0bKF-VqUzyP9YZ_lNklAx0ImNc92so1BQM1kV_7dEFQyh7_u5G777lHgWYmLW0NeBjVYB4T2azWcGGXh187w6bgr4Ksoy97la8KyJ-/s447/images%20(14).jpeg" alt="Yoyo" loading="lazy"/></figure>
+      <p>There is a peculiar blindness that afflicts people trained in conventional marketing. They look at a business and immediately ask: what is the product? Then they ask: who is the competition? Then, armed with these two dangerously incomplete answers, they proceed to optimize everything in precisely the wrong direction. Yoyo commits none of these errors. And that is why it is extraordinary.</p>
+      <h2>The Third Space Problem Nobody Was Solving</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj722iQB7kMfqXUflkwUleUVJQevg5-bYcj5bQBU52UYyF-yNoRXcJaa7MKGJ3WeC8C9xllLfo7nLQ32gMK1Go4LA40jHdi1UOm11Ud7W9dHcU5V0OCO-SEXtIHnHYwXNrT4sqK6ZoEN52NauaDtlyY76diMoE24dqWneX__P4iKLlQTRVn9LVc2yzb_doT/s720/1771628447840.jpg" alt="Third space" loading="lazy"/></figure>
+      <p>In Tunisia, families with disposable income and a desire to spend a pleasant afternoon together had essentially two options. The salon de thé, which carries the ambient energy of a Swiss banking institution — hushed, tasteful, and subtly communicating that children are a regrettable presence. Or the restaurant, which is architecturally and philosophically engineered for the singular act of eating, after which your continued presence becomes socially awkward.</p>
+      <p>Neither of these is where families actually want to be. Families want a third thing — a place that feels like an event, a destination, somewhere that communicates you belong here the moment you walk through the door. Yoyo built that place. The physical scale of the space is not a luxury, it is load-bearing.</p>
+      <h2>The Magician Who Made Himself the Brand</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFWwPzXDq2b38F4L5SsDaTyv761PWwbAYAj4-jjGInEW8WwwODK3-L4v7vLx774ESD2uIR_RCq9TRtPqAz9-aEUW1AXUdRdNIKA1cn7kfh3xykrSHIsh9CzCFMc1BR3VHjVQLrBPOqaosLTz15aJkCjLnEeJwJ3MjOfPfZQ7JUJkYSO3bL-RX7a1d2RDZ5/s716/1771627144567.jpg" alt="Yoyo founder" loading="lazy"/></figure>
+      <p>The owner made himself the primary brand asset. His face, his clothes, his way of speaking, his presence in videos — all of it. This is not vanity. This is the single most psychologically sophisticated thing a founder can do, and it works for reasons that have nothing to do with celebrity.</p>
+      <div class="pull-quote"><p>The result is a brand with a personality that is felt, not just recognised.</p></div>
+      <h2>The Engineering of Moments</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglLTlN7N-QumscSoVt8EPupMkFXCn6yIvfyBYgLZPH1A3iWdmoBIQ835LFnEVrNFiwaYbANTUgCqNpuXk-EJm7qYic12gaeKHEgSOEk3u_69pGk_leR9BMzAVKok5_f2E1Y8-BpmrnJERx6a7VNXSeEFi4WfB94Tz46tj9o-jiWgYgVPviEAo4LbKOTzTv/s953/1771627202392.jpg" alt="Moments" loading="lazy"/></figure>
+      <p>Hospitality, properly understood, is not the provision of food and seating. It is the engineering of moments where a customer feels important, loved, and genuinely seen. Yoyo systematised them anyway. The chocolate being poured ceremonially over a waffle. The anniversary surprise coordinated with a family who trusted a stranger with something precious. These are not accidents of service. They are designed. They are repeatable. They are the product.</p>
+      <h2>The Pratfall Effect and Strategic Imperfection</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja28SIJkgZedp3WQDU9E5xzMopjss_RJVP9gfFa4DvJav8s53X855Hvz8XKpn3oq_P4w0PNUjWkvW_23iK3sHWPx4jJ6VV6wplTh5PapcWVluoIns0wa9uG-g23Cd7LHpp5QzJ2Ag-efhAEzLLDu1dmRqE4qHjVnq-Cky0fPJYnMAl7nOj9uWR3-c1AYKS/s735/e883c85ff100b6aaa3eb86b4da409b7c.jpg" alt="Pratfall effect" loading="lazy"/></figure>
+      <p>There is a famous finding in social psychology called the Pratfall Effect. Highly competent people become more likeable when they make small, human mistakes. This is why products with 4.5 stars on Amazon outsell products with 5 stars. Yoyo uses this implicitly and brilliantly. His employees appear in videos not as polished brand ambassadors, but as people who sometimes don't know what to do. The vulnerability of the employee becomes the credibility of the brand.</p>
+      <h2>FOMO as the Primary Currency</h2>
+      <p>Yoyo's content funnel is elegant in its simplicity and devastating in its effectiveness. He creates a genuinely special moment in-store, amplifies it, films it and posts it on Facebook — generating between one and seven thousand organic likes per video, at a cadence of two to three videos per day. The mechanism is not awareness. It is FOMO — the Fear of Missing Out — which is a far more motivating emotion than desire, because it contains an element of loss.</p>
+      <h2>The Drinking Yoghurt That Isn't Drinking Yoghurt</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBs1SsUGfyWfZJpc1HSTG7K3DKRnX18LkdmG5wQ-VKspzA6Yj06jbJb235muAyvH4jXzwfvlCKwrjkZc9Y3tue0zscgRmLql25pYJDbUm_NCsHheilS_Haf1JvBNrFjvAQusx2yAlARxAQlQ_Q2J8nq3InRxEHguWKNgo6CZAla-RKZoPSjDXOGWAsLWks/s1152/Gemini_Generated_Image_2f6z2e2f6z2e2f6z.png" alt="Yoyo FMCG" loading="lazy"/></figure>
+      <p>The move into FMCG products looks, to the untrained eye, like a diversification strategy. It is nothing of the sort. It is an association transplant. Yoyo didn't launch a drinking yoghurt. He framed it as a liquid dessert — and this changes the product's function, its occasion, its competitors, and critically, its price ceiling. The moment you call something a dessert, you are no longer competing with Danone. You are competing with pleasure. And pleasure is a category where Yoyo has spent ten years building an unassailable position.</p>
+      <div class="pull-quote"><p>What the competition is not seeing: Yoyo's competition is not crêpe shops. It is not ice cream parlours. All of those sell fun, which is a product. Yoyo sells moments, which is something considerably harder to replicate.</p></div>
+
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author">
+          <div class="author-avatar">SE</div>
+          <div class="author-info">
+            <strong>Slim El Fatmi</strong>
+            <span>Marketing Strategist</span>
+          </div>
+        </div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Related Articles</div>
+        <div class="related-item"><a href="trust-gap.html">Exploiting the Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
+        <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
+        <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com" />
+          <button onclick="handleSubscribe(this)">Subscribe</button>
+        </div>
+      </div>
+          <div class="li-box">
+        <div class="li-label">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <script>
+    function handleSubscribe(btn) {
+      const input = btn.previousElementSibling;
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) { input.style.borderColor = '#e83a2f'; input.focus(); return; }
+      btn.textContent = '✓ You\'re in.';
+      btn.style.background = '#16a34a';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>

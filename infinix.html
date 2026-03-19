@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Infinix Heist: How a Nobody Brand Conquered Tunisia — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:64px 48px 48px;border-bottom:2px solid var(--ink);max-width:900px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;padding:5px 12px;display:inline-block;margin-bottom:20px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;}
+    .article-hero h1 em{font-style:italic;color:var(--accent1);font-family:'Libre Baskerville',serif;}
+    .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .dot{color:var(--border);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:56px 56px 80px 48px;border-right:2px solid var(--ink);}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:24px;color:#1a1a1a;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:48px 0 16px;padding-top:32px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:24px 0 10px;}
+    .article-body ul{margin:0 0 24px 0;padding-left:24px;}
+    .article-body li{font-size:16px;line-height:1.75;margin-bottom:8px;color:#1a1a1a;}
+    .article-body strong{font-weight:700;}
+    .article-body em{font-style:italic;}
+    .article-img{margin:32px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform 0.4s;}
+    .article-img:hover img{transform:scale(1.02);}
+    .article-img figcaption{padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);}
+    .pull-quote{margin:40px 0;padding:28px 36px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:19px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .article-sidebar{padding:56px 28px;}
+    .sidebar-section{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--paper);flex-shrink:0;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:10px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:22px 18px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:14px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .back-btn:hover{background:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 20px;}.article-hero{padding:40px 20px 32px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px;border-right:none;}.article-sidebar{padding:32px 20px;border-top:2px solid var(--ink);}.article-footer{padding:28px 20px;}.pull-quote{padding:20px 22px;}}
+
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;flex-shrink:0;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+
+</style>
+</head>
+<body>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#0d9488">Brand Strategy</span>
+    <h1>The Infinix Heist: How a Nobody Brand Conquered Tunisia</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span><span class="dot">·</span><span>January 15, 2026</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDJjlexEqCXnzzQWSGXGMw7AhhUusfD0TbYbNw9KbhdXXTY4Ej6l1OnHkcSY62tFOroSSXbgvq-z2eYuw-1D14yvDjYsZMS6fWjgGUM7znugNvywNEMaQb3G-X26nIxqQOyYyd9WJKM903WWga-ghJWs-gaNnMjU2TIUSU6QQfvaPeRpQtGaWv6sGWE7mE/s447/images.png" alt="Infinix" loading="lazy"/></figure>
+      <p>In 2018, a phone brand you'd never heard of quietly entered Tunisia through Cellcom and Jumia's online marketplace. No fanfare. No celebrity endorsements. Just phones aimed at kids, sold exclusively online.</p>
+      <p>That brand was Infinix — a Hong Kong-Chinese company founded in 2013 that exclusively targets emerging markets in Africa and Asia. They're the phone world's best-kept secret, and that's entirely the point. What happened next wasn't planned genius. It was accidental alchemy.</p>
+      <h2>The Contrast Con</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja4cvFScasvrSSsi3QGANcjnCI6UMnuMuH0VbDKCsQ6JJ6qcoqtIxKmvmhz9i8GldkaecHveHmHpm_t-KBIqfPpEzjnTll7u4iDFRk2-LyqCnS2r09TKZEOJOr9loLYRNVie3TDJ3rbNM3pvMsgXUn3CBxJDpjlNlH35wdXYnESrd5UpjZ8H5aI2hyphenhyphenOfPE/s1200/color-contrast.png" alt="" loading="lazy"/></figure>
+      <p>The entire Infinix proposition rests on one psychological trick: amplified contrast. They don't just offer decent specs at reasonable prices. They scream about features — MediaTek processors! Extended RAM! Gaming performance! — in a way that makes the price seem almost suspiciously low. 'Surely corporate made a pricing mistake?'</p>
+      <p>It's not just contrast between features and price. It's their prices versus Samsung's. Their specs versus what you'd expect at this price point. Every comparison makes them look like highway robbery in your favor.</p>
+      <p>And here's the bit of psychological judo that makes it work: they understood that people trust numbers they can count, even when they don't understand what those numbers mean. This is tangibility bias in action. Eight sounds better than four. That's mathematics. That's truth. What RAM actually does? That's a problem for later.</p>
+      <h2>Gaming as Quality Theatre</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgerny-BreJX9py1NaS9cdOZYVBrVZgot6WI2s74zaiRosX6mKiOV_cRzv_YF-Kx7UgDaUtEW1ARwF-lqw5GrH1wDxs2mFtSzqunljJ1PeKYFlc2FpkbOsvqcvOenU2_12JK5kzQv540PK1_M_bHrZNBOucztsPXv5Gg3GJVXGDadkSeFOVrQIDd19yXUyN/s619/images%20(4).jpeg" alt="" loading="lazy"/></figure>
+      <p>Infinix's first move was brilliant: they made gaming their Trojan horse. If it's good enough for gamers, it must be quality. That's the heuristic.</p>
+      <p>They partnered with Free Fire and PUBG — not abstract 'mobile gaming' but the specific games Tunisian kids obsess over. In January 2024, they sponsored the Ooredoo EZ Cup, Tunisia's largest Free Fire tournament. This wasn't marketing. This was reputation laundering. Gaming credibility became their Good Housekeeping Seal. But the real genius was in who they were actually targeting.</p>
+      <h2>The Trojan Horse: Children as Sales Agents</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNmkFplCJBotArUguTvAHHQnyzInfQ_ELGs5FaRLaBGK_d9AOZZwsxuoByWMz_nZq5CLwTzWTUCD6wOXP4mLdE8v16bJVIrdTXvZ7n95bhwUw9__gKQXpdATou-DlSDMmiiQkdiM1REYWn5WTOw_DltLDQHxP9tVICMGPcDXeaGCZIJSOi8JGeXtL9DeXq/s701/images%20(5).jpeg" alt="" loading="lazy"/></figure>
+      <p>Here's the family dynamic Infinix exploited: Ahmed, age 14, speaks fluent technology. His parents don't. When Ahmed says 'This phone has 8GB RAM and runs Free Fire perfectly,' he's not just expressing an opinion. He's the household authority on technical matters.</p>
+      <p>Infinix didn't just target kids. They recruited them as unpaid sales representatives with familial authority. The teenagers weren't the end customers — they were the sales force. And they worked for free, converting skeptical parents through sheer enthusiasm and technical-sounding jargon.</p>
+      <h2>The 8GB Lie (That Isn't Quite a Lie)</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKrBfAk4iclPEqoBPMQtX0jmqWPh23T8ikXTlsNymVlqCkr1LO42xY74HCaH2aVjD-CwashrxJ7YtzYVDCs4beJOwUxvMsMJ-jyZ7NrmquG-9rgm3OzAgFbh9fiagtrDy9MZBAHF-ShYGL1cdMcY0NlK-hsPPa87MH6ic1PKG0tWY1LLgUwshLo2-Q5E5C/s2000/71Pbzy2UyjL.jpg" alt="" loading="lazy"/></figure>
+      <p>This is where it gets deliciously devious. Infinix advertises '8GB RAM' — impressive for a mid-range phone. What the fine print doesn't shout about: it's actually 4GB real RAM plus 4GB 'extended' from storage. To anyone technical, this is like advertising a car with '400 horsepower' where half the horses are imaginary.</p>
+      <p>But here's why it works: parents don't know the difference between RAM and ROM. What they know: eight is bigger than four. More numbers = better phone. 'Extended' sounds premium. By the time someone technical explains the reality, the purchase is done. The teenager is happy. The parent feels smart. The confusion isn't a bug. It's the entire strategy.</p>
+      <h2>That Lurid Green Box</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp1rzv6Oa9YyrPCWxwsCoNurZGz-bOz9zGkuvTMAX1pr6XQhnJMP0qCz7DHcNReaIsfI0Mn2nz2PM_PSabyhG7oAnbUX4r8bZqsUqTstKYRVQ-rp3JJUYFiNG95N4CtRMwLRibds5faHjiTiqELiQXt1fZiYxK24doXmttlIwrhDmUq_hKj2b4HQCHxgDF/s1280/Infinix-Hot-50-5G-4-jpg.webp" alt="" loading="lazy"/></figure>
+      <p>Show someone eight phone boxes — Samsung, Oppo, Xiaomi, whatever. They blur together in minimalist sameness. But that Infinix green? You'd spot it across a crowded shop. It's aggressively, fluorescently, unmissably different. The phone itself looks like every other black rectangle. But the packaging is a distinctive asset worth its weight in gold — and it's the most visible thing to consumers browsing shop windows.</p>
+      <p>Because here's the thing about Tunisia's phone market — the real advertising isn't TV commercials. It's the shop window. People walk past, spot that green box through the glass, and the theater begins.</p>
+      <h2>Where the Magic Actually Happens</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTEnWtxxNDF5io2JPRM9s9AxkidUI8aQ82NO2jEFb442LR0YG0AwzTDshO2XskZxxUoUXq4XxBWRrlbw9Ov4XDYEf0QfXS1RpqQBFEdX1qA-o7eZ1A7Z6DfjCAlojVrGsFbtuKTFIs4kI3j0eJbIcz6ZXA83HZM6isG0u0EgttQaiHJ0s7_4OJAcS-Tdca/s984/NS-Mobile-Nimes_reference.jpg" alt="" loading="lazy"/></figure>
+      <p>Infinix didn't fight for shelf space in premium retailers where serious adults make serious purchases. They saturated neighborhood electronics shops — the small stores where teenagers actually browse after school. And those in-store displays come loaded with Free Fire and PUBG, ready to play. This transforms shopping into experience. A kid plays for two minutes, feels the phone perform in his hands, and the psychological sale is complete. The rest is just his parents signing the receipt.</p>
+      <h2>The Accidental Masterpiece</h2>
+      <p>Here's what makes this beautiful — I don't think Infinix planned most of this. They just did what made sense for an emerging market brand: maximize perceived value, target youth, make specs impressive, use distinctive packaging, get products in front of eyeballs. But the cumulative effect? Rather brilliant.</p>
+      <p>They created a persuasion machine where contrast makes prices feel absurd (in a good way), gaming creates quality associations, children become technical authorities, confusing specs exploit knowledge gaps, green packaging cuts through clutter, and strategic distribution puts phones where decisions happen. Each piece reinforces the others. It's a psychological flywheel.</p>
+      <div class="pull-quote"><p>Infinix doesn't make the 'best' phones by any objective measure. But they understand what premium brands forget: purchasing decisions aren't made by rational brains comparing specifications.</p></div>
+      <h2>The Uncomfortable Truth</h2>
+      <p>Infinix doesn't make the 'best' phones by any objective measure. But they understand what premium brands forget: purchasing decisions aren't made by rational brains comparing specifications. They're made by parents who trust their kids, kids who want to play games, and everyone who feels they've discovered a secret — getting premium features without premium prices.</p>
+      <p>The specs might be somewhat fictional. The RAM might be half-imaginary. The brand might be younger than the teenagers buying it. But the feeling? The feeling of getting a bargain, of being tech-savvy, of making a smart choice while your kid beams with excitement? That's absolutely real. And in the end, that's what we're all actually buying anyway. The phones are just the excuse.</p>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author"><div class="author-avatar">SE</div><div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div></div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">More Articles</div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+        <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="trust-gap.html">The Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
+        <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
+        <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
+        <div class="related-item"><a href="index.html">← All Articles</a></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
+      </div>
+          <div class="li-box">
+        <div class="li-label">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <script>function handleSubscribe(btn){const i=btn.previousElementSibling;const e=i.value.trim();if(!e||!e.includes('@')){i.style.borderColor='#e83a2f';i.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
+</body>
+</html>

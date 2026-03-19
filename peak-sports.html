@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From Zero to Hero: How Peak Sports Ate the Competition for Breakfast — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:64px 48px 48px;border-bottom:2px solid var(--ink);max-width:900px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;padding:5px 12px;display:inline-block;margin-bottom:20px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;}
+    .article-hero h1 em{font-style:italic;color:var(--accent1);font-family:'Libre Baskerville',serif;}
+    .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .dot{color:var(--border);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:56px 56px 80px 48px;border-right:2px solid var(--ink);}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:24px;color:#1a1a1a;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:48px 0 16px;padding-top:32px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:24px 0 10px;}
+    .article-body ul{margin:0 0 24px 0;padding-left:24px;}
+    .article-body li{font-size:16px;line-height:1.75;margin-bottom:8px;color:#1a1a1a;}
+    .article-body strong{font-weight:700;}
+    .article-body em{font-style:italic;}
+    .article-img{margin:32px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform 0.4s;}
+    .article-img:hover img{transform:scale(1.02);}
+    .article-img figcaption{padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);}
+    .pull-quote{margin:40px 0;padding:28px 36px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:19px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .article-sidebar{padding:56px 28px;}
+    .sidebar-section{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--paper);flex-shrink:0;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:10px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:22px 18px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:14px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .back-btn:hover{background:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 20px;}.article-hero{padding:40px 20px 32px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px;border-right:none;}.article-sidebar{padding:32px 20px;border-top:2px solid var(--ink);}.article-footer{padding:28px 20px;}.pull-quote{padding:20px 22px;}}
+
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;flex-shrink:0;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+
+</style>
+</head>
+<body>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#0d9488">Brand Strategy</span>
+    <h1>From Zero to Hero: How Peak Sports Ate the Competition for Breakfast</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span><span class="dot">·</span><span>August 10, 2025</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFNilpJur3CVQhDdtbZ9jw_NjEuUPcXmvBaxW0JthqHe9XQoeHtVH3VN_BdfqXn0GDruyg7qpgMV5RQDxlSlW-cvIW-JpmPb5UJBAfM-WBu-ZbCIVs5n9E5QWZAS2mQ6koUpzRvxJ4K3KUvqtW0FIfpPK-P_O9-fCiIEbJEJYtFlK9ItafwCuvVzPl4Otm/s700/photo-202.jpeg" alt="" loading="lazy"/></figure>
+      <p>Sometimes the most valuable marketing insights emerge from unexpected markets. While marketing professionals dissect the latest campaigns from global giants, a fascinating case study has been unfolding in Tunisia that offers lessons every brand strategist should understand.</p>
+      <h2>The Anti-Mainstream Advantage</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9D8IbQwHEhv1qio8cqvn7HVgmR-QgxZlToV29tjgwKgn_i1xm7CiLWqyeMRdj2tXTvHp5T4DG9NxKYuwl2Q4wN14V_tXxayFxUgLvrR9wUjlEWnPCHiUNtOi4cDQe2YurSgqVgG6hVY9V4ePH450hdsnCEySpc3ucEyhdAQajlYkJCjVtTROV5H51URlv/s1296/Mainstream_Eat-Art-LLC-1598514462.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak Sports, a Chinese sportswear brand, landed in Tunisia in 2017 with a strategy that would make most brand managers break out in cold sweats. Instead of trying to compete head-to-head with the big boys, they embraced being the unknown newcomer. Anti-mainstream brands create what I call 'discovery value.' It's not just about the product; it's about the joy of finding something others haven't discovered yet. Peak customers became brand evangelists not because they were paid to, but because they loved being the ones to share hidden gems.</p>
+      <h2>Understanding Market Segmentation</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzO8H_pUhk2aIhXp5SUWp9equhjhpBYMKUEKTYRD74fvS3PTBc_hNso411OCB3KpyGNdC-Tk3TewQgjb-QtALOpAaxkVsdBwCW7vLyZBI52cRzBzGoLgFE7u6TYpOX8JobI54x2z927vyvxsL2ZaOB2sjt966zG_I4rTxAkZz9Cu1c9MFungl9bFQmk4Ul/s5472/pexels-kaboompics-6224.jpg" alt="" loading="lazy"/></figure>
+      <p>The Tunisian footwear market breaks down into three distinct price segments. <strong>50–150 dinars:</strong> The bottom tier — frip shops, traditional souks, counterfeit fashion shoes. Quality is consistently poor with minimal durability. <strong>150–300 dinars:</strong> The sweet spot — Decathlon, Hummel, Peak Sports, Springfield, Zara. Decent quality without the brand premium. <strong>300–700 dinars:</strong> The premium segment dominated by Nike, Adidas, Reebok, Puma. The vast majority of the total addressable market clusters in that middle segment. When you want decent shoes but can't afford the big brands, you're left with maybe 5–7 options. Peak didn't just compete in this segment — they devoured it.</p>
+      <h2>Quality Meets Psychology</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdtt64fgsHoeRmHo9H6HuB2-dgECGrOORmDVF0uVJhsxVBuqdsAGp8XkFkWpgOsnBxj7Y_HLkdm5byzeI0oHI8k6e2sXIYmhhDDrGiUF1SAXCtnNX3-W52zlniiF_1IJ6Z4T1YeCygAZl_nzy-MgliVmGykKxGNjXWeIfMTi7nmsM1l8HEuWrhsYWIFNpO/s6720/pexels-rdne-7563653.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak won on two fronts that their competitors completely missed: superior product quality and brilliant psychological positioning. The product quality is genuinely impressive. Peak invests heavily in R&D, maintains design centers globally including California, and delivers technology-packed shoes that are comfortable, durable, and stylish. When customers compared Peak's offerings to other brands in their price segment, it wasn't even close. Peak is also eating into the premium segment above them. Why spend double the price for potentially inferior quality? It's a compelling value proposition that traditional brand hierarchies struggle to answer.</p>
+      <h2>The Word-of-Mouth Engine</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2gd-dA3vj4KKBIvXpFpmIv40-DZYWPaOtovZAkbLOKHgm-KEiYUPYKmKQDTp8JMo1nzk-kRts6Y7qVkRDe0519TgjV3HzPPIPtuoBCJidHiWwAyALlHMj1FHy056Apu-7yBM8OecuNuqxUBu5OWg26zATrVQar2xkUJmPJ92LDPqWkL9Gwb3MS3v8R3pO/s1314/Peak%20Taichi.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak created what Seth Godin would call a 'remarkable' product — something worth talking about. Whether it's the cushioning technology, the comfort factor, or simply the satisfaction of discovering something great, Peak shoes make people want to evangelize. There's a social currency in being the person who knows about the great alternative to expensive Western brands.</p>
+      <h2>Brand Archetype Evolution</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNf0IbBPWzlc338oUTWBagDlnXfEuz79JpWmqkB5uCQp9ezCpHGC6Poya3fj1YKrEhzq9xzup_tFWt0sCMNRBxkl9SaxAANvDmDRzAXTud9CeZpyBUh_OYJ5RfhM7pBsedxzkKzpX2M6FnEsoMaQXkP2bMr8XbrlURUHSAHl8drftI0eHPfNbrgSUzVD4W/s2594/012-FB-Sage.png" alt="" loading="lazy"/></figure>
+      <p>Something fascinating happened to Peak's brand image in Tunisia. Globally, Peak positions itself as the 'Hero' archetype — bold, athletic, conquering. But in Tunisia, the brand naturally evolved into a combination of the Sage and Rebel archetypes. The Sage positioning: 'You're smart enough to see through expensive Western marketing and choose based on actual value.' The Rebel element: 'You don't get fooled by brand names; you make informed decisions.' This wasn't manufactured — it emerged organically from the market dynamics and customer behavior.</p>
+      <h2>The Satisfaction Surplus</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNXpagTYvgWcxr_Tun1pWr5fesTT0LUhfAiyPQf7vQN3eQDpKdvuPu7lXfYW43lauQoJh3yPNdp1IVFW9ZJq-WKXqzZ6OPut7ari4Me5KqmDi0LyIrIzvsGJbDKKf_amIlY-aakDPjinqPNAZ_mlEkL8ys6022VO9vYBeH48F2EA5jT05EsNb5Z_VKP2fI/s4671/pexels-rocketmann-prod-9486675.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak stumbled onto something marketers spend fortunes trying to achieve: a massive satisfaction surplus. Customers expected decent quality but experienced premium comfort. That gap between expectation and reality — particularly the 'foaming sensation' of their cushioning technology — created prediction errors that generated genuine delight. When actual value dramatically exceeds perceived value, you don't just get satisfied customers — you get advocates.</p>
+      <h2>Sales Funnel Innovation</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxgcQZc37FTn_Bk0WzA0R_k5CTADDijQHtR2-54rVEFoyePrTA8ZQdsNoIjufXcmLpHMraz2hMUqvibFCezdY1yKitNJgO5Anj17gZyFjxGseZdgIttp78BAl1E0oo7ZfJ0sDUScv69LZuNNRGSewfpkUSqESojo4NgHvGimKzSulWqWqqRBGINsEI5GWD/s5940/pexels-olly-3761509.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak's sales approach would make any performance marketer jealous. <strong>Step 1 — The Bait:</strong> Peak announces live events through social media, promoting specific products with teaser content about major promotions and 'last chance' inventory. This creates initial awareness and anticipation.</p>
+      <p><strong>Step 2 — The Hook:</strong> They host live events in-store featuring product presentations, limited-time promotions, and heavily discounted 'last chance' products. Most customers initially come hunting for these discounted items — they serve as the primary traffic driver.</p>
+      <p><strong>Step 3 — The Wait:</strong> They wait until their stores fill with people hunting for bargains. The crowd becomes an asset, not a problem. <strong>Step 4 — The Strike:</strong> Once stores are packed, they launch another live event to maximize social proof. Seeing a crowded store signals popularity and validates the purchase decision for new arrivals.</p>
+      <p><strong>Step 5 — The Conversion:</strong> This creates a perfect storm of scarcity (limited inventory), loss aversion (fear of missing the deal), social proof (crowded store), and FOMO that drives sales of even their premium products. <strong>Step 6 — The Amplification:</strong> Peak leverages satisfied customers in-store to provide live testimonials on Facebook, creating authentic social proof that feeds back into the cycle for future events.</p>
+      <h2>Anchoring Mastery</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmezGXMah6aesnXbbV0DA1U6FkalSFvIJxyc-8fDAfVk6SouimzOETPgPGoqu1FtPT5nRo5pNiIH7rCQrzYP2UmBBH23inqFUfBLYsaVC9o0dTIP9sR9eOH6rVw0vQIB29vIiiQAxMCStZqFYoDQumUQui14xoTCnkVK2sI6VIrDpIzEms2fOGxI3cv4Kv/s600/paper-brain-sign-anchoring-effect-600nw-2261558101.webp" alt="" loading="lazy"/></figure>
+      <p>While competitors like Decathlon and Hummel kept their ranges modest, Peak always displayed shoes priced between 500–900 dinars prominently in-store. This high-end range served as an anchor, making their 200–300 dinar shoes seem like incredible value. It's textbook behavioral economics, executed flawlessly.</p>
+      <h2>The Anis Effect</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0FLNLqRAYNT_Te4XTNgVqPfY-_Y1eDjBxqI8OJNUJRnVpwt2VpUk-ORjMivl1U4QPDtbBLAz-FUtDSyMtGjwkh3iSzZ0djQu61275ek4-3NYVKWRhvl-TaJS0ryBRTuPmE9E2PWjEkNhhSggfPwgzWuSPZ6qqVV3cTGyZogHqgxciH-bmGbLo4ivAP_Cx/s5040/pexels-a-darmel-7715793.jpg" alt="" loading="lazy"/></figure>
+      <p>Peak's secret weapon was Anis — an experienced salesperson and gifted copywriter who had worked at Foot Locker in France. But Anis became more than just a spokesperson; he became a pattern interrupter. His eloquence and expertise were immediately apparent, but what made him memorable was his cognitive dissonance: speaking French mixed with broken Arabic, sporting a beard that suggested religious observance while dressing in basketball attire. This combination was jarring and therefore unforgettable. Through the halo effect, his articulate product presentations elevated Peak's perceived expertise — if their presenter knew this much about shoe technology, surely the brand was sophisticated too.</p>
+      <h2>The Gaps in the Strategy</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhheus4uXwf6EO4WcwxZHTNWFn88DY9xwFBzR6BmwzHSSqm9k50udTJauPSH7g1NAG-XaULTYqYNXUAj4gIkInaeFzmslFXWD79xyo1bIrSdMJcJGT49J0vqmAAO9FJBXEozN2zywX5ppE0SCgiQ9QcNypnkjqVC5r1lSQZJ8a2yHJnZUvq0UQNHC-3Xyif/s6000/pexels-clement-proust-363898785-18554368.jpg" alt="" loading="lazy"/></figure>
+      <p>Despite their success, Peak has some blind spots. Funnel Myopia: they focus almost exclusively on sales activation rather than awareness building. There's a significant portion of their target market that's simply unaware of the brand or needs more information before considering purchase. And their messaging rarely connects to the mental triggers that prompt shoe purchases — feeling accepted, reducing fatigue, impressing friends, or wanting versatile footwear for multiple occasions.</p>
+      <h2>The Lessons</h2>
+      <div class="pull-quote"><p>Sometimes being the alternative is better than trying to be the leader.</p></div>
+      <p>Peak Sports Tunisia offers several crucial insights: Anti-mainstream positioning can be powerful — especially in markets dominated by expensive incumbents. Product quality still matters — you can't marketing your way out of a bad product. Understanding local market dynamics beats global best practices. Word-of-mouth amplifies when customers feel smart for choosing you. First-mover advantage in new channels can create sustainable competitive advantage. Satisfaction surplus generates advocacy better than any loyalty program. Peak Sports proves that smart marketing doesn't require the biggest budget — it requires the deepest understanding of your market, your customers, and the psychological drivers that influence purchase decisions.</p>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author"><div class="author-avatar">SE</div><div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div></div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">More Articles</div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+        <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="trust-gap.html">The Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
+        <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
+        <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
+        <div class="related-item"><a href="index.html">← All Articles</a></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
+      </div>
+          <div class="li-box">
+        <div class="li-label">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <script>function handleSubscribe(btn){const i=btn.previousElementSibling;const e=i.value.trim();if(!e||!e.includes('@')){i.style.borderColor='#e83a2f';i.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
+</body>
+</html>
