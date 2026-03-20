@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Lilas Lunacy: A Behavioural Economics Dissection of Tunisia's Most Expensive Marketing Misadventure — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:64px 48px 48px;border-bottom:2px solid var(--ink);max-width:900px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;padding:5px 12px;display:inline-block;margin-bottom:20px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;}
+    .article-hero h1 em{font-style:italic;color:var(--accent1);font-family:'Libre Baskerville',serif;}
+    .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .dot{color:var(--border);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:56px 56px 80px 48px;border-right:2px solid var(--ink);}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:24px;color:#1a1a1a;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:48px 0 16px;padding-top:32px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:24px 0 10px;}
+    .article-body ul{margin:0 0 24px 0;padding-left:24px;}
+    .article-body li{font-size:16px;line-height:1.75;margin-bottom:8px;color:#1a1a1a;}
+    .article-body strong{font-weight:700;}
+    .article-body em{font-style:italic;}
+    .article-img{margin:32px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform 0.4s;}
+    .article-img:hover img{transform:scale(1.02);}
+    .article-img figcaption{padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);}
+    .pull-quote{margin:40px 0;padding:28px 36px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:19px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .article-sidebar{padding:56px 28px;}
+    .sidebar-section{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--paper);flex-shrink:0;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:10px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:22px 18px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:14px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .back-btn:hover{background:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 20px;}.article-hero{padding:40px 20px 32px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px;border-right:none;}.article-sidebar{padding:32px 20px;border-top:2px solid var(--ink);}.article-footer{padding:28px 20px;}.pull-quote{padding:20px 22px;}}
+
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;flex-shrink:0;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+
+
+    /* ── POINT 9: KEY INSIGHTS ── */
+    .key-insights{
+      background:var(--ink);color:var(--paper);
+      padding:28px 32px;margin-bottom:48px;
+      border-left:4px solid var(--accent1);
+      position:relative;
+    }
+    .ki-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.22em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:16px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .ki-label::after{content:'';flex:1;height:1px;background:rgba(245,240,232,0.12);}
+    .ki-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .ki-list li{
+      font-family:'Libre Baskerville',serif;font-size:13px;
+      line-height:1.65;color:rgba(245,240,232,0.82);
+      display:flex;align-items:flex-start;gap:10px;
+    }
+    .ki-list li::before{
+      content:'→';color:var(--accent1);flex-shrink:0;
+      font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;
+    }
+
+    /* ── POINT 11: TYPOGRAPHY HIERARCHY ── */
+    .article-body{max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-size:22px;margin:52px 0 18px;padding-top:36px;}
+    .article-body h3{font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+
+    /* ── POINT 18: FLOATING AUTHOR BADGE ── */
+    .author-float{
+      position:fixed;bottom:28px;right:28px;
+      display:flex;align-items:center;gap:10px;
+      background:var(--ink);color:var(--paper);
+      padding:10px 16px 10px 10px;
+      box-shadow:0 4px 24px rgba(13,13,13,0.18);
+      z-index:500;cursor:pointer;
+      opacity:0;transform:translateY(12px);
+      transition:opacity .4s ease,transform .4s ease;
+      text-decoration:none;
+    }
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{
+      width:36px;height:36px;border-radius:50%;
+      overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);
+      background:#c0251a;
+    }
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-text{}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    @media(max-width:860px){.author-float{bottom:16px;right:16px;padding:8px 12px 8px 8px;}.af-avatar{width:30px;height:30px;}.af-name{font-size:11px;}}
+
+
+    /* ── POINT 1: READING PROGRESS BAR ── */
+    #read-progress{
+      position:fixed;top:0;left:0;height:3px;width:0%;
+      background:var(--accent1);z-index:9999;
+      transition:width .1s linear;
+    }
+
+    /* ── POINT 2: READING TIME DOTS ── */
+    .read-time-visual{
+      display:flex;align-items:center;gap:8px;margin-top:8px;
+    }
+    .rt-dots{display:flex;gap:3px;align-items:center;}
+    .rt-dot{
+      width:6px;height:6px;border-radius:50%;
+      background:var(--border);flex-shrink:0;
+    }
+    .rt-dot.filled{background:var(--accent1);}
+    .rt-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+    }
+
+    /* ── POINT 7: SCROLL BREAK ELEMENTS ── */
+    .scroll-break{
+      display:flex;align-items:center;gap:16px;
+      margin:56px 0;opacity:0.35;
+    }
+    .scroll-break::before,.scroll-break::after{
+      content:'';flex:1;height:1px;background:var(--ink);
+    }
+    .scroll-break-inner{
+      display:flex;gap:6px;align-items:center;
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.2em;color:var(--ink);
+    }
+    .scroll-break-dot{
+      width:4px;height:4px;border-radius:50%;
+      background:var(--accent1);
+    }
+
+    /* ── POINT 3: ARTICLE RECOMMENDATIONS ── */
+    .continue-reading{
+      margin-top:72px;padding-top:40px;
+      border-top:2px solid var(--ink);
+    }
+    .cr-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.22em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:24px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{
+      background:var(--paper);padding:22px 20px;
+      text-decoration:none;color:var(--ink);
+      display:block;transition:background .2s;
+      position:relative;overflow:hidden;
+    }
+    .cr-card::after{
+      content:'';position:absolute;bottom:0;left:0;
+      width:0;height:2px;background:var(--accent1);
+      transition:width .3s;
+    }
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{
+      font-family:'DM Mono',monospace;font-size:9px;
+      letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:8px;display:block;
+    }
+    .cr-title{
+      font-family:'Syne',sans-serif;font-weight:700;
+      font-size:14px;line-height:1.25;color:var(--ink);
+    }
+    .cr-arrow{
+      font-family:'DM Mono',monospace;font-size:10px;
+      color:var(--muted);margin-top:10px;display:block;
+      transition:color .2s;
+    }
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){
+      .cr-grid{grid-template-columns:1fr;}
+      .cr-card{padding:18px 16px;}
+    }
+
+
+    /* ── POINT 12: SCROLL SECTION HEADER ── */
+    #section-tracker{
+      position:fixed;top:3px;left:0;right:0;
+      height:36px;
+      background:var(--ink);color:var(--paper);
+      display:flex;align-items:center;padding:0 24px;
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.15em;text-transform:uppercase;
+      z-index:9990;
+      opacity:0;transform:translateY(-100%);
+      transition:opacity .3s ease,transform .3s ease;
+      pointer-events:none;
+    }
+    #section-tracker.visible{opacity:1;transform:translateY(0);}
+    #section-tracker-text{flex:1;}
+    #section-tracker-pct{
+      color:var(--accent1);font-weight:500;
+      margin-left:16px;flex-shrink:0;
+    }
+    #section-tracker-line{
+      position:absolute;bottom:0;left:0;
+      height:2px;background:var(--accent1);
+      width:0%;transition:width .1s linear;
+    }
+
+    /* ── POINT 16: TIMN INSIGHT MARKER ── */
+    .timn-insight{
+      margin:44px 0;
+      padding:24px 28px 24px 24px;
+      background:rgba(232,58,47,0.04);
+      border-left:3px solid var(--accent1);
+      position:relative;
+    }
+    .timn-insight::before{
+      content:'TIMN';
+      position:absolute;top:-1px;left:24px;
+      font-family:'DM Mono',monospace;font-size:8px;
+      letter-spacing:0.25em;color:var(--accent1);
+      background:var(--paper);padding:0 6px;
+      transform:translateY(-50%);
+      line-height:1;
+    }
+    .timn-insight p{
+      font-family:'Libre Baskerville',serif;
+      font-style:italic;font-size:15px !important;
+      line-height:1.75 !important;color:var(--ink) !important;
+      margin:0 !important;
+    }
+
+    /* ── POINT 17: MOBILE READING MODE ── */
+    @media(max-width:860px){
+      .article-body{
+        padding:32px 20px 48px !important;
+        font-size:16px;
+      }
+      .article-body p{
+        font-size:16px !important;
+        line-height:1.82 !important;
+        margin-bottom:1.4em !important;
+      }
+      .article-body h2{
+        font-size:20px !important;
+        margin:40px 0 14px !important;
+        padding-top:28px !important;
+      }
+      .article-body h3{
+        font-size:16px !important;
+        margin:24px 0 10px !important;
+      }
+      .pull-quote{
+        margin:32px -20px !important;
+        padding:24px 20px !important;
+        border-left:none !important;
+        border-top:3px solid var(--accent1) !important;
+        border-bottom:3px solid var(--accent1) !important;
+        background:rgba(232,58,47,0.04) !important;
+      }
+      .pull-quote p{font-size:17px !important;}
+      .key-insights{
+        margin:0 -20px 36px !important;
+        padding:24px 20px !important;
+        border-left:none !important;
+        border-top:4px solid var(--accent1) !important;
+      }
+      .timn-insight{
+        margin:32px -20px !important;
+        padding:22px 20px 22px 20px !important;
+        border-left:none !important;
+        border-top:2px solid var(--accent1) !important;
+      }
+      .timn-insight::before{left:20px;}
+      .article-img{margin:28px -20px !important;border-left:none !important;border-right:none !important;}
+      .continue-reading{margin-top:48px !important;}
+      .cr-grid{gap:1px !important;}
+      #section-tracker{display:none;}
+    }
+
+
+    /* ── POINT 4: MARGIN NOTES ── */
+    /* Override layout to 3 columns on desktop */
+    .article-layout{
+      display:grid;
+      grid-template-columns:1fr 200px 260px;
+    }
+    .article-body{
+      border-right:1px solid var(--border);
+      position:relative;
+    }
+    /* Margin notes column — sits between body and sidebar */
+    .margin-notes-col{
+      padding:64px 16px 80px 20px;
+      border-right:2px solid var(--ink);
+      position:relative;
+    }
+
+    /* Individual margin note */
+    .mnote{
+      position:absolute;
+      width:176px;
+      font-family:'DM Mono',monospace;
+      font-size:10.5px;
+      line-height:1.62;
+      color:var(--muted);
+      border-left:2px solid var(--accent1);
+      padding:8px 0 8px 10px;
+      transition:color .2s;
+    }
+    .mnote:hover{color:var(--ink);}
+    .mnote-marker{
+      display:inline-block;
+      width:14px;height:14px;
+      background:var(--accent1);
+      color:var(--paper);
+      font-family:'DM Mono',monospace;
+      font-size:8px;font-weight:700;
+      text-align:center;line-height:14px;
+      border-radius:50%;
+      vertical-align:middle;
+      margin-left:3px;
+      cursor:default;
+      flex-shrink:0;
+    }
+
+    /* Mobile: tooltip reveal */
+    @media(max-width:860px){
+      .article-layout{grid-template-columns:1fr !important;}
+      .margin-notes-col{display:none;}
+      /* Mobile inline note trigger */
+      .mnote-marker{
+        cursor:pointer;
+        position:relative;
+      }
+      .mnote-tooltip{
+        display:none;
+        position:fixed;
+        bottom:0;left:0;right:0;
+        background:var(--ink);color:rgba(245,240,232,0.85);
+        font-family:'DM Mono',monospace;font-size:12px;
+        line-height:1.65;
+        padding:18px 20px 28px;
+        z-index:800;
+        border-top:3px solid var(--accent1);
+        animation:slideUp .25s ease;
+      }
+      .mnote-tooltip.open{display:block;}
+      .mnote-tooltip-close{
+        float:right;
+        font-size:16px;color:rgba(245,240,232,0.4);
+        cursor:pointer;margin-left:12px;line-height:1;
+      }
+      @keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+    }
+
+</style>
+</head>
+<body>
+  <div id="read-progress"></div>
+  <div id="section-tracker">
+    <span id="section-tracker-text">—</span>
+    <span id="section-tracker-pct"></span>
+    <div id="section-tracker-line"></div>
+  </div>
+
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#e83a2f">Brand Failure</span>
+    <h1>The Lilas Lunacy: A Behavioural Economics Dissection of Tunisia's Most Expensive Marketing Misadventure</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span><span class="dot">·</span><span>July 21, 2025</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+
+      <div class="key-insights">
+        <div class="ki-label">Key Insights</div>
+        <ul class="ki-list">
+          <li>Lilas violated all three Aaker & Keller criteria for brand extension: functional, physical, and usage situation fit.</li>
+          <li>The cognitive dissonance of Lilas Suprême destroyed the core value proposition: you can't be the budget rebel and go premium.</li>
+          <li>Failed extensions don't just fail — they damage the parent brand by making consumers question what it stood for.</li>
+        </ul>
+      </div>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVk63kUikFRe2rhnYorC_Q981TmvHHLMYuMpwGw79e5EdY4DtIrFTzGQ8kqi2H8C3kmPCXBog8QD5c5Zl26IxFud47GuBlvuKXbNuKAxVBMJqJ0CDe3so3TmOe0a8J0is-nyzBRSOicYm7CYz4_K_D8vqsrPPgTIOCIy5cDXFug0KW0TO_7gO5V3OU9c9X/s720/1753131916623.jpg" alt="" loading="lazy"/></figure>
+      <p id="mnote-anchor-2">I have a theory about marketing catastrophes: they're infinitely more instructive than marketing successes. Success can be attributed to luck, timing, or superior products — but spectacular failure requires a perfect storm of psychological misunderstanding, strategic delusion, and behavioral blindness that illuminates exactly how human minds actually work. Which brings me to the Lilas cosmetics debacle of 2024 — a case study so rich in cognitive errors and psychological miscalculations that it deserves its own wing in the Museum of Marketing Malpractice.</p>
+      <h2>The Alchemy of Brand Meaning</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnnd7N6uV2LpGa1WOwnHvBmwF7FhRf8uMMSxTmc1HxzCQ4A7OaQb8baToKOWKwxRb5ieTgg6IH074nfPTEXO9e2Qhjv3gTA21u5Ly8HWwbXi84Qvll44fmrHIOPDPpG7nEBIQ_EnrYZQE90LGHLmFjNRh_Sp9QHdnoI7Gs_ilpxdfwPjkLtEUYuSjyrGyL/s750/BRAND-EQUITY-FINAL-825f60e364e147e1b3e3279349615e34.webp" alt="" loading="lazy"/></figure>
+      <p>Lilas had spent decades doing something rather magical: they'd transmuted mundane household products into genuine brand equity. They'd become the 'smart local choice.' Creating brand preference in commodity categories requires a peculiar kind of genius. You're essentially convincing people that your sodium lauryl sulfate is somehow more desirable than everyone else's sodium lauryl sulfate. Lilas had cracked this code through decades of consistent quality, competitive pricing, and smart positioning as the patriotic alternative to foreign brands. And then, in 2024, someone decided this wasn't enough.</p>
+      <h2>The Academic Foundation of Brand Extension Failure</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsJIej3ZRF5zEFs_WLzoXXjpBJXo2hj0rSbBCXv19Y0DjMKqNu4j9_171bKUuJsXXyrhSydy5JI67SI9vMSOMaYmMjEUAcRtb1nxOHJWPRG9b3TIjDtHEWPdTGJc6A_pFShPg0V59XRO6W7Pyzt9GcSJBjOMuQdQmOB8XZZ_JY_pbATMTOSfh6GpOBdcDR/s750/Brand-extension_final-0a0b1fc4a1a046c08a826577fe19b8bb.webp" alt="" loading="lazy"/></figure>
+      <p>David Aaker and Kevin Lane Keller's seminal 1990 study on brand extensions predicted exactly this outcome. The more similar the extension product is to the original product category, the more favorable the attitude toward the extension. Lilas scored poorly on all three dimensions of fit — functional similarity (do the products serve similar needs?), physical similarity (do they share manufacturing processes?), and usage situation (are they used in similar contexts?). Toilet paper and shampoo share virtually nothing beyond both being consumer goods.</p>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQjKuDIyCt0FmhUQ6pd7eV0ads1cRW1_gN_6-diS2W18KE4hIKzYBkXBdR5rBga5jf9CeJDsfGboLDZxOWfDIL5zB5jEefDWnnq6fAxhYABlK-FwR3bFQ5Eac2UEfUSFEYjP45SIubdsrRTNhblbnBiWIs8ZHk9ANKlTsfQhiHvrgMVrO-s8bUH4e0ktJL/s1024/1.jpeg" alt="" loading="lazy"/></figure>
+      <p>Aaker and Keller also discovered that failed extensions don't just fail — they can damage the parent brand. When consumers encounter an implausible extension, they begin questioning the competence and focus of the original brand. Lilas wasn't just risking their cosmetics investment — they were potentially undermining decades of household product equity. Every consumer who encountered Lilas shampoo and thought 'this doesn't make sense' was also subtly questioning whether Lilas toilet paper was as good as they remembered.</p>
+      <h2>The Seductive Simplicity of Line Extension</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeODy9rUEwN9a3k1UNxY2C_9SK-cYyQRTQ2bIqcyG1DHoxNPdt3fDIKARhZPyVXXe3LLeugHNxNXxfPOdKi4P6l2sBqt1pLK4tVqWVEygAQ00RS674ugcE4fx4mf30QpV7_9098eaWOu0p5kpL6jNqwfHMhlXUP6GOyXQYKg47PaoPjU_hp75s-EWK1pUK/s675/IMGBN111047lilas%201.jpg" alt="" loading="lazy"/></figure>
+      <p>The logic of brand extension seems so obvious that it's taught in every business school: if consumers trust you in Category A, surely they'll trust you in adjacent Category B? It's the marketing equivalent of assuming that because someone's an excellent dentist, they'd naturally make a superb brain surgeon. The Lilas team looked at their distribution network, their brand recognition, their celebrity endorsement budget, and thought: 'How hard can beauty be?' This is a classic example of the planning fallacy — our systematic tendency to underestimate the complexity of future tasks.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <h2>The Tyranny of Mental Categories</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6i_cGHcVCPd8ysERzsAZOVZnKmVYJsEEk6Tk43pwRC8U4ZUoAyFA0q9mmHMfs7l-BweYHEmh8uRm15tQVz1lWatyVhtKKMZuGzEHMRKgVpBIJrl5D-LiyG-k1B2l-k20dS0pwz994j3rsXsI9W1ULvfxcLaFb5mnqzJxGJtFyGv3XzDOiNF3XezzFVJ9N/s1280/1710625095761.jpeg" alt="" loading="lazy"/></figure>
+      <p>When you hear 'Lilas,' your brain doesn't consciously think about the company's history. It simply activates a cluster of associations: household chores, practicality, value for money, domestic efficiency. These schemas are carved into our neural pathways through repetition, experience, and emotional reinforcement. They're not easily rewritten with advertising budgets.</p>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNGTkZEARc_fjyi1Z2pTjx4ErEpZX_9qSBxMQbCCStsWCtaPR-DTvEwEhvSRkEPVdUjenICGih78sGiE4RYFLzeOB0diO6XTnRNSll4X2SprZZ73VmsP_M4glEXtNBhlOtvFIe8KaTrumCmlwmGMOUULypIayhjpWI5rd9Os9tmOwHSp1RRsuVC4FsH3fq/s632/confused-e1372986731860.jpg" alt="" loading="lazy"/></figure>
+      <p>When Lilas introduced cosmetics, they were asking consumers to perform extraordinary mental gymnastics. Every time someone encountered Lilas shampoo, their brain had to suppress decades of 'Lilas equals toilet paper' associations and somehow generate 'Lilas equals beautiful hair' thoughts instead. This is cognitive load — the mental effort required to process conflicting information. Consumers don't want cognitive load. They want mental shortcuts that make decisions easier, not harder.</p>
+      <h2>The Authenticity Paradox</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBQvn8IvkzmK55tkDynB3o79tGDn3PFEB5v8GJxZLnWOtQRNFZSuEqPvmyQmaeKRRYZJBgZncOILadBY2rwzJuM-DpB8Srs15UGKUMQUn0l38y5VLxroJjce0EH-zas55M6_cOfreJPe10AxEUtaVy1O-3Y9gwS3PRXkItky5cQJ_jVgMr2bd61mUdoUAf/s720/1753098807715.jpg" alt="" loading="lazy"/></figure>
+      <p>The celebrity endorsement strategy reveals another fascinating psychological blind spot. Ons Jabeur and Dhafer El Abidine are indeed symbols of Tunisian success and beauty. But authenticity can't be manufactured through casting decisions. When consumers see international tennis stars endorsing products from their local toilet paper manufacturer, their bullshit detectors start flashing red. Not because the endorsement is paid — all endorsements are paid — but because it fails the basic credibility test.</p>
+      <p>This triggers what I call the 'too good to be true heuristic.' Our brains have evolved sophisticated mechanisms for detecting deception, and incongruous endorsements trigger these alarm systems. The more prestigious the celebrity, the more suspicious the endorsement becomes when paired with an implausible product claim.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <h2>The Premium Positioning Paradox</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX_OD-jFYacT4fNeNt9Zr4LNGqwbPewRnZ5258HtwlSqzJa6d9JgfII7sA_KHtDFgiCw7iTDgOfa9Zexpk2H7eaYvd0JpgbB4LHe7NctbImo2z5BMTsw4W4HfPfIQbm98JLWzP01dN4O_g0voFiUYYLWZGhhEcNktzt8vnfhbylK8pbhy0fsi4WRvjznGu/s760/BMD-3550-760x400.png" alt="" loading="lazy"/></figure>
+      <p>Perhaps the most psychologically fascinating aspect was Lilas's decision to launch three different price tiers simultaneously: Extrême (affordable), Expert (professional), and Suprême (premium). Lilas's core brand equity was built on being the 'smart budget choice' — the clever consumer's alternative to overpriced foreign brands. Suddenly launching 'Lilas Suprême' created cognitive dissonance. If Lilas was previously the smart alternative to expensive foreign brands, what did it mean when Lilas itself became expensive? The entire value proposition collapsed under its own contradictions.</p>
+      <h2>The Complexity Catastrophe</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPMEf4pHOxhH4_kBfcwOsIgTIKk8KOxKp3P1cZDDkhcOOokTD6PAy-i9qss2ts1apoOKZHGXJwlSWJfm09nNHFqW3zEFsjZ4ERVaouKHFS0N5eGF-G-35jWm2xmq0AG4-SCDoHNtZMmGgcU4eftiNmBd02XD7hPDrDx-Oy3G6970vqvnx-IbZoCn9Eq17h/s997/1719328857046.jpeg" alt="" loading="lazy"/></figure>
+      <p>Not content with challenging one psychological principle, Lilas decided to challenge them all simultaneously. Three product ranges, multiple sub-categories, different price points, varied functionality claims. In behavioral economics, we talk about 'choice overload' — the paradoxical effect where too many options actually decrease consumer satisfaction and purchase likelihood. Lilas didn't just offer consumers choice overload — they offered identity overload. Were they buying from the practical household brand or the premium beauty company? The poor consumer's brain simply gave up trying to make sense of it all.</p>
+      <h2>The Distribution Delusion</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqGu5AcOFbioouhplKA9e21QHBtcgRvmWMq5O28XHJnuZ4GaBp1L8nEqe1PvbABmTy-TEnG0wdVWWIxxtE4JNCX3tYwZE-2BbZec6HOvRD57P1khzDzB9ke4AbDH0lcSTrN5RxHEFCggK6GyQuUD6FMtbp08Ymntr0DK-4sUOha8Kqa7rPgQb_wRzH_RM9/s1000/lilas-ons-290724_4920dc265a69c4212e98d52f101bd099.jpg" alt="" loading="lazy"/></figure>
+      <p>The campaign's omnipresence was indeed remarkable. Billboards, supermarket takeovers, testing stations, celebrity endorsements — they achieved what marketing textbooks call 'share of voice.' But presence isn't preference, and visibility isn't credibility. Their aggressive distribution strategy may have backfired through reactance — our natural resistance to perceived manipulation. When consumers feel they're being oversold, they often respond by rejecting the message entirely.</p>
+      <h2>The French Exception</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiS_e2qd6hua5DEaOhPNngx1yT8d4wgSI2QnAau5wnq591SPlsdgWnC3ijnTL6eDuSlwoKS98JTeCqmmsbAJVE2pqMEN6zZhwb52eg0EeN_M1EckdkPLFJeuo8hRFEDHL-zGohN4LiPSP__V3lF8FaxalF1gkweiw_ssRYIdvT1r8wGRBP-wlc5Zy4tpXCX/s1280/maxresdefault.jpg" alt="" loading="lazy"/></figure>
+      <p>The campaign's nationalist positioning — 'It's the Tunisian that suits you' — reveals another interesting psychological miscalculation. French beauty products benefit from country-of-origin effects — our tendency to associate certain countries with particular expertise. France equals fashion and beauty. Tunisia, whatever its many virtues, simply hasn't established beauty expertise as part of its national brand. Trying to create this association through advertising alone was like trying to convince people that Antarctica is famous for its tropical fruit — technically possible, but practically implausible.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <h2>The Unilever Lesson</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1q9iWZVEhXBCErtleP1DX2ZcM8vDywUWViItlJCmLpi_8ay-MsnSTiNQxnqpuRIEceZH-K5AL3Gs6SVSQm4i8x2VUeMYT5nBHjoABGqulok9ONmMIw9nIzx_jxUZkClMxSAZ7-n0dltonFEIX-YCDyUZa0Is8DXLMlWhVSGpdZTwXotGSb1g5b7fTwFL8/s620/45_main-70.jpg" alt="" loading="lazy"/></figure>
+      <p>The most damning aspect of this entire debacle is that the solution was sitting in plain sight. Unilever doesn't sell cosmetics under the Unilever name — they created Dove, Axe, Lux, each with distinct identities and targeted positioning. This isn't just organizational structure — it's psychological necessity. Different products require different mental frameworks. Lilas could have created a new beauty brand, perhaps with subtle corporate backing. They could have told a genuine story about Tunisian innovation, started with one category, built expertise gradually. Instead, they chose the path of maximum psychological resistance.</p>
+      <h2>The Behavioral Audit</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL64Aw773YDfGiKpwUKRco1FvuYEGJKSoF1J8fhesZ-MDsr6SmlVZzd0vTcA_1JtDni4X8xtJkb7QH-TthCd5dQEmT6lCn5miO25V2UiBZjOdLSqPydZd6i10DBIP_ioDer6FiLbl8sKerqq7wBReV-XKkChpeo7brm9DHtAVnkT_Tcn-9Lb0ETQbzQ7Vf/s1920/audit-1.jpg" alt="" loading="lazy"/></figure>
+      <p>If we were to conduct a behavioral audit of this campaign, the list of psychological principles violated would be almost comically comprehensive: category contamination (fighting against established mental schemas), cognitive dissonance (creating contradictory brand messages), choice overload (overwhelming consumers with options), authenticity detection (triggering skepticism through implausible endorsements), reactance (provoking resistance through overselling), country-of-origin mismatch (claiming expertise without credible foundation), and violation of Aaker & Keller<sup class="mnote-marker" data-note="Deux chercheurs qui ont passé des décennies à documenter exactement comment les extensions de marque échouent. Leurs livres sont disponibles. Lilas aurait pu les lire." title="Deux chercheurs qui ont passé des décennies à documenter exactement comment les extensions de marque échouent. Leurs livres sont disponibles. Lilas aurait pu les lire.">2</sup>'s fit criteria. It's rather like a masterclass in how not to apply behavioral science to marketing.</p>
+      <h2>The Expensive Education</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_QEWqs4yO_uY5VPHaYqiTYcA2nLMwflQ9TPPIMQicf4NvMmkErfOGelDWYdoNeT-341eAbOi-2IiZtMcq3OLxNXqB2WmDqcYfZXgzE2M6FzJraVvKDjPLePV4WjAp2yU4uc9Xye5SCLDs27ygggmgPu-BoX59Qt6Vt-y6YknYepXYFoML7snPNtyeIei3/s390/lesson-1-white-chalk-text-260nw-535576588.webp" alt="" loading="lazy"/></figure>
+      <p>The tragedy is that Lilas was perfectly positioned in their original market. They'd achieved that rarest of marketing accomplishments: genuine brand preference in a commodity category. In chasing growth in an unsuitable direction, they risked the very psychological assets that made them successful.</p>
+      <div class="pull-quote"><p>The most successful brands aren't those with the biggest ambitions — they're those with the clearest identities. They understand what they represent in consumers' minds and protect that representation fiercely.</p></div>
+      <p>Every spectacular failure in marketing advances our collective understanding of how consumer psychology actually works. The Lilas cosmetics disaster will become a case study, taught in business schools and referenced in boardrooms for years to come. The next time someone in your organization gets excited about a dramatic brand extension, ask them: 'Does our extension pass the Aaker and Keller test for perceived fit?' Because in the end, that's often the difference between strategic success and spectacular failure.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+    <div class="continue-reading">
+      <div class="cr-label">Continue the analysis</div>
+      <div class="cr-grid">
+      <a class="cr-card" href="chocoline.html">
+        <span class="cr-tag">Brand Failure</span>
+        <div class="cr-title">Chocoline</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="gaucho.html">
+        <span class="cr-tag">Brand Failure</span>
+        <div class="cr-title">Gaucho</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="100-ads.html">
+        <span class="cr-tag">Advertising Research</span>
+        <div class="cr-title">100 Tunisian Ads</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      </div>
+    </div>
+    </article>
+    <div class="margin-notes-col">
+      <div class="mnote" data-anchor="mnote-anchor-1">Je mesure l'ampleur d'une erreur marketing à deux variables : le budget investi et la vitesse à laquelle les consommateurs ont refusé de coopérer. Lilas Suprême score exceptionnellement sur les deux.</div>
+      <div class="mnote" data-anchor="mnote-anchor-2">Deux chercheurs qui ont passé des décennies à documenter exactement comment les extensions de marque échouent. Leurs livres sont disponibles. Lilas aurait pu les lire.</div>
+      <div class="mnote" data-anchor="mnote-anchor-3">Je ne dis pas ça pour être cruel. Je dis ça parce que c'est précisément le problème. L'expertise en papier toilette n'est pas transférable à la crème hydratante. Ce n'est l'avis de personne. C'est la conclusion de toutes les recherches disponibles.</div>
+    </div>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author"><div class="author-avatar">SE</div><div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div></div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">More Articles</div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+        <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="trust-gap.html">The Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
+        <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
+        <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
+        <div class="related-item"><a href="index.html">← All Articles</a></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
+      </div>
+          <div class="li-box">
+        <div class="li-label">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <script>function handleSubscribe(btn){const i=btn.previousElementSibling;const e=i.value.trim();if(!e||!e.includes('@')){i.style.borderColor='#e83a2f';i.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
+
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text">
+      <span class="af-name">Slim El Fatmi</span>
+      <span class="af-role">Follow on LinkedIn</span>
+    </div>
+  </a>
+  <script>
+    // Point 18 — floating badge appears after 40% scroll
+    (function(){
+      var badge = document.getElementById('authorFloat');
+      if(!badge) return;
+      window.addEventListener('scroll', function(){
+        var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        if(pct > 0.25) badge.classList.add('visible');
+        else badge.classList.remove('visible');
+      }, {passive:true});
+    })();
+  </script>
+
+
+  <script>
+    // Point 1 — reading progress bar
+    (function(){
+      var bar = document.getElementById('read-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.body.scrollHeight - window.innerHeight;
+        var pct = h > 0 ? (window.scrollY / h * 100) : 0;
+        bar.style.width = Math.min(pct, 100) + '%';
+      }, {passive:true});
+    })();
+  </script>
+
+
+  <script>
+    // Point 12 — section tracker
+    (function(){
+      var tracker = document.getElementById('section-tracker');
+      var trackerText = document.getElementById('section-tracker-text');
+      var trackerPct = document.getElementById('section-tracker-pct');
+      var trackerLine = document.getElementById('section-tracker-line');
+      if(!tracker) return;
+      var headings = Array.from(document.querySelectorAll('.article-body h2'));
+      if(!headings.length) return;
+      var currentSection = '';
+      window.addEventListener('scroll', function(){
+        var scrollY = window.scrollY;
+        var h = document.body.scrollHeight - window.innerHeight;
+        var pct = h > 0 ? Math.round(scrollY / h * 100) : 0;
+        // Show only after first scroll past hero
+        if(pct < 8){ tracker.classList.remove('visible'); return; }
+        tracker.classList.add('visible');
+        // Find current section
+        var active = '';
+        for(var i = headings.length - 1; i >= 0; i--){
+          if(headings[i].getBoundingClientRect().top < 80){ active = headings[i].textContent; break; }
+        }
+        if(!active && headings.length) active = document.querySelector('.article-hero h1') ? document.querySelector('.article-hero h1').textContent : '';
+        if(active !== currentSection){
+          currentSection = active;
+          trackerText.textContent = active || '—';
+        }
+        trackerPct.textContent = pct + '%';
+        trackerLine.style.width = pct + '%';
+      }, {passive:true});
+    })();
+  </script>
+
+  <div class="mnote-tooltip" id="mnote-tooltip-mobile">
+    <span class="mnote-tooltip-close" id="mnote-tooltip-close">✕</span>
+    <span id="mnote-tooltip-text"></span>
+  </div>
+
+  <script>
+    // Point 4 — margin notes positioning + mobile tooltip
+    (function(){
+      // Desktop: position each .mnote next to its anchor paragraph
+      var notes = document.querySelectorAll('.mnote[data-anchor]');
+      var body = document.querySelector('.article-body');
+      if(!body) return;
+
+      function positionNotes(){
+        notes.forEach(function(note){
+          var anchorId = note.getAttribute('data-anchor');
+          var anchor = document.getElementById(anchorId);
+          if(!anchor) return;
+          var bodyRect = body.getBoundingClientRect();
+          var anchorRect = anchor.getBoundingClientRect();
+          var offsetTop = anchorRect.top - bodyRect.top + body.scrollTop + window.scrollY - body.getBoundingClientRect().top + anchor.offsetTop;
+          // Use offsetTop relative to margin-notes-col
+          var col = note.parentElement;
+          var colRect = col.getBoundingClientRect();
+          var anchorAbsTop = anchor.offsetTop;
+          note.style.top = anchorAbsTop + 'px';
+        });
+      }
+
+      // Simpler approach: use offsetTop of anchor paragraphs
+      function positionNotesSimple(){
+        notes.forEach(function(note){
+          var anchorId = note.getAttribute('data-anchor');
+          var anchor = document.getElementById(anchorId);
+          if(!anchor) return;
+          note.style.top = anchor.offsetTop + 'px';
+        });
+      }
+
+      if(window.innerWidth > 860){
+        positionNotesSimple();
+        window.addEventListener('resize', positionNotesSimple);
+      }
+
+      // Mobile tooltip
+      var tooltip = document.getElementById('mnote-tooltip-mobile');
+      var tooltipText = document.getElementById('mnote-tooltip-text');
+      if(!tooltip) return;
+
+      document.querySelectorAll('.mnote-marker').forEach(function(marker){
+        marker.addEventListener('click', function(e){
+          e.stopPropagation();
+          var text = marker.getAttribute('data-note');
+          if(!text) return;
+          tooltipText.textContent = text;
+          tooltip.classList.add('open');
+        });
+      });
+
+      document.getElementById('mnote-tooltip-close').addEventListener('click', function(){
+        tooltip.classList.remove('open');
+      });
+
+      document.addEventListener('click', function(e){
+        if(tooltip.classList.contains('open') && !tooltip.contains(e.target)){
+          tooltip.classList.remove('open');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
