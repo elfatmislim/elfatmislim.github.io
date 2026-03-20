@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Honey Seller Who Understood Psychology Better Than Most Marketing Directors — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:72px 48px 56px;border-bottom:2px solid var(--ink);max-width:900px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;padding:5px 12px;display:inline-block;margin-bottom:24px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,4vw,50px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;}
+    .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .dot{color:var(--border);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:64px 56px 80px 48px;border-right:2px solid var(--ink);}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:28px;color:#1a1a1a;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:52px 0 18px;padding-top:36px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:28px 0 12px;}
+    .article-body strong{font-weight:700;}
+    .article-body em{font-style:italic;}
+    .article-body ul,.article-body ol{margin:0 0 24px 28px;}
+    .article-body li{font-size:16px;line-height:1.75;margin-bottom:8px;color:#1a1a1a;}
+    .article-img{margin:36px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform 0.4s;}
+    .article-img:hover img{transform:scale(1.02);}
+    .pull-quote{margin:40px 0;padding:28px 36px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .article-sidebar{padding:56px 28px;}
+    .sidebar-section{margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--paper);flex-shrink:0;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:12px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:22px 18px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:14px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .back-btn:hover{background:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 24px;}.article-hero{padding:48px 24px 36px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:36px 24px;border-right:none;}.article-sidebar{padding:36px 24px;border-top:2px solid var(--ink);}.article-footer{padding:28px 24px;}.pull-quote{padding:20px 22px;}}
+
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;flex-shrink:0;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+
+
+    /* ── POINT 9: KEY INSIGHTS ── */
+    .key-insights{
+      background:var(--ink);color:var(--paper);
+      padding:28px 32px;margin-bottom:48px;
+      border-left:4px solid var(--accent1);
+      position:relative;
+    }
+    .ki-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.22em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:16px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .ki-label::after{content:'';flex:1;height:1px;background:rgba(245,240,232,0.12);}
+    .ki-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .ki-list li{
+      font-family:'Libre Baskerville',serif;font-size:13px;
+      line-height:1.65;color:rgba(245,240,232,0.82);
+      display:flex;align-items:flex-start;gap:10px;
+    }
+    .ki-list li::before{
+      content:'→';color:var(--accent1);flex-shrink:0;
+      font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;
+    }
+
+    /* ── POINT 11: TYPOGRAPHY HIERARCHY ── */
+    .article-body{max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-size:22px;margin:52px 0 18px;padding-top:36px;}
+    .article-body h3{font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+
+    /* ── POINT 18: FLOATING AUTHOR BADGE ── */
+    .author-float{
+      position:fixed;bottom:28px;right:28px;
+      display:flex;align-items:center;gap:10px;
+      background:var(--ink);color:var(--paper);
+      padding:10px 16px 10px 10px;
+      box-shadow:0 4px 24px rgba(13,13,13,0.18);
+      z-index:500;cursor:pointer;
+      opacity:0;transform:translateY(12px);
+      transition:opacity .4s ease,transform .4s ease;
+      text-decoration:none;
+    }
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{
+      width:36px;height:36px;border-radius:50%;
+      overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);
+      background:#c0251a;
+    }
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-text{}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    @media(max-width:860px){.author-float{bottom:16px;right:16px;padding:8px 12px 8px 8px;}.af-avatar{width:30px;height:30px;}.af-name{font-size:11px;}}
+
+
+    /* ── POINT 1: READING PROGRESS BAR ── */
+    #read-progress{
+      position:fixed;top:0;left:0;height:3px;width:0%;
+      background:var(--accent1);z-index:9999;
+      transition:width .1s linear;
+    }
+
+    /* ── POINT 2: READING TIME DOTS ── */
+    .read-time-visual{
+      display:flex;align-items:center;gap:8px;margin-top:8px;
+    }
+    .rt-dots{display:flex;gap:3px;align-items:center;}
+    .rt-dot{
+      width:6px;height:6px;border-radius:50%;
+      background:var(--border);flex-shrink:0;
+    }
+    .rt-dot.filled{background:var(--accent1);}
+    .rt-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+    }
+
+    /* ── POINT 7: SCROLL BREAK ELEMENTS ── */
+    .scroll-break{
+      display:flex;align-items:center;gap:16px;
+      margin:56px 0;opacity:0.35;
+    }
+    .scroll-break::before,.scroll-break::after{
+      content:'';flex:1;height:1px;background:var(--ink);
+    }
+    .scroll-break-inner{
+      display:flex;gap:6px;align-items:center;
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.2em;color:var(--ink);
+    }
+    .scroll-break-dot{
+      width:4px;height:4px;border-radius:50%;
+      background:var(--accent1);
+    }
+
+    /* ── POINT 3: ARTICLE RECOMMENDATIONS ── */
+    .continue-reading{
+      margin-top:72px;padding-top:40px;
+      border-top:2px solid var(--ink);
+    }
+    .cr-label{
+      font-family:'DM Mono',monospace;font-size:10px;
+      letter-spacing:0.22em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:24px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{
+      background:var(--paper);padding:22px 20px;
+      text-decoration:none;color:var(--ink);
+      display:block;transition:background .2s;
+      position:relative;overflow:hidden;
+    }
+    .cr-card::after{
+      content:'';position:absolute;bottom:0;left:0;
+      width:0;height:2px;background:var(--accent1);
+      transition:width .3s;
+    }
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{
+      font-family:'DM Mono',monospace;font-size:9px;
+      letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--accent1);margin-bottom:8px;display:block;
+    }
+    .cr-title{
+      font-family:'Syne',sans-serif;font-weight:700;
+      font-size:14px;line-height:1.25;color:var(--ink);
+    }
+    .cr-arrow{
+      font-family:'DM Mono',monospace;font-size:10px;
+      color:var(--muted);margin-top:10px;display:block;
+      transition:color .2s;
+    }
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){
+      .cr-grid{grid-template-columns:1fr;}
+      .cr-card{padding:18px 16px;}
+    }
+
+</style>
+</head>
+<body>
+  <div id="read-progress"></div>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#16a34a">Consumer Psychology</span>
+    <h1>The Honey Seller Who Understood Psychology Better Than Most Marketing Directors</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span class="dot">·</span>
+      <span>August 21, 2025</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+
+      <div class="key-insights">
+        <div class="ki-label">Key Insights</div>
+        <ul class="ki-list">
+          <li>Mall stands solved the distribution paradox: authentic enough to feel special, convenient enough to actually buy.</li>
+          <li>Hazem Boumiza understood that trust is emotional, not rational. Theater beats certificates every time.</li>
+          <li>Scarcity framed as family planning — 'your honey for the year' — triggers loss aversion without feeling manipulative.</li>
+        </ul>
+      </div>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7jbNrO89jOSeBQe23PIu261ZdJME_1UHsCfKpkKRP-ZSNVvxNE7VFj11dA5iBqgUPVubXpb29r83B4JdtTP1GTOsdxk9NKQR7SgK0mLr5n9znx98rfTsbN8erAbkx9b97dj9_-fOAbMT74x90eGQ5K0MLVrPwgeWNs1d3CTr2eERJ6EI-7cuiwuBRqjTk/s1400/b9225784352729.5d5a96394e5af.jpg" alt="" loading="lazy"/></figure>
+      <p>Why a Tunisian bee farmer's instincts about human behavior could teach us all a thing or two</p>
+      <p>Sometimes the most interesting business stories come from people who've never read a marketing textbook. They just watch their customers carefully and trust their instincts about human nature.</p>
+      <p>Meet Hazem Boumiza, who took over his family's honey business in Tunisia and figured out what works by paying attention to how people actually behave.</p>
+      <h2>The Problem With Being Too Logical</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGfi4H6Kp_QX29HiJJ2WDGS91KMoNaxzs2bEGiHiYYOmC1tUqwvn8J0nwjxIMkOpeEkTAh8sF5cFRwTrBf7rNKKEZ9nXJ4lBnqjCSjczlv_lZkkt4VWsMKxL37oPZjT_NfxnpgKdiOehy3DeLQfrnZxyJ9tm0KA9tSpxNdfJrWSxg3K4tsPqrIBxM44Ukt/s6000/pexels-eye4dtail-374916.jpg" alt="" loading="lazy"/></figure>
+      <p>Let's start with where most people would have gone wrong. If you were a rational business consultant looking at Tunisia's honey market, you'd probably suggest either:</p>
+      <ol>
+        <li>Sell directly from farms (traditional approach)</li>
+        <li>Get into supermarkets (modern retail approach)</li>
+      </ol>
+      <p>Both seem perfectly logical. Both would have failed spectacularly.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <p>Here's the thing about honey — and this is where psychology gets interesting — people don't think of it as a product. They think of it as nature itself, bottled. The very idea of honey sitting on a supermarket shelf next to processed foods feels fundamentally wrong. It's like selling sunset in a can.</p>
+      <p>So supermarkets were out. But standalone honey shops? Also problematic. People won't make a special trip just for honey. It's what behavioral economists call a "convenience good" — you'll buy it if it's easy, but you won't go out of your way.</p>
+      <h2>The Beautiful Solution</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBIBcZL8sUwA2L3kqJYKfkSXxGjQP2veTL6BSSRxn-x9a9JceV3z9NU9MLqThW6Kp_eXGghPXeqA3xAgN2dE9dSvlOWlYlsHdYMLJDa2Nft48K_rrfRD6zkZHd3XEe2vct3iXYWj9TWc8qpj24fret2NdW1NhixnE9Ygf8TFQFQcqSaX32QSGPcDsqoDeK/s5709/pexels-tara-winstead-8386184.jpg" alt="" loading="lazy"/></figure>
+      <p>Hazem found what I like to call the "Goldilocks position" — not too industrial, not too inconvenient, but just right. He set up honey stands in shopping malls.</p>
+      <p>Think about the psychology here: You're already at the mall, so there's no extra effort required. But you're not in a supermarket, so the honey feels special, artisanal, authentic. It's positioned between the boring (supermarket shelves) and the inconvenient (specialty shops).</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <p>This works perfectly with what behavioral scientist BJ Fogg calls the B=MAP model — Behavior equals Motivation times Ability times Prompt. Supermarket honey fails because it lacks motivation. Specialty honey shops fail because they lack ability. But mall stands? Perfect motivation, perfect ability, natural prompt.</p>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQp9Xw6XJsWz1GZ2cLirfnjoOi-9aexhYCzo0gLR5vMGiHsvpoPP0yHknfgKFIXJqprCszThxKqgLGRGk74kLIlXUSSr4ZqLGD3UfgCp42T68XKdRevBzknU-Z44XnMz5FdZCBanFZaSxqrkQ9JpWUA4J2qaPIuaJ6YTurBbQ2aCpfziAGX7T2c7bOeLG1/s1544/fogg-behavior-model.webp" alt="" loading="lazy"/></figure>
+      <h2>The Art of Expanding Your Category</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwU2bOo-YKz7VsivZHDMxs4aTUMzuZLi-M6LgNIzu5QfjvHQlBVeKA1PEujirFLNRa0LdXAfQH4FsCekIV8cHiOdkG6Ykd54aDbHMZ760XOq3iK6jxuSZyoOiyyjBqBYW5JxhOukSOmezuHef8LevXWITfPxwALFkPERQh8x9WXN-NJWavvd7SUK7NX1X_/s5730/pexels-ann-h-45017-33137125.jpg" alt="" loading="lazy"/></figure>
+      <p>Most honey sellers think they're in the "honey business." Hazem realized he was in the "life enhancement business." He systematically connected honey to every possible moment when someone might want it: fertility honey for marriages, concentration honey for exams, energy honey for athletes, Mother's Day honey as a gift of love, weight management honey, and so on.</p>
+      <p>This is what psychologists call the "availability heuristic" — the more contexts in which people can imagine using your product, the more likely they are to buy it. Each new use case creates a fresh memory pathway to your brand.</p>
+      <h2>Trust Through Theater</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigyOi7pL4ILbGXmKGIEuwpe-Y8G4T7BeL6SR8Ee_cdwXaFDVi1t5rocEpQG4ZOzLYeUqXZLU3LYsIUXaFVppPhAXnIRiIiQTxTRR8WX4WUiltETqzCUU4opXzfQqXPIK1IpMPI7PO0dCN6_zFKc8e1FWDE9Buz5SHBRPsawCVCOAKLjK5pZ4bNhAEP71Vl/s897/1755433470631.jpg" alt="" loading="lazy"/></figure>
+      <p>Here's something most brands get wrong about proving quality: they think certificates and lab tests are convincing. Hazem understood that trust is emotional, not rational.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <p>Instead of just getting ISO certifications, he filmed the entire journey — the struggles, the team working hard, the celebration when they finally achieved the standards. He made the boring process of certification into a story people could connect with.</p>
+      <p>The real stroke of genius was the live honey extraction events. Customers could watch honey being taken directly from honeycombs, right there in the mall. This isn't just "proof" — it's theater. And good theater creates belief in ways that spreadsheets never could.</p>
+      <p>He also made videos showing how honey can be faked, positioning himself as the trustworthy expert simply by being the one to educate people about deception. Very clever indeed.</p>
+      <h2>The Psychology of Scarcity</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAGcmqU-b41Bchlc3PxOMBCxzV_DsRcQWaI4dZaa6IdZTbRV8pdfQXlhjXIt_QOrgExJVWgC7xDTGuQ93g8J20cCyhKZcwV3T7T0HTHZ5gx4LT-04rUZqegDbSkUVT0l21pVVg52lS_yqItY8H1jKpIqmVW74YIrswj8mMvA_OMnaVKbrdjN1PbHHJTxOV/s800/47_Peak-endRuleInCX-2.png" alt="" loading="lazy"/></figure>
+      <p>During harvest season, Boumiza offers "Oula" — 2 kilograms and more of honey representing "your honey for the year." This taps into loss aversion. By framing it as your annual honey supply, he makes people worry about missing out. The larger size gives customers a sense of security — they've taken care of their family's honey needs. It's scarcity marketing, dressed up as family planning.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <h2>The Power of Always Having a Reason</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7hyphenhyphenh_1H6XugUyPYn5SA4UHiobQgbEEUvRVPU7VLwIaYbqBcsm0k6V3O1zkamrOUqq3f2tQSvISui56nYmBOg_IAYaXEA0DQcqnN6IoOhMEw7GY-mPl92-wBqzRd2OzLkaY4nVwLbPOIhlJ3zP1aSiJHVdVcfAPjdJUXF0ujodtW5rveUGVbX6RKEpIoue/s1600/start-with-why-1.png" alt="" loading="lazy"/></figure>
+      <p>Boumiza never just offers discounts. He always has a reason — celebrating a harvest, marking an occasion, supporting students during exams. This matters because of cognitive dissonance: if you just offer a discount, people wonder if your product is normally overpriced. But if you have a reason for the discount, it feels like good fortune rather than suspicion.</p>
+      <h2>Digital Done Differently</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLDu_tVx29GgU7Vj-cym15gdR0kTbxTTv9o2kSuixtpmo1FXzh2tsgOSb9mZjm4uUp2AmzmzOLptMo-Zl5eMKbsXpMUuw24z05_h0SFdV_ffki18bt5lwu1gBuVFRzCgp0VZJaeuuELfFH2XgDfx5Zk8lU2Kb0Jh3RWsrIKBc8mcF2OpsYlbTchC83Ih5r/s715/1755516018450.jpg" alt="" loading="lazy"/></figure>
+      <p>While most brands treat social media as a broadcasting platform, Boumiza uses it as an education channel. He's constantly posting content that teaches people about honey, extraction processes, and beekeeping — always filmed in natural settings. The more people see him sharing knowledge, the more they trust him. He's not selling honey; he's sharing wisdom. The selling happens almost by accident.</p>
+      <h2>Suggestions for Getting Even Cleverer</h2>
+      <p>Gift Cards as Social Currency: Give buyers a gift card to share with friends — 50% off for someone else. This turns customers into advocates through reciprocal altruism.</p>
+      <p>The Subscription Psychology: A quarterly honey subscription with photos of where each batch was extracted creates commitment bias — once you've subscribed, you're psychologically invested.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <p>Take-Home Education: Include a booklet with each purchase explaining the honey type, where it came from, and how to use it.</p>
+      <p>Digital Transparency: QR codes on jars linking to videos of the exact hive location.</p>
+      <p>VIP Access to Nature: Let loyal customers participate in harvest experiences.</p>
+      <p>Seasonal Anticipation: A "honey calendar" showing when different varieties will be available creates anticipatory pleasure — looking forward to something can be almost as enjoyable as the thing itself.</p>      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+
+      <h2>The Ultimate Moat</h2>
+      <p>But here's Boumiza's masterstroke: lock up every mall location. Once people associate honey-buying with mall visits, and your brand with mall honey stands, competitors are stuck. They can't replicate your model because you've claimed the only viable real estate. It's behavioral lock-in through location monopoly.</p>
+      <h2>What This All Means</h2>
+      <p>Hazem's success isn't really about honey — it's about understanding that people are not rational decision-makers. He found the sweet spot between industrial and inconvenient. He expanded his category without losing focus. He built trust through theater rather than certificates. He created scarcity that felt caring rather than manipulative.</p>
+      <p>Sometimes the best marketing lessons come not from business schools or agencies, but from someone who simply pays attention to how people really behave. And sometimes, that someone happens to sell honey in Tunisia.</p>
+    <div class="continue-reading">
+      <div class="cr-label">Continue the analysis</div>
+      <div class="cr-grid">
+      <a class="cr-card" href="trust-gap.html">
+        <span class="cr-tag">Consumer Behavior</span>
+        <div class="cr-title">The Trust Gap</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="aziza.html">
+        <span class="cr-tag">Retail</span>
+        <div class="cr-title">Aziza's Mousetrap</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="poultry-wars.html">
+        <span class="cr-tag">Consumer Psychology</span>
+        <div class="cr-title">The Poultry Wars</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      </div>
+    </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author"><div class="author-avatar">SE</div><div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div></div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">More Articles</div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+        <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="trust-gap.html">The Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
+        <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
+        <div class="related-item"><a href="index.html">← All Articles</a></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
+      </div>
+          <div class="li-box">
+        <div class="li-label">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <script>function handleSubscribe(btn){const input=btn.previousElementSibling;const email=input.value.trim();if(!email||!email.includes('@')){input.style.borderColor='#e83a2f';input.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
+
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text">
+      <span class="af-name">Slim El Fatmi</span>
+      <span class="af-role">Follow on LinkedIn</span>
+    </div>
+  </a>
+  <script>
+    // Point 18 — floating badge appears after 40% scroll
+    (function(){
+      var badge = document.getElementById('authorFloat');
+      if(!badge) return;
+      window.addEventListener('scroll', function(){
+        var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        if(pct > 0.25) badge.classList.add('visible');
+        else badge.classList.remove('visible');
+      }, {passive:true});
+    })();
+  </script>
+
+
+  <script>
+    // Point 1 — reading progress bar
+    (function(){
+      var bar = document.getElementById('read-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.body.scrollHeight - window.innerHeight;
+        var pct = h > 0 ? (window.scrollY / h * 100) : 0;
+        bar.style.width = Math.min(pct, 100) + '%';
+      }, {passive:true});
+    })();
+  </script>
+
+</body>
+</html>
