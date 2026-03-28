@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutto Novo: Brand Identity and Visual System for Tutto Sport — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:72px 48px 56px;border-bottom:2px solid var(--ink);max-width:860px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper);padding:5px 12px;display:inline-block;margin-bottom:24px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;}
+    .article-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:64px 56px 80px 48px;border-right:2px solid var(--ink);max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:52px 0 18px;padding-top:36px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+    .article-img{margin:40px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform .4s ease;}
+    .article-img:hover img{transform:scale(1.02);}
+    .pull-quote{margin:48px 0;padding:32px 40px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .pillars-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink);margin:40px 0;}
+    .pillar-card{background:var(--paper);padding:24px 22px;}
+    .pillar-num{font-family:'Syne',sans-serif;font-weight:800;font-size:36px;line-height:1;color:var(--border);margin-bottom:8px;display:block;letter-spacing:-0.04em;}
+    .pillar-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:10px;color:var(--ink);font-style:normal;}
+    .pillar-card ul{list-style:none;padding:0;}
+    .pillar-card ul li{font-family:'DM Mono',monospace;font-size:11px;line-height:1.65;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);}
+    .pillar-card ul li:last-child{border-bottom:none;}
+    .color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+    .color-swatch{border:1px solid var(--border);overflow:hidden;}
+    .color-swatch-fill{height:64px;}
+    .color-swatch-info{padding:10px 12px;}
+    .color-swatch-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;margin-bottom:2px;}
+    .color-swatch-use{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.06em;color:var(--muted);}
+    .attr-row{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);}
+    .attr-row:last-child{border-bottom:none;}
+    .attr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent1);width:130px;flex-shrink:0;padding-top:2px;}
+    .attr-value{font-size:14px;line-height:1.65;color:var(--ink);}
+    .brand-gallery{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:40px 0;background:var(--ink);}
+    .brand-gallery img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .4s ease;}
+    .brand-gallery img:hover{transform:scale(1.03);}
+    .brand-gallery-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:32px 0;background:var(--ink);}
+    .brand-gallery-3 img{width:100%;aspect-ratio:1;object-fit:cover;display:block;}
+    .article-sidebar{padding:64px 32px;}
+    .sidebar-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+    .sidebar-section:last-child{border-bottom:none;}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:#c0251a;overflow:hidden;flex-shrink:0;}
+    .author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:14px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color .2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:24px 20px;}
+    .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+    .back-btn:hover{background:var(--accent1);}
+    .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
+    .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .li-box .li-label svg{width:13px;height:13px;fill:#0077b5;}
+    .li-box .li-hook{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:8px;color:var(--paper);}
+    .li-box .li-sub{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .li-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#0077b5;color:#fff;padding:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+    .li-btn:hover{background:#005e8f;}
+    .li-btn svg{width:15px;height:15px;fill:#fff;}
+    .key-insights{background:var(--ink);color:var(--paper);padding:28px 32px;margin-bottom:48px;border-left:4px solid var(--accent1);}
+    .ki-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent1);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+    .ki-label::after{content:'';flex:1;height:1px;background:rgba(245,240,232,0.12);}
+    .ki-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .ki-list li{font-family:'Libre Baskerville',serif;font-size:13px;line-height:1.65;color:rgba(245,240,232,0.82);display:flex;align-items:flex-start;gap:10px;}
+    .ki-list li::before{content:'→';color:var(--accent1);flex-shrink:0;font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;}
+    #read-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent1);z-index:9999;transition:width .1s linear;}
+    .author-float{position:fixed;bottom:28px;right:28px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:10px 16px 10px 10px;box-shadow:0 4px 24px rgba(13,13,13,0.18);z-index:500;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;text-decoration:none;}
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);background:#c0251a;}
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    .continue-reading{margin-top:72px;padding-top:40px;border-top:2px solid var(--ink);}
+    .cr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent1);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{background:var(--paper);padding:22px 20px;text-decoration:none;color:var(--ink);display:block;transition:background .2s;position:relative;overflow:hidden;}
+    .cr-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent1);transition:width .3s;}
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent1);margin-bottom:8px;display:block;}
+    .cr-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:var(--ink);}
+    .cr-arrow{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px;display:block;}
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){
+      nav{padding:16px 24px;}
+      .article-hero{padding:48px 24px 40px;}
+      .article-layout{grid-template-columns:1fr;}
+      .article-body{padding:32px 20px 48px;border-right:none;}
+      .article-body p{font-size:16px!important;line-height:1.82!important;}
+      .article-sidebar{padding:40px 24px;border-top:2px solid var(--ink);}
+      .article-footer{padding:32px 24px;}
+      .pillars-grid{grid-template-columns:1fr;}
+      .color-grid{grid-template-columns:1fr 1fr;}
+      .brand-gallery{grid-template-columns:1fr 1fr;}
+      .brand-gallery-3{grid-template-columns:1fr 1fr;}
+      .cr-grid{grid-template-columns:1fr;}
+      .author-float{bottom:16px;right:16px;}
+      .pull-quote{margin:32px -20px!important;padding:24px 20px!important;border-left:none!important;border-top:3px solid var(--accent1)!important;border-bottom:3px solid var(--accent1)!important;}
+      .key-insights{margin:0 -20px 36px!important;padding:24px 20px!important;border-left:none!important;border-top:4px solid var(--accent1)!important;}
+      .attr-row{flex-direction:column;gap:6px;}
+      .attr-label{width:auto;}
+    }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
+    <a class="nav-back" href="index.html">← All Articles</a> <a class="nav-back" href="about.html" style="margin-left:16px;opacity:0.55;">About</a>
+  </nav>
+
+  <header class="article-hero">
+    <span class="article-tag" style="background:#0d9488">Brand Strategy</span>
+    <h1>Tutto Novo: A Brand Identity and Visual System for Tutto Sport</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span>·</span>
+      <span>October 18, 2025</span>
+      <span>·</span>
+      <span>8 min read</span>
+    </div>
+  </header>
+
+  <div class="article-layout">
+    <article class="article-body">
+
+      <div class="key-insights">
+        <div class="ki-label">Key Insights</div>
+        <ul class="ki-list">
+          <li>Tutto Sport's problem is not product or distribution. It is identity. The brand has stores and inventory but no coherent reason for a customer to prefer it over Peak or Decathlon.</li>
+          <li>The Italian tennis heritage angle is a genuine white space in Tunisian sportswear. Nobody is owning Mediterranean elegance. That gap is an asset, but only if claimed with consistency.</li>
+          <li>A visual system only works when every execution is disciplined. One discount video shot on a phone in bad lighting erases months of brand-building. Execution is the real competitive advantage.</li>
+        </ul>
+      </div>
+
+      <figure class="article-img">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaq3ovbcYF8MY05PYyjim85YP-uEAAfoHpsl9G2ZLG2T4YZnElKEyeVKnosxpPzQllVq1S1tFTUQuXrFuceQMjVjnbWCAG-4MVIzn0plp3iJnDti-PDv0uTKLR7K5XsoQUyhGnJeMNx96W_IW2e2myW6zsOozYN_Du5lII_E4qUPJvlBmPwsmj25mVWGSk/s1024/Gemini_Generated_Image_n7k8itn7k8itn7k8.png" alt="Tutto Novo brand identity" loading="lazy"/>
+      </figure>
+
+      <p>Tutto Sport is a Tunisian sneaker and sportswear reseller with a real problem. Not a product problem. Not a distribution problem. A brand problem. The stores exist, the inventory exists, the price points are competitive. What does not exist is a coherent reason for a customer to prefer Tutto Sport over the increasingly confident alternatives crowding the same space.</p>
+
+      <p>This document is a brand identity proposal called Tutto Novo. It channels the golden era of Italian tennis, specifically the 1970s and 1980s, through a modern American streetwear lens. The result is a brand where sport becomes poetry, performance meets style, and the Mediterranean spirit runs through everything from the packaging to the photography to the copy on a window display.</p>
+
+      <div class="pull-quote">
+        <p>In one line: effortlessly cool. Not try-hard cool. Not discount cool. The kind of cool that looks like it was not trying, which of course requires more effort than anything else.</p>
+      </div>
+
+      <h2>Brand Pillars</h2>
+
+      <p>Four pillars hold the identity together. Each one references something real, something with cultural weight, something that a Tunisian customer in 2025 can feel even if they cannot name the reference.</p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3>Heritage and Place</h3>
+          <ul>
+            <li>Italian tennis golden age (Adriano Panatta, 70s Rome)</li>
+            <li>Mediterranean lifestyle and light</li>
+            <li>Historic courts of Rome, Florence, Milano</li>
+            <li>Italian basketball courts and running trails</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3>Sport as Theater</h3>
+          <ul>
+            <li>Performance is elegance in motion</li>
+            <li>The court is a stage, not just competition</li>
+            <li>Sport should feel poetic, not painful</li>
+            <li>Every movement is worth watching</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3>Style Fusion</h3>
+          <ul>
+            <li>80s surf culture energy</li>
+            <li>American streetwear modernity</li>
+            <li>Italian old money tennis aesthetic</li>
+            <li>Athletic wear (Fila, Ellesse heritage), not luxury</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">04</span>
+          <h3>Attitude</h3>
+          <ul>
+            <li>Bold, poetic, funny</li>
+            <li>Effortlessly cool archetype</li>
+            <li>Sunny, vibrant, never boring</li>
+            <li>Bling bling with friends energy</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Visual Identity</h2>
+
+      <p>The design philosophy is minimalist but bold. Empty space that feels intentional. Every image should look like a painting bathed in golden Mediterranean sunlight. The aesthetic equation: Nike meets old money Italian tennis courts. Wooden rackets meet Fila stripes meet modern streetwear. 70s Italian elegance meets 80s surf coolness.</p>
+
+      <div class="brand-gallery">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsbst8aQMv6QVKaBaB39eU54O71XbxTLMN0GPvHgM21VnDWU57iCHZoBsk2WR4hDyZyVADpk2RISV2EN668ncrfV5pBjyp2JqpCyEN1NjFcbZvw0fU3oD3QoVEgsHKp4fdexphNBfU965OdKivsewV5OhXMKWM1Qupt-HREEWXdgHFIjkg8pNLm436wJqj/s1024/Gemini_Generated_Image_zh5ov0zh5ov0zh5o.png" alt="Visual identity 1" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXcBCNaRJ8j7gl8fKA3HNR8zf4oaTNDdERs3zv_mjOx_2PkTxkX-Um5BQJK2BLhxuGmqnVvaViiZ8SfOG6aNAoQ1brNf09EdqRtxH4vedhNCcUYG4bzB_QRzvcBXkeT9VHWP5TFAUhlBujqWUjpvSsbPSxh3Rcx0J56GWM9YzQM5b-zyjP7dfJi-UCdIlf/s1024/Gemini_Generated_Image_rifcpdrifcpdrifc.png" alt="Visual identity 2" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-l3yPTb94T4DrHVqiaLDdSgma6MzldUadLDeAyHjArneXR1iRO0mG_H110zxKwrDsV7mSRkDZQaZ19fkS3OF8oA5C9dgQOOJBgfNC00_nfNOUyk5MQevDtCl_qdmT0ATGL1e5DAD-6t5xDcf1k5Ggm0Ryb6q-N70o6Z-686zpJx8wMyq0uVyDi8nN3QqI/s1024/Gemini_Generated_Image_wacy9zwacy9zwacy.png" alt="Visual identity 3" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmrqaNoeJIE1KgieQ5FE4IrkmYtikvd43tkq49Kc5i-SJclIv8ycrTZrBrrdjn4EmwBm-xdLYjQ44fC9ukf2c_72DYAcjZRPGv2l8TV-lAvTID0yQ5BM2tH_wEqmjkp6yMzSxfeN5RQrXZQAkElUzCIf1ZcSgrYKgHPpJ_9FXjrnV6YfLS2oOhQTP5D1S2/s1024/Gemini_Generated_Image_vuljdgvuljdgvulj.png" alt="Visual identity 4" loading="lazy"/>
+      </div>
+
+      <h2>Color Palette</h2>
+
+      <p>Every color is a reference to something real. The sky above a clay court in Rome. The yellow of a new tennis ball at the start of a set. The green of turf at golden hour. The palette must feel warm, confident, and Mediterranean at all times.</p>
+
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#1B3A6B;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Baseline Blue</span><span class="color-swatch-use">Logo, typography, key signage. Italian sky, court confidence.</span></div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#E8D44D;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Tennis Ball</span><span class="color-swatch-use">Energy accents, call-to-actions. Vibrant sport energy.</span></div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#3D6B47;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Serve and Turf</span><span class="color-swatch-use">Sophistication highlights. Grounded elegance.</span></div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#D7E4E5;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Center Court Fog</span><span class="color-swatch-use">Backgrounds, web UI. Early morning light, simplicity.</span></div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#A7E647;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Drop Shot Mint</span><span class="color-swatch-use">Seasonal highlights, surf nods. Fresh, vibrant 80s summer.</span></div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-fill" style="background:#A8A256;"></div>
+          <div class="color-swatch-info"><span class="color-swatch-name">Aqua Advantage</span><span class="color-swatch-use">Packaging, lifestyle visuals. Coastal ease, Mediterranean breeze.</span></div>
+        </div>
+      </div>
+
+      <h2>Typography and Photography</h2>
+
+      <div class="attr-row"><span class="attr-label">Primary font</span><span class="attr-value">Helvetica Neue Bold. Clean, modern, athletic. Strong enough to carry minimalist compositions. Timeless like the sport itself.</span></div>
+      <div class="attr-row"><span class="attr-label">Lighting</span><span class="attr-value">Golden hour always. Minimalist framing with intentional empty space. Sunny, breezy, effortless.</span></div>
+      <div class="attr-row"><span class="attr-label">Subjects</span><span class="attr-value">Clay courts in Rome, Italian architecture, basketball in nature, modern athletes in 80s-inspired athletic streetwear.</span></div>
+      <div class="attr-row"><span class="attr-label">Mood</span><span class="attr-value">La Belle Epoque tennis atmosphere. Mediterranean warmth. Theater of sport. Bling bling with friends energy.</span></div>
+
+      <div class="brand-gallery-3">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1piDGwjSENapo1nawjyfjUIgL59YqysK_JAUxrjUDwfKwoaShuFohmV1AN2dFG3r3kk7TDxGsc175llwRU624kBZQ3keycCZhX3natts4w4wE1ZOYpI226UiX-maH6xuL0QT5RgE-TPzLHjYJY8nnS8HfAFSU-BYAuoOwZNPwUjKB0r-M3Y_Kzj36t_Ds/s1024/Gemini_Generated_Image_xtmfilxtmfilxtmf.png" alt="Brand visual 5" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZwt_Oqcnzf3y8OCSrSL244bWOmLNaekGSlcBj4s72Cpx3E2N7YFpZaBv0b3wHehwcTMyt4VlZ1HhypiZu7h_oSnQGBTsRJ2pK_ckANY-wwgqGplOC9UWeZVqJC84wW8EXq-APUavanWsgsOZUJ551S3CwhDuW-OEqoc2WCDqL0-dYOk9Z14hj2Ay1127Y/s1024/Gemini_Generated_Image_wgcur2wgcur2wgcu.png" alt="Brand visual 6" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPmW3SwumOJze4uQ8tAV8SeTp2JcDdCfsfy_9iyrDGTLCCoE48Rcha8ISW0u6y9k_M6uGeNmsz7jmprsgrtSsRJPxs-LUDuh-1tkCb7rd4TlkKDz-NFYt4LY6pUwR_KZCMinD9EnwPh5qEOvtbkDwp6ebPAKrpBDjhHFNrP50Qd2MHrKhau5usv8zDlWd1/s1024/Gemini_Generated_Image_ockwukockwukockw.png" alt="Brand visual 7" loading="lazy"/>
+      </div>
+
+      <h2>Brand Personality and Voice</h2>
+
+      <p>The brand archetype is the effortlessly cool guide. Bold, poetic, funny. Confident without arrogance. Makes sport feel inspiring rather than exhausting. The voice is Italian in spirit, Mediterranean in warmth, and streetwear in energy.</p>
+
+      <div class="attr-row"><span class="attr-label">Voice lines</span><span class="attr-value">"Sportivo, stile, sempre." / "Elegance in motion." / "Sport is poetry."</span></div>
+      <div class="attr-row"><span class="attr-label">Mission</span><span class="attr-value">Make sport cool, fun, and elegant. Never boring or painful. Position Tutto Sport as the guide to being effortlessly cool in sport and in life.</span></div>
+      <div class="attr-row"><span class="attr-label">Layout rule</span><span class="attr-value">Embrace emptiness. Negative space is a design element. Always sunny, bright, optimistic, golden. Think gallery, not catalog.</span></div>
+      <div class="attr-row"><span class="attr-label">Stripes</span><span class="attr-value">Use sparingly but confidently. Blue/white and green/white. They carry the Italian tennis court into every execution.</span></div>
+
+      <div class="brand-gallery-3">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg44MlrPaC7aTVYgTSkvdrY7ak519u6fi5LV19QDe8O1SCI6gtOFilmIVm4dXcUwuA3ZBTv165myVmWMYFVjwqy97Gip7OP6pghqOvlH3ztlly9NpEz_ksgkXCcovBpVa_jmKAeZf_UZhaG5-kW08hVkPRd9X78CTue1gkLBKn03dnqvxXOOWtuKqqnbzEz/s1024/Gemini_Generated_Image_ux0h8fux0h8fux0h.png" alt="Brand visual 8" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXbeUZ3yHDg1iYiC4LQFZ0RqWxw8Esz4kMkjTllXHznqarSkvdBkZcKyE3Zv6EEgY7Av-cEuCVpH9JC3mE_bu6U3nb9OvK7jjwPvt-UsEs_KnXX_sBBI0RSnJli_T6Z1BJ7O9Mz7n5l4P6Qctb3qNWRWGlL-WVHvSfRWhlM0oHOpCfazv_iwD8bbe73q94/s1024/Gemini_Generated_Image_8mg5n28mg5n28mg5.png" alt="Brand visual 9" loading="lazy"/>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZdIVsMINpUv5_-jqRueZ2QWgtCZkz7y7lbCm1xjkBfUhtJIxLh1LltvLgnMSCCsJiVKxiCZyjEYzM6yLab3EYmqv_35AN5BVUtzsW9Mx7UvQ-rrSFU3iXBwhSM9uwkQNb470Ifm0ptDaqcTzX6M0tyzRODB5gzj9s5XPYQ8957pgODT1gAATvd91HIoiG/s1024/Gemini_Generated_Image_n27lkan27lkan27l.png" alt="Brand visual 10" loading="lazy"/>
+      </div>
+
+      <p>Tutto Sport is where Italian elegance meets American streetwear energy, where the court becomes a canvas, and where every sneaker tells a story of sun, style, and the effortless poetry of movement. The brand exists at the intersection of a place, an era, and an attitude. The question is not whether this identity could work. The question is whether Tutto Sport has the execution discipline to hold it consistently, or whether the next discount video will undo it in 30 seconds.</p>
+
+      <div class="continue-reading">
+        <div class="cr-label">Continue the analysis</div>
+        <div class="cr-grid">
+          <a class="cr-card" href="tutto-sport.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">Why Tutto Sport's Discount Strategy Is Killing the Brand</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="peak-sports.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">Peak Sports: Zero to Hero</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="decathlon.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">The Decathlon Deception</div><span class="cr-arrow">Read →</span></a>
+        </div>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author">
+          <div class="author-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.style.display='none'"/></div>
+          <div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div>
+        </div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics applied to the Tunisian market.</p>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Related Articles</div>
+        <div class="related-item"><a href="tutto-sport.html">Why Tutto Sport's Discount Strategy Is Killing the Brand</a><div class="rel-date">Oct 18, 2025</div></div>
+        <div class="related-item"><a href="peak-sports.html">Peak Sports: Zero to Hero</a><div class="rel-date">Aug 10, 2025</div></div>
+        <div class="related-item"><a href="decathlon.html">The Decathlon Deception</a><div class="rel-date">Jul 20, 2025</div></div>
+        <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
+      </div>
+      <div class="li-box">
+        <div class="li-label"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+        <p class="li-hook">If you read this far, you're exactly the kind of person I write for.</p>
+        <p class="li-sub">I dissect Tunisian brands every week on LinkedIn — the ones no one else is looking at seriously.</p>
+        <a class="li-btn" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Follow on LinkedIn</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text"><span class="af-name">Slim El Fatmi</span><span class="af-role">Follow on LinkedIn</span></div>
+  </a>
+
+  <script>
+    function handleSubscribe(btn){const i=btn.previousElementSibling,e=i.value.trim();if(!e||!e.includes('@')){i.style.borderColor='#e83a2f';i.focus();return;}btn.textContent="✓ You're in.";btn.style.background='#16a34a';btn.disabled=true;}
+    (function(){var b=document.getElementById('read-progress');window.addEventListener('scroll',function(){var h=document.body.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(window.scrollY/h*100,100):0)+'%';},{passive:true});})();
+    (function(){var badge=document.getElementById('authorFloat');window.addEventListener('scroll',function(){var p=window.scrollY/(document.body.scrollHeight-window.innerHeight);if(p>0.25)badge.classList.add('visible');else badge.classList.remove('visible');},{passive:true});})();
+  </script>
+</body>
+</html>
