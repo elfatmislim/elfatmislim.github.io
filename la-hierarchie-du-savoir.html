@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La hiérarchie du savoir : pourquoi tu lis beaucoup et comprends peu — TIMN</title>
+  <meta name="description" content="La plupart des gens accumulent de la connaissance comme on remplit un entrepôt. Le problème n'est pas la quantité. C'est l'absence de hiérarchie." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #555;
+      --ink-faint: #888;
+      --paper: #faf9f7;
+      --paper-alt: #f3f1ed;
+      --accent: #c0392b;
+      --accent-light: #f9eded;
+      --border: #e0dbd4;
+      --max: 720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* ── Progress bar ── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Ticker ── */
+    .ticker-wrap {
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-track span { margin: 0 48px; opacity: 0.7; }
+    .ticker-track span.sep { opacity: 0.3; margin: 0 16px; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── Nav ── */
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+    nav a { color: var(--ink); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-left { font-weight: 600; }
+    .nav-right { display: flex; gap: 20px; color: var(--ink-light); }
+
+    /* ── Article wrapper ── */
+    article {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Category tag ── */
+    .category-tag {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* ── Title ── */
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    /* ── Byline ── */
+    .byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .byline .dot { opacity: 0.4; }
+
+    /* ── Key Insights ── */
+    .key-insights {
+      background: var(--paper-alt);
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      border-radius: 0 4px 4px 0;
+    }
+    .key-insights-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .key-insights ul { list-style: none; padding: 0; }
+    .key-insights ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+      padding: 5px 0 5px 18px;
+      position: relative;
+    }
+    .key-insights ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* ── Hero image ── */
+    .hero-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    /* ── Body text ── */
+    .body-text p {
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+
+    .body-text h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 48px 0 18px;
+      line-height: 1.3;
+    }
+
+    .body-text strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .body-text em {
+      font-style: italic;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      margin: 40px 0;
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* ── TIMN Insight ── */
+    .timn-insight {
+      background: var(--ink);
+      color: #fff;
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin: 40px 0;
+    }
+    .timn-insight-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+    .timn-insight p {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+
+    /* ── Method steps ── */
+    .method-block {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+      margin: 32px 0;
+      background: #fff;
+    }
+    .method-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .method-step:last-child { margin-bottom: 0; }
+    .step-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      padding: 2px 7px;
+      white-space: nowrap;
+      margin-top: 3px;
+    }
+    .step-body { flex: 1; }
+    .step-body strong {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .step-body p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink-light);
+      margin: 0;
+    }
+
+    /* ── Books list ── */
+    .books-block {
+      background: var(--paper-alt);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .books-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 12px;
+    }
+    .books-block ul { list-style: none; padding: 0; }
+    .books-block ul li {
+      font-size: 15px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink);
+    }
+    .books-block ul li:last-child { border-bottom: none; }
+    .books-block ul li em { color: var(--ink-faint); font-style: normal; font-size: 13px; }
+
+    /* ── Related articles ── */
+    .related {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .related-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .related-card {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--accent); }
+    .related-card .rc-cat {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .related-card .rc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .related-card .rc-arrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--ink-faint);
+    }
+
+    /* ── Author bio ── */
+    .author-bio {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .author-initials {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .author-text .author-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .author-text .author-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    /* ── Newsletter ── */
+    .newsletter-block {
+      margin-top: 48px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 4px;
+      padding: 32px;
+      text-align: center;
+    }
+    .newsletter-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .newsletter-block p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 18px;
+    }
+    .newsletter-block a {
+      display: inline-block;
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+
+    /* ── Footer ── */
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--ink-faint);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    footer a { color: var(--ink-faint); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    /* ── Floating author badge ── */
+    #author-badge {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 40px;
+      padding: 10px 16px 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      z-index: 900;
+    }
+    #author-badge.visible { transform: translateY(0); opacity: 1; }
+    #author-badge img {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    #author-badge .badge-close {
+      margin-left: 8px;
+      opacity: 0.5;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #author-badge .badge-close:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Ticker -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span>The Tunisian Institute for Marketing Nonsense</span><span class="sep">—</span>
+    <span>Brand strategy &amp; advertising effectiveness</span><span class="sep">—</span>
+    <span>Behavioral economics applied to Tunisia</span><span class="sep">—</span>
+    <span>The untold stories of Tunisian brands</span><span class="sep">—</span>
+    <span>Est. 2025 · Slim El Fatmi</span><span class="sep">—</span>
+    <span>The Tunisian Institute for Marketing Nonsense</span><span class="sep">—</span>
+    <span>Brand strategy &amp; advertising effectiveness</span><span class="sep">—</span>
+    <span>Behavioral economics applied to Tunisia</span><span class="sep">—</span>
+    <span>The untold stories of Tunisian brands</span><span class="sep">—</span>
+    <span>Est. 2025 · Slim El Fatmi</span><span class="sep">—</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="https://elfatmislim.github.io/index.html" class="nav-left">The Tunisian Institute<br>for Marketing Nonsense</a>
+  <div class="nav-right">
+    <a href="https://elfatmislim.github.io/index.html">← All Articles</a>
+    <a href="https://elfatmislim.github.io/about.html">About</a>
+  </div>
+</nav>
+
+<!-- Article -->
+<article>
+
+  <div class="category-tag">Apprentissage &amp; Connaissance</div>
+
+  <h1>La hiérarchie du savoir : pourquoi tu lis beaucoup et comprends peu</h1>
+
+  <div class="byline">
+    <span>Slim El Fatmi</span>
+    <span class="dot">·</span>
+    <span>16 avril 2026</span>
+    <span class="dot">·</span>
+    <span>8 min de lecture</span>
+  </div>
+
+  <!-- Key Insights -->
+  <div class="key-insights">
+    <div class="key-insights-label">Key Insights</div>
+    <ul>
+      <li>Tout savoir n'a pas la même valeur. Certains concepts expliquent cent autres — ce sont ceux-là qu'il faut chercher en premier.</li>
+      <li>L'éloquence d'un concept se mesure à ce qu'il déverrouille, pas à ce qu'il décrit.</li>
+      <li>Choisir ses sources par densité de sens, pas par autorité institutionnelle.</li>
+    </ul>
+  </div>
+
+  <!-- Hero image -->
+  <img
+    class="hero-img"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYgqbeptebdCLgs3ki1vfMUG-w9d12ufCdUGKTcjXlwHMrW6B6mcHas5Kn4qN7MdJlLevAuah75H1g30QZoEQVohKQCCOroELEHnRDv9F55RsNEshufJxELHGGN9TiCcvaHfyEwuiNNZn55MWYcpAYmxAFL1CSjF41AwxADfZrKrozokYe2W_EKgI5rOOA/s797/09b0af0e5f32f33ed961d6e3a27cae42.jpg"
+    alt="La hiérarchie du savoir"
+  />
+
+  <!-- Body -->
+  <div class="body-text">
+
+    <p>La plupart des gens accumulent de la connaissance comme on remplit un entrepôt. Une case pour le management, une case pour le marketing, une case pour l'économie. Et ils s'étonnent ensuite de ne jamais trouver le levier.</p>
+
+    <p>Le problème n'est pas la quantité. C'est l'absence de hiérarchie.</p>
+
+    <h2>Le piège du cours magistral</h2>
+
+    <p>Imagine que tu suis un cours de théorie des organisations. On t'explique qu'il existe cinq types de structures organisationnelles. C'est exact. C'est même utile, dans ce contexte précis, pour cet examen précis.</p>
+
+    <p>Maintenant imagine que tu étudies la théorie des systèmes. Comment les systèmes émergent, se régulent, se décomposent.</p>
+
+    <p>Tout à coup, les cinq structures du cours précédent ne sont plus cinq cases à mémoriser. Elles deviennent des cas particuliers d'un principe général. Tu vois <em>pourquoi</em> elles existent, pas seulement <em>qu'elles</em> existent.</p>
+
+    <div class="pull-quote">
+      <p>C'est ça, la connaissance éloquente : un modèle qui explique beaucoup de choses à la fois, dans beaucoup de domaines à la fois, avec un minimum de concepts.</p>
+    </div>
+
+    <h2>L'éloquence comme critère de sélection</h2>
+
+    <p>J'utilise le mot "éloquence" dans un sens précis : la capacité d'un concept à expliquer le maximum de phénomènes pertinents avec le minimum de mots.</p>
+
+    <p>La loi de Pareto est éloquente. La théorie des contraintes est éloquente. Le biais de confirmation est éloquent. Ils traversent les disciplines. Ils se réactivent dans des contextes que tu n'avais pas prévus.</p>
+
+    <p>À l'opposé, les cinq forces de Porter ne sont pas éloquentes. C'est un outil contextuel. Utile dans son domaine, aveugle hors de lui.</p>
+
+    <div class="timn-insight">
+      <div class="timn-insight-label">TIMN Insight</div>
+      <p>Le critère n'est pas : <em>est-ce que je comprends ça ?</em><br>Le critère est : <em>est-ce que ça m'aide à comprendre autre chose ?</em></p>
+    </div>
+
+    <h2>Choisir ses sources par densité de sens</h2>
+
+    <p>On nous a appris à évaluer les sources par autorité : diplôme, titre, institution. C'est une heuristique paresseuse.</p>
+
+    <p>Le vrai critère : combien de sens est-ce que cette personne me transfère par unité de temps, multiplié par la pertinence de ce sens ?</p>
+
+    <p>C'est une formule simple. <strong>Densité × Pertinence.</strong></p>
+
+    <p>Quelqu'un peut avoir un doctorat et un langage qui dilue. Quelqu'un peut ne jamais avoir enseigné et restructurer ta pensée en dix minutes.</p>
+
+    <p>Tu juges par ce que tu repartiras avec, pas par ce qu'il a sur son CV.</p>
+
+    <h2>La méthode concrète</h2>
+
+    <p>Voici comment j'opère en pratique, sur n'importe quel sujet nouveau.</p>
+
+    <div class="method-block">
+      <div class="method-step">
+        <div class="step-num">ÉTAPE 01</div>
+        <div class="step-body">
+          <strong>Les podcasts comme radar</strong>
+          <p>Je cherche sur YouTube des podcasts longs sur le sujet qui m'intéresse. Dans ces formats, les vrais penseurs se distinguent vite des vendeurs de contenu. Et surtout, les noms circulent. Les auteurs se citent entre eux. Tu cartographies rapidement qui compte dans ce champ.</p>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">ÉTAPE 02</div>
+        <div class="step-body">
+          <strong>Les listes de lecture comme signal d'alignement</strong>
+          <p>Quand quelqu'un résonne avec ma façon de penser, je vais sur son site. Je cherche ses recommandations de livres. Ce qu'une personne a choisi de lire dit plus sur elle que ce qu'elle a choisi de publier. Des outils comme <a href="https://www.goodbooks.io" target="_blank" rel="noopener" style="color:var(--accent)">goodbooks.io</a> agrègent les listes de lecture de dizaines de penseurs reconnus. C'est un signal de densité : si un livre revient dans cinq listes différentes d'auteurs sérieux, il mérite ta priorité.</p>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">ÉTAPE 03</div>
+        <div class="step-body">
+          <strong>La convergence comme critère de lecture</strong>
+          <p>Je priorise les livres cités par plusieurs experts indépendants dans le même domaine. La convergence est un proxy de signal.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Ce que tu cherches vraiment</h2>
+
+    <p>Tu ne cherches pas à tout savoir. Tu cherches des clés maîtresses, des concepts qui ouvrent plusieurs serrures à la fois.</p>
+
+    <p>La hiérarchie du savoir n'est pas un classement d'importance. C'est un classement d'éloquence.</p>
+
+    <p>Plus tu montes dans cette hiérarchie, moins tu mémorises, plus tu comprends. Et plus tu comprends dans un domaine, plus tu vois vite dans les autres.</p>
+
+    <p>Ce n'est pas de l'intelligence. C'est de la méthode.</p>
+
+    <div class="books-block">
+      <div class="books-label">Livres qui m'ont donné ce genre de levier</div>
+      <ul>
+        <li><strong>Thinking in Systems</strong> <em>— Donella Meadows</em></li>
+        <li><strong>The Goal</strong> <em>— Eliyahu Goldratt</em></li>
+        <li><strong>Poor Charlie's Almanack</strong> <em>— Charlie Munger</em></li>
+      </ul>
+    </div>
+
+    <p style="color:var(--ink-faint); font-family:'Inter',sans-serif; font-size:14px;">Pas des livres de management. Des livres sur comment penser.</p>
+
+  </div><!-- /body-text -->
+
+  <!-- Related articles -->
+  <div class="related">
+    <div class="related-label">Continue the analysis</div>
+    <div class="related-grid">
+      <a href="https://elfatmislim.github.io/yoyo.html" class="related-card">
+        <div class="rc-cat">Brand Study</div>
+        <div class="rc-title">The Yoyo Story</div>
+        <div class="rc-arrow">Read →</div>
+      </a>
+      <a href="https://elfatmislim.github.io/fast-food.html" class="related-card">
+        <div class="rc-cat">Consumer Behavior</div>
+        <div class="rc-title">Fast Food Psychology</div>
+        <div class="rc-arrow">Read →</div>
+      </a>
+      <a href="https://elfatmislim.github.io/trust-gap.html" class="related-card">
+        <div class="rc-cat">Consumer Behavior</div>
+        <div class="rc-title">The Trust Gap</div>
+        <div class="rc-arrow">Read →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Author bio -->
+  <div class="author-bio">
+    <div class="author-initials">SE</div>
+    <div class="author-text">
+      <div class="author-name">Slim El Fatmi</div>
+      <div class="author-desc">Marketing Strategist · Analyse sharp sur l'efficacité publicitaire, la stratégie de marque et l'économie comportementale appliquée au marché tunisien.</div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-block">
+    <h3>One insight per week.</h3>
+    <p>Sharp marketing analysis. No fluff.</p>
+    <a href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">Follow on LinkedIn</a>
+  </div>
+
+</article>
+
+<!-- Footer -->
+<footer>
+  <span>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</span>
+  <a href="https://elfatmislim.github.io/index.html">← Back to All Articles</a>
+</footer>
+
+<!-- Floating author badge -->
+<a id="author-badge" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener">
+  <img src="https://elfatmislim.github.io/photo.jpg" alt="Slim El Fatmi" onerror="this.style.display='none'" />
+  <span>Slim El Fatmi · Follow on LinkedIn</span>
+  <span class="badge-close" id="badge-close">✕</span>
+</a>
+
+<script>
+  // Reading progress bar
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrolled / total * 100) + '%';
+  });
+
+  // Floating author badge
+  const badge = document.getElementById('author-badge');
+  const closeBtn = document.getElementById('badge-close');
+  let badgeDismissed = false;
+
+  window.addEventListener('scroll', () => {
+    if (badgeDismissed) return;
+    if (window.scrollY > 400) {
+      badge.classList.add('visible');
+    } else {
+      badge.classList.remove('visible');
+    }
+  });
+
+  closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    badgeDismissed = true;
+    badge.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
