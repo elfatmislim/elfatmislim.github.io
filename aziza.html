@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tunisia's Zag Moment: Why Quality Is the New Disruption — TIMN</title>
+  <title>Designing the Mousetrap: How Aziza Wins Without Saying a Word — TIMN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #0d0d0d;
-      --paper: #f5f0e8;
-      --accent1: #e83a2f;
-      --accent2: #f5a623;
-      --accent3: #2563eb;
-      --accent4: #16a34a;
-      --muted: #7a7265;
-      --border: #d9d0be;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--paper); color: var(--ink); font-family: 'Libre Baskerville', Georgia, serif; overflow-x: hidden; }
-    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.6; }
-    .ticker { background: var(--ink); color: var(--paper); padding: 8px 0; overflow: hidden; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; white-space: nowrap; }
-    .ticker-inner { display: inline-block; animation: marquee 35s linear infinite; }
-    .ticker-inner span { margin: 0 40px; }
-    .ticker-inner span::before { content: '◆  '; color: var(--accent1); }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; border-bottom: 2px solid var(--ink); position: sticky; top: 0; background: var(--paper); z-index: 100; }
-    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; max-width: 200px; line-height: 1.3; }
-    .nav-back { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-    .nav-back:hover { color: var(--accent1); }
-    .article-hero { padding: 72px 48px 56px; border-bottom: 2px solid var(--ink); max-width: 860px; }
-    .article-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--paper); padding: 5px 12px; display: inline-block; margin-bottom: 24px; }
-    .article-hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
-    .article-hero h1 em { font-style: italic; color: var(--accent1); font-family: 'Libre Baskerville', serif; }
-    .article-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .article-meta span { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-    .article-meta .dot { color: var(--border); }
-    .article-meta .author { color: var(--ink); font-weight: 500; }
-    .article-layout { display: grid; grid-template-columns: 1fr 280px; }
-    .article-body { padding: 64px 56px 80px 48px; border-right: 2px solid var(--ink); }
-    .article-body p { font-size: 17px; line-height: 1.85; margin-bottom: 28px; color: #1a1a1a; }
-    .article-body h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; margin: 56px 0 20px; padding-top: 40px; border-top: 2px solid var(--ink); }
-    .article-body h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; margin: 32px 0 14px; }
-    .article-img { margin: 40px 0; border: 2px solid var(--ink); overflow: hidden; }
-    .article-img img { width: 100%; display: block; transition: transform 0.4s ease; }
-    .article-img:hover img { transform: scale(1.02); }
-    .article-img figcaption { padding: 10px 16px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--border); }
-    .pull-quote { margin: 48px 0; padding: 32px 40px; border-left: 4px solid var(--accent1); background: rgba(232,58,47,0.04); }
-    .pull-quote p { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 20px !important; line-height: 1.6 !important; color: var(--ink) !important; margin: 0 !important; }
-    .article-sidebar { padding: 64px 32px; }
-    .sidebar-section { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-    .sidebar-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .sidebar-author { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
-    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; color: var(--paper); flex-shrink: 0; }
-    .author-info strong { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; display: block; }
-    .author-info span { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent1); }
-    .sidebar-section p { font-size: 13px; line-height: 1.7; color: var(--muted); }
-    .related-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .related-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .related-item a { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px; line-height: 1.3; color: var(--ink); text-decoration: none; transition: color 0.2s; }
-    .related-item a:hover { color: var(--accent1); }
-    .related-item .rel-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 4px; }
-    .nl-box { background: var(--ink); color: var(--paper); padding: 24px 20px; }
-    .nl-box .nl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
-    .nl-box h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.25; margin-bottom: 8px; }
-    .nl-box p { font-size: 12px; line-height: 1.6; color: #b0a898; margin-bottom: 16px; }
-    .nl-form { display: flex; flex-direction: column; gap: 8px; }
-    .nl-form input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--paper); padding: 10px 12px; font-family: 'DM Mono', monospace; font-size: 12px; outline: none; }
-    .nl-form input::placeholder { color: #7a7265; }
-    .nl-form button { background: var(--accent1); color: var(--paper); border: none; padding: 11px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
-    .nl-form button:hover { background: var(--accent2); }
-    .article-footer { border-top: 2px solid var(--ink); padding: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    .article-footer p { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: var(--muted); }
-    .back-btn { background: var(--ink); color: var(--paper); padding: 12px 28px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
-    .back-btn:hover { background: var(--accent1); }
-    @media (max-width: 860px) { nav { padding: 16px 24px; } .article-hero { padding: 48px 24px 40px; } .article-layout { grid-template-columns: 1fr; } .article-body { padding: 40px 24px; border-right: none; } .article-sidebar { padding: 40px 24px; border-top: 2px solid var(--ink); } .article-footer { padding: 32px 24px; } .pull-quote { padding: 24px; } }
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;max-width:200px;line-height:1.3;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:64px 48px 48px;border-bottom:2px solid var(--ink);max-width:900px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;padding:5px 12px;display:inline-block;margin-bottom:20px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;}
+    .article-hero h1 em{font-style:italic;color:var(--accent1);font-family:'Libre Baskerville',serif;}
+    .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .dot{color:var(--border);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:56px 56px 80px 48px;border-right:2px solid var(--ink);}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:24px;color:#1a1a1a;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:48px 0 16px;padding-top:32px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:24px 0 10px;}
+    .article-body ul{margin:0 0 24px 0;padding-left:24px;}
+    .article-body li{font-size:16px;line-height:1.75;margin-bottom:8px;color:#1a1a1a;}
+    .article-body strong{font-weight:700;}
+    .article-body em{font-style:italic;}
+    .article-img{margin:32px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform 0.4s;}
+    .article-img:hover img{transform:scale(1.02);}
+    .article-img figcaption{padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);}
+    .pull-quote{margin:40px 0;padding:28px 36px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:19px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .article-sidebar{padding:56px 28px;}
+    .sidebar-section{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--paper);flex-shrink:0;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:10px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color 0.2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:22px 18px;}
+    .nl-box .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:14px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .back-btn:hover{background:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 20px;}.article-hero{padding:40px 20px 32px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px;border-right:none;}.article-sidebar{padding:32px 20px;border-top:2px solid var(--ink);}.article-footer{padding:28px 20px;}.pull-quote{padding:20px 22px;}}
 
     .li-box{background:var(--ink);color:var(--paper);padding:22px 20px;margin-top:28px;border-left:4px solid #0077b5;}
     .li-box .li-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#0077b5;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
@@ -415,34 +410,16 @@
     <div id="section-tracker-line"></div>
   </div>
 
-
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span>The Tunisian Institute for Marketing Nonsense</span>
-      <span>Brand strategy &amp; advertising effectiveness</span>
-      <span>Behavioral economics applied to Tunisia</span>
-      <span>The untold stories of Tunisian brands</span>
-      <span>Est. 2025 · Slim El Fatmi</span>
-      <span>The Tunisian Institute for Marketing Nonsense</span>
-      <span>Brand strategy &amp; advertising effectiveness</span>
-      <span>Behavioral economics applied to Tunisia</span>
-      <span>The untold stories of Tunisian brands</span>
-      <span>Est. 2025 · Slim El Fatmi</span>
-    </div>
-  </div>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
   <nav>
     <a class="nav-logo" href="index.html">The Tunisian Institute<br>for Marketing Nonsense</a>
     <a class="nav-back" href="index.html">← All Articles</a> <a class="nav-back" href="about.html" style="margin-left:16px;opacity:0.55;">About</a>
   </nav>
   <header class="article-hero">
-    <span class="article-tag" style="background:#0d9488">Brand Strategy</span>
-    <h1>Tunisia's Zag Moment: Why Quality Is the New Disruption</h1>
+    <span class="article-tag" style="background:#2563eb">Retail</span>
+    <h1>Designing the Mousetrap: How Aziza Wins Without Saying a Word</h1>
     <div class="article-meta">
-      <span class="author">Slim El Fatmi</span>
-      <span class="dot">·</span>
-      <span>January 17, 2026</span>
-      <span class="dot">·</span>
-      <div class="read-time-visual"><div class="rt-dots"><span class="rt-dot filled"></span><span class="rt-dot filled"></span><span class="rt-dot filled"></span><span class="rt-dot filled"></span><span class="rt-dot"></span><span class="rt-dot"></span><span class="rt-dot"></span><span class="rt-dot"></span><span class="rt-dot"></span><span class="rt-dot"></span><span class="rt-dot"></span></div><span class="rt-label">11 min read</span></div>
+      <span class="author">Slim El Fatmi</span><span class="dot">·</span><span>July 14, 2025</span>
     </div>
   </header>
   <div class="article-layout">
@@ -450,110 +427,112 @@
       <div class="key-insights">
         <div class="ki-label">Key Insights</div>
         <ul class="ki-list">
-          <li>Product is subordinate to experience, and experience is subordinate to perception. Cutting 5 grams from a chocolate bar is not a product decision. It is a perceptual decision with consequences no spreadsheet can capture.</li>
-          <li>When every competitor is degrading simultaneously, making a good product is the genuinely disruptive move. The contrast will be so enormous it bypasses rational evaluation entirely and hits people at a gut level.</li>
-          <li>Quantification bias: companies can measure the savings from cutting material. They cannot measure the cumulative erosion of trust until it is far too late. The numbers that kill brands are the ones nobody is tracking.</li>
+          <li>Variable reward schedules: unpredictable promotions create stronger behavioral loops than consistent discounts. Aziza weaponized this neurological quirk without knowing the academic term for it.</li>
+          <li>Aziza did not set out to solve social isolation. They accidentally became a third place — a social space between home and work — which is harder to replicate than any pricing strategy.</li>
+          <li>The Kawther El Bardi choice is psychological mirroring: customers see their aspirational self, not a distant celebrity. Attainable aspiration converts. Unattainable aspiration does not.</li>
         </ul>
       </div>
 
-      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-2F1icBkjNf_AJGJ7fqPEijuMYYyP3DnKTjsFN6zPel5GiumhFOFqo2dbAQsNj2o9c_rMK3PWuVQJHRB2EeHBbwstQp2gf1cDp2QMcg5VNXgrjnvEdDqsGXL-bPEX34qhILTiiXiB2oo-dchmtz0DO2OgGRJcrRdDJJSojRxMZrVbFyHyvW2oEtPG6Z0b/s1024/Gemini_Generated_Image_312ib7312ib7312i.png" alt="Zag moment" loading="lazy"/></figure>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4foIpAKeOVBVMBfMQ1Bl_AtRVMJNtKQyaPBycw5GnC2q5LtK9-L6wgtnvwN_vzkgR-BGpXATqi6HQVCfTGJNfPGAZ4JAIxNUIcQrXNWvGvBKZWTs873JS5vkMcsZINU7w-EynHA95BdqlchZN8gJyg-WJpzPjdAfIIzybB2yz21KsnefEoNpjroMSUIi2/s710/IMGBN51656magasin-aziza.jpg" alt="Aziza" loading="lazy"/></figure>
 
-      <div class="timn-insight"><p>In a market where every competitor is cutting, quality becomes the genuine insurgent move. Not premium pricing. Not brand storytelling. Just the quiet, radical act of making something that does not disappoint.</p></div>
+      <div class="timn-insight"><p>Aziza solved a problem no one was paid to solve: loneliness. Not through design intent, but through an accidental accumulation of features that made the store feel like a place where you belonged. That is harder to replicate than any pricing architecture.</p></div>
 
-      <p id="mnote-anchor-1">There is a rather depressing game you can play in any Tunisian supermarket. Pick up a 2-liter water bottle<sup class="mnote-marker" data-note="J&#39;ai une collection personnelle de bouteilles d&#39;eau tunisiennes qui se sont effondrées d&#39;elles-mêmes sur mon bureau. C&#39;est de la recherche de terrain, pas de la maladresse." title="De la recherche de terrain.">1</sup>. No, really try to pick it up with one hand. You cannot, can you? The plastic has become so gossamer-thin that the bottle crumples like a defeated soufflé the moment you apply the slightest pressure. It is not a water bottle anymore. It is a water suggestion.</p>
+      <p id="mnote-anchor-1">In the bustling neighborhoods of Tunisia, a retail phenomenon has quietly emerged that demonstrates the power of behavioral psychology in action. Aziza, a local supermarket chain targeting family caregivers and household managers, has created one of the most sophisticated applications of habit-forming psychology in Tunisian retail — whether by design or happy accident.</p>
 
-      <p>Walk down the chocolate aisle and you will find the same story, told in diminishing weights and expanding air pockets. Tris, Maestro, Gaucho — they have all joined the Great Thinning. Each year, the bars get lighter, airier, more insubstantial. Pick one up and you are holding what feels less like chocolate and more like the memory of chocolate. This is happening everywhere, across nearly every CPG category you can name. And it is not just wasteful. It is catastrophically stupid.</p>
+      <h2>Exploiting Social Isolation</h2>
 
-      <h2>The Misconception: A Tragic Oversimplification</h2>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmXAxeGOMgrXFi0VAWLSr5Xmo_n7y8xS-LBYvrEhLPeHn8CP39MrWAKHP6pwJhr-UIm0nnALfO-fg9Lab18yuT1CGonPG2RJN348-jmqItymUUCEHxJMH7UTB4Ky3LKQR9LRd5_cagkmGCM1c-77bcXgW7RCgSA-Wgop-hQOkj2Eas-fvjHelKkOenRtHq/s768/isolation-768x512.jpg" alt="Social isolation" loading="lazy"/></figure>
 
-      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4hKRO9hXHGNwfjURwx4a-3kRg_Ti0vr5SuY0nMzc7IF3mgOUFy8-CrErA48MumHiI0NinAObx17_C-pFuokbdd2SzYmGo_sKARkVPUiJp1r8MTo4WCCxDb76eO3BD9gJhRGCiu9stU18v8l-KMhTFQK8QQZHHjfnOrOjpfcVqtAwavk7HFLK0Y6673cT4/s2292/iStock-165790610-e1548771887276.jpg" alt="Misconception" loading="lazy"/></figure>
+      <p>Traditional meeting spots for household managers — the souk, local épiceries, neighborhood gatherings — were not providing adequate opportunities for social connection. While Aziza likely did not set out to solve this problem, their stores implicitly filled this void.</p>
 
-      <p>Here is where most product managers get it spectacularly wrong: they think of "product" as a discrete, quantifiable thing that exists independently of human perception. You know a chocolate bar is 45 grams of cocoa, sugar, and milk solids. Change the configuration slightly, shave off 5 grams, pump in some air, and there you go: same product, better margins. Except it is not the same product at all. Because if you detach product from experience, you lose the game entirely. Product is subordinate to experience, and experience is the most important piece. Within experience, there is perception, and within perception, there are implicit, tacit variables that interact with our neurocognitive machinery in ways that spreadsheets simply cannot capture.</p>
+      <p>Walk into any Aziza location and you witness something remarkable: customers know the cashiers by name. They exchange pleasantries about family, discuss local events, and genuinely seem to care about each other's wellbeing. What started as transactional interactions evolved into authentic friendships. Regular customers coordinate their shopping trips, turning routine errands into informal social gatherings right in the aisles.</p>
 
-      <p>Consider the perceptual variables that product managers routinely ignore. <strong>Resistance gradients</strong>: how much resistance increases as you squeeze a product. When you pick up that water bottle and it collapses like a punctured lung, your brain receives a cascade of signals that scream "cheap," "flimsy," "not-quite-right." You have not saved 2 cents on plastic. You have destroyed the tactile authority of your product. <strong>Mouthfeel complexity</strong>: not just "creamy" but the temporal narrative of creaminess. Quality products have complex mouthfeel journeys, not static textures. <strong>Fracture pattern</strong>: break a chocolate bar. Does it snap cleanly or shatter into random shards? Clean fracture signals structural integrity and care in manufacture. Random fracture screams "air pockets" and "we cut corners."</p>
+      <p>This reveals something crucial about human psychology. We are wired for belonging<sup class="mnote-marker" data-note="Le concept de Ray Oldenburg — ni la maison, ni le travail, l&#39;espace intermédiaire. Aziza est accidentellement devenu le troisième lieu de femmes tunisiennes qui n&#39;avaient pas de troisième lieu prévu dans leur journée." title="Le troisième lieu de Oldenburg.">1</sup>, and when our environment fails to satisfy this fundamental need, we gravitate toward spaces that do. Aziza did not explicitly position themselves as the solution to social isolation. Their stores naturally evolved into what sociologists call the "third place" — a social space between home and work. The genius lies in the consistency of the experience. When customers know they will encounter familiar faces, both staff and fellow shoppers, the store transforms from a place of commerce into a hub of community.</p>
+
+      <h2>The Variable Reward: Engineering Uncertainty</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgL93id6ajyPrGpX7rZQ8xiCT9BhU10s3uW_OqZz1GV0-j6Zu0NjC6yaQzd1HTKtqDXueAtFXyhDGidGtpW8xVLqec7PWABI4ro1Gw84EldJgLwhKCac8m9SeZhIEceB6tQ3J1vIMLpPJs_Ci5VZ0JptXXsjmx1PkZsT-RyB8KYkZiUNCyJ81WnGJJ7Hvj4/s585/448-Diagram.jpg" alt="Variable reward" loading="lazy"/></figure>
+
+      <p>Aziza has mastered the variable reward schedule<sup class="mnote-marker" data-note="B.F. Skinner a découvert ça avec des pigeons dans les années 50. Aziza applique le même principe à des mères de famille cherchant du lait. Les deux groupes répondent de façon similaire." title="Les pigeons de Skinner.">2</sup> — the same psychological principle that makes slot machines addictive and keeps us scrolling through social media feeds. Every time a customer enters an Aziza supermarket, they encounter promotions, but not predictable ones. Sometimes a major discount on essential items. Other times a modest promotion on something less relevant. The key is not the reward itself. It is the variability and consistency of the reward system.</p>
+
+      <p>This uncertainty hijacks the limbic brain's reward pathways. Research shows that dopamine levels spike highest not when we receive a reward, but when we are uncertain whether we will receive one. Aziza has weaponized this neurological quirk, creating an environment where customers feel compelled to check in regularly, never knowing what they might discover.</p>
 
       <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
 
-      <h2>The Risk Epidemic</h2>
+      <h2>The Novelty Factor: Thrift Shop Psychology</h2>
 
-      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFAO7m9Iv0UDhJL5qGOoB2rSRVCB3KqsAg08t8u-9eQgssyO61XXEW7Ix-5n-FXnOxu9B7c7tjXQller8i9J6RW972nQtk8_AFUFnulfUFhH8PU8TgdEjJOqLNiW3FsDxMNkcD9dng-WB5hoe5bQkKhjKoCcWSLg13RwJ3fReQdULd1LQ1_RKnzKBpf6B1/s8000/pexels-gabby-k-6289073.jpg" alt="Risk" loading="lazy"/></figure>
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjde3iJqSXzjsT1As4HgPiOh-X45bEMLeqpp3zliNvgDUFL8J4T31ejAqVuNbZdPp3D0f8XSaJ2OyO0263IOvfQnnp9KzZ4OZQoxgASvzXo_-6_1wRo4cZmSSpA7DGXsNcQmz65r3zwB0He6FYMOEdmNI1Qo22hJ64oqaca0S1nisseIQnvYEtVk2FSFVNa/s715/img_1_1752504824442.jpg" alt="Novelty" loading="lazy"/></figure>
 
-      <p>Tunisian companies suffer from catastrophically low risk tolerance. If you are a product developer, you must quantify your ideas to get validation from management. But innovation is fundamentally unquantifiable and probabilistic<sup class="mnote-marker" data-note="Une phrase qui aurait semblé absurde dans n&#39;importe quel autre contexte. Dans le marché tunisien actuel, c&#39;est une thèse d&#39;investissement sérieuse." title="Une thèse d&#39;investissement sérieuse.">2</sup>, while cost-cutting offers the siren song of certainty: cut X grams of material, save Y dinars. Guaranteed. They have become addicted to it like rats pressing a lever for dopamine hits. Meanwhile, the product developer who says "I think if we use proper tempering and real cocoa butter, people will love it and tell their friends" gets laughed out of the room. Where are your numbers? What is your ROI projection? You do not know. That is the point. You are making a bet on human psychology, and human psychology is gloriously, infuriatingly uncertain.</p>
+      <p>Beyond promotional uncertainty, Aziza employs another powerful psychological trigger: consistent novelty. Walk into any Aziza supermarket and you will find a carefully curated section of kitchen utensils and household items, always changing, always surprising. This mirrors the psychology that drives thrift shopping. The anticipation of finding something unexpected and valuable creates a dopamine-driven feedback loop — the same mechanism that makes loot boxes in video games so compelling.</p>
 
-      <h2>Quantification Bias: When Numbers Make You Stupid</h2>
+      <h2>The Voice of Authority: Kawther El Bardi</h2>
 
-      <p>This is what I call Quantification Bias: overestimating the importance of quantifiable data while ignoring psychology and perception. Yes, you can measure that you saved 0.8 dinars per unit. But can you measure the cumulative degradation of trust? The slow erosion of brand meaning? The moment when your product crosses below the category prototype in consumers' minds and stops being "chocolate" and becomes "chocolate-flavored product"? No. You cannot. Not until it is far too late.</p>
+      <p>Perhaps most cleverly, Aziza chose the perfect brand ambassador<sup class="mnote-marker" data-note="Le choix d&#39;ambassadrice le plus intelligent du retail tunisien. Pas aspirationnelle au sens inaccessible. Aspirationnelle au sens : &#39;je pourrais être elle, avec un peu plus de chance et un meilleur éclairage.&#39;" title="L&#39;aspiration atteignable.">3</sup> in Kawther El Bardi. She represents the aspirational yet attainable version of their target customer — the Tunisian housewife who is competent, caring, and connected to her community. When customers see Kawther endorsing Aziza, they are not just seeing a celebrity spokesperson. They are seeing a reflection of their ideal selves. She embodies the caregiver archetype that resonates deeply with their audience, and the key word is "embodies" — not "represents from a distance."</p>
 
-      <h2>The Category Killer Hypothesis</h2>
+      <h2>The Scarcity Engine: Weekly TV Promotions</h2>
 
-      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVRfS5Lp94zY5uzfIfMDdDMIhtZmXxB5lbEx28blHnJP2udlBWvitdFtWluPLaqbFXkgNcnEq_jNuObOygZYzb3keqaYAu0sen1BUyVVxmeWM5cZClTvHAssxJIUI26d2lTSEMlKWvqzyt0n8ytyMNiABG6RWa6lrTqG7ZfFESJJoR3P0b6RgDGdVZvttK/s6505/pexels-cottonbro-8717530.jpg" alt="Category killer" loading="lazy"/></figure>
+      <p>Aziza's weekly TV promotion structure creates a temporal rhythm that trains customers to check in regularly. This is classical conditioning applied to retail — the store becomes associated with the anticipation of a good deal, and that anticipation becomes its own reward. The weekly cadence is crucial. It is frequent enough to maintain habit formation but not so frequent that it loses its urgency.</p>
 
-      <p>The truly terrifying part: these cost-cutting measures are not just product killers. They are category killers. When every chocolate bar in Tunisia degrades simultaneously, consumers do not just switch brands. They might switch categories entirely. The entire "impulse chocolate" category could shrink by 30% while everyone is frantically fighting over the remaining share, wondering what happened. Your brain has a prototype for "chocolate bar," an idealized average built from years of experience. When products degrade below that prototype, they stop feeling like the real thing and start feeling like imitations.</p>
-
-      <h2>The Opportunity: Contrast Volatility</h2>
-
-      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMPFQFMNSQz1TXKLFosOZiApNnsJKJGOssa7M8BxbY-RAcfEa5nRt_4qJ5ZFkTReFdz7e_XYoBrti3OMesRQ_Wq6hNgF5dirPiEArklDoQAoGFp38LZdHM6EKtfkxSg4dyFj5Dw4EQtrA02N7POOXKWguG8stlWdvbWXRq8e8k_ZUQQ_G_qnYANA6FF0DP/s6000/pexels-fauxels-3184419.jpg" alt="Contrast" loading="lazy"/></figure>
-
-      <p>But here is where it gets gloriously interesting<sup class="mnote-marker" data-note="Le zag n&#39;est intéressant que parce que tout le monde zig. Actuellement en Tunisie, tout le monde zig vers le bas. Le zag vers le haut est donc vide." title="Le zag vers le haut est vide.">3</sup>. Product quality has become so uniformly, so catastrophically terrible that the simple act of making a good product will make you instantly viral. Not "might make you viral." Will make you viral. When everything around you is disappointingly light, suspiciously airy, and vaguely unsatisfying, encountering something with actual substance is a physical shock to the system. It is like walking through a desert and finding a waterfall. This contrast only exists because the other products are so bad. Your competitors have inadvertently created the conditions for your disruption.</p>
-
-      <div class="pull-quote"><p>The great irony of Tunisia's quality crisis is that it has created the most favorable conditions imaginable for anyone willing to simply make a good product. In a market of water suggestions, a bottle that holds its shape is revolutionary. You cannot A/B test your way to an iPhone. But you can make a chocolate bar that does not crumble into existential dust when you unwrap it. Start there.</p></div>
+      <div class="pull-quote"><p>Aziza did not design a behavioral architecture. They stumbled into one. Which is either a testament to their instincts or an indictment of how much opportunity exists for brands that actually try to understand their customers. Either way, the result is a retail operation whose loyalty runs deeper than any points program could ever manufacture.</p></div>
 
 
     <div class="continue-reading">
+        <div class="cr-label">Continue the analysis</div>
+        <div class="cr-grid">
+          <a class="cr-card" href="decathlon.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">The Decathlon Deception</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="honey-seller.html"><span class="cr-tag">Consumer Psychology</span><div class="cr-title">The Honey Seller</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="trust-gap.html"><span class="cr-tag">Consumer Behavior</span><div class="cr-title">The Trust Gap</div><span class="cr-arrow">Read →</span></a>
+        </div>
+      </div>
+
+    
+    <div class="continue-reading">
       <div class="cr-label">Continue the analysis</div>
       <div class="cr-grid">
-      <a class="cr-card" href="magnificent-middle.html">
+      <a class="cr-card" href="decathlon.html">
+        <span class="cr-tag">Brand Strategy</span>
+        <div class="cr-title">Decathlon</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="honey-seller.html">
+        <span class="cr-tag">Consumer Psychology</span>
+        <div class="cr-title">Honey Seller</div>
+        <span class="cr-arrow">Read →</span>
+      </a>
+      <a class="cr-card" href="trust-gap.html">
         <span class="cr-tag">Consumer Behavior</span>
-        <div class="cr-title">The Magnificent Middle</div>
-        <span class="cr-arrow">Read →</span>
-      </a>
-      <a class="cr-card" href="tutto-sport.html">
-        <span class="cr-tag">Brand Strategy</span>
-        <div class="cr-title">Tutto Sport</div>
-        <span class="cr-arrow">Read →</span>
-      </a>
-      <a class="cr-card" href="peak-sports.html">
-        <span class="cr-tag">Brand Strategy</span>
-        <div class="cr-title">Peak Sports</div>
+        <div class="cr-title">The Trust Gap</div>
         <span class="cr-arrow">Read →</span>
       </a>
       </div>
     </div>
     </article>
     <div class="margin-notes-col">
-      <div class="mnote" data-anchor="mnote-anchor-1">J'ai une collection personnelle de bouteilles d'eau tunisiennes qui se sont effondrées d'elles-mêmes sur mon bureau. C'est de la recherche de terrain, pas de la maladresse.</div>
-      <div class="mnote" data-anchor="mnote-anchor-2">Une phrase qui aurait semblé absurde dans n'importe quel autre contexte. Dans le marché tunisien actuel, c'est une thèse d'investissement sérieuse.</div>
-      <div class="mnote" data-anchor="mnote-anchor-3">Le zag n'est intéressant que parce que tout le monde zig. Actuellement en Tunisie, tout le monde zig vers le bas. Le zag vers le haut est donc vide.</div>
+      <div class="mnote" data-anchor="mnote-anchor-1">B.F. Skinner a découvert ça avec des pigeons dans les années 50. Aziza applique le même principe à des mères de famille cherchant du lait. Les deux groupes répondent de façon similaire.</div>
+      <div class="mnote" data-anchor="mnote-anchor-2">Le concept de Ray Oldenburg — ni la maison, ni le travail, l'espace intermédiaire. Aziza est accidentellement devenu le troisième lieu de femmes tunisiennes qui n'avaient pas de troisième lieu prévu dans leur journée.</div>
+      <div class="mnote" data-anchor="mnote-anchor-3">Le choix d'ambassadrice le plus intelligent du retail tunisien. Pas aspirationnelle au sens inaccessible. Aspirationnelle au sens : 'je pourrais être elle, avec un peu plus de chance et un meilleur éclairage.'</div>
     </div>
     <aside class="article-sidebar">
       <div class="sidebar-section">
         <div class="sidebar-label">Written by</div>
-        <div class="sidebar-author">
-          <div class="author-avatar">SE</div>
-          <div class="author-info">
-            <strong>Slim El Fatmi</strong>
-            <span>Marketing Strategist</span>
-          </div>
-        </div>
+        <div class="sidebar-author"><div class="author-avatar">SE</div><div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div></div>
         <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics — applied to the Tunisian market.</p>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Related Articles</div>
-        <div class="related-item"><a href="trust-gap.html">Exploiting the Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
+        <div class="sidebar-label">More Articles</div>
+        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
         <div class="related-item"><a href="yoyo.html">The Yoyo Story</a><div class="rel-date">Feb 20, 2026</div></div>
+        <div class="related-item"><a href="trust-gap.html">The Trust Gap</a><div class="rel-date">Feb 13, 2026</div></div>
         <div class="related-item"><a href="magnificent-middle.html">The Magnificent Middle</a><div class="rel-date">Feb 7, 2026</div></div>
         <div class="related-item"><a href="100-ads.html">100 Tunisian Ads</a><div class="rel-date">Jan 21, 2026</div></div>
         <div class="related-item"><a href="zag-moment.html">Tunisia's Zag Moment</a><div class="rel-date">Jan 17, 2026</div></div>
-        <div class="related-item"><a href="fast-food.html">Fast Food Psychology</a><div class="rel-date">Mar 5, 2026</div></div>
+        <div class="related-item"><a href="index.html">← All Articles</a></div>
       </div>
       <div class="nl-box">
         <div class="nl-label">Newsletter</div>
         <h3>One insight per week.</h3>
         <p>Sharp marketing analysis. No fluff.</p>
-        <div class="nl-form">
-          <input type="email" placeholder="your@email.com" />
-          <button onclick="handleSubscribe(this)">Subscribe</button>
-        </div>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="handleSubscribe(this)">Subscribe</button></div>
       </div>
           <div class="li-box">
         <div class="li-label">
@@ -573,16 +552,7 @@
     <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
     <a class="back-btn" href="index.html">← Back to All Articles</a>
   </footer>
-  <script>
-    function handleSubscribe(btn) {
-      const input = btn.previousElementSibling;
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) { input.style.borderColor = '#e83a2f'; input.focus(); return; }
-      btn.textContent = '✓ You\'re in.';
-      btn.style.background = '#16a34a';
-      btn.disabled = true;
-    }
-  </script>
+  <script>function handleSubscribe(btn){const i=btn.previousElementSibling;const e=i.value.trim();if(!e||!e.includes('@')){i.style.borderColor='#e83a2f';i.focus();return;}btn.textContent='✓ You\'re in.';btn.style.background='#16a34a';btn.disabled=true;}</script>
 
   <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
     <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
