@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Most Perfectly Positioned TV Show in Tunisia Is One You Probably Hate — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:72px 48px 56px;border-bottom:2px solid var(--ink);max-width:860px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper);padding:5px 12px;display:inline-block;margin-bottom:24px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;}
+    .article-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:64px 56px 80px 48px;border-right:2px solid var(--ink);max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:52px 0 18px;padding-top:36px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+    .article-img{margin:40px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform .4s ease;}
+    .article-img:hover img{transform:scale(1.02);}
+    .pull-quote{margin:48px 0;padding:32px 40px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .scroll-break{display:flex;align-items:center;gap:16px;margin:56px 0;opacity:0.35;}
+    .scroll-break::before,.scroll-break::after{content:'';flex:1;height:1px;background:var(--ink);}
+    .scroll-break-inner{display:flex;gap:6px;align-items:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--ink);}
+    .scroll-break-dot{width:4px;height:4px;border-radius:50%;background:var(--accent1);}
+    .article-sidebar{padding:64px 32px;}
+    .sidebar-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+    .sidebar-section:last-child{border-bottom:none;}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:#c0251a;overflow:hidden;flex-shrink:0;}
+    .author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:14px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color .2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:24px 20px;}
+    .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+    .back-btn:hover{background:var(--accent1);}
+    #read-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent1);z-index:9999;transition:width .1s linear;}
+    .author-float{position:fixed;bottom:28px;right:28px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:10px 16px 10px 10px;box-shadow:0 4px 24px rgba(13,13,13,0.18);z-index:500;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;text-decoration:none;}
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);background:#c0251a;}
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    .continue-reading{margin-top:72px;padding-top:40px;border-top:2px solid var(--ink);}
+    .cr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent1);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{background:var(--paper);padding:22px 20px;text-decoration:none;color:var(--ink);display:block;transition:background .2s;position:relative;overflow:hidden;}
+    .cr-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent1);transition:width .3s;}
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent1);margin-bottom:8px;display:block;}
+    .cr-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:var(--ink);}
+    .cr-arrow{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px;display:block;}
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 24px;}.article-hero{padding:48px 24px 40px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px 48px;border-right:none;}.article-body p{font-size:16px!important;line-height:1.82!important;}.article-sidebar{padding:40px 24px;border-top:2px solid var(--ink);}.article-footer{padding:32px 24px;}.cr-grid{grid-template-columns:1fr;}.author-float{bottom:16px;right:16px;}.pull-quote{margin:32px -20px!important;padding:24px 20px!important;border-left:none!important;border-top:3px solid var(--accent1)!important;border-bottom:3px solid var(--accent1)!important;}}
+  </style>
+</head>
+<body>
+  <div id="read-progress"></div>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">TIMN</a>
+    <a class="nav-back" href="index.html">← All Articles</a> <a class="nav-back" href="about.html" style="margin-left:16px;opacity:0.55;">About</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#e83a2f">Brand Strategy</span>
+    <h1>The Most Perfectly Positioned TV Show in Tunisia Is One You Probably Hate</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span>·</span>
+      <span>April 9, 2026</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxeSc77_7fdfBEoULXCxDpLCmLTdMzFSLKfljM0L7C_9hRmBI0JT_BvrrY7nBaazAyShnJ5u57WqKwKTafsRX54GrR3zF9p6kM9rdDGHW7RSdAnClZiuInXIpVJ74i0rM32QrBLBfR-c3-txFOaMJ-474BxNtlYvSnpsJM4e5FprE7oEcO9bU7JZ0fIH_-/s1280/maxresdefault%20(5).jpg" alt="The Most Perfectly Positioned TV Show in Tunisia Is One You Probably Hate" loading="lazy"/></figure>
+      <p>Mal3ab El Noujoum is dépassé, low-budget, and despised by half its potential audience. That is not a problem. That is the strategy.</p>
+      <p>Let me start with a confession. When someone suggested I write about Mal3ab El Noujoum, that three-hour Monday night show with the fuzzy audio, the guests who look like they wandered in off a café terrace, and a presenter who treats brevity as a personal affront, I laughed. Then I thought about it for a week. Then I stopped laughing.</p>
+      <p>Because here is the thing: this show has survived more than a decade in a brutally competitive Tunisian media landscape. It has posted some of the best ratings of its slot in certain seasons. And it has done all of this without a production budget worth mentioning, without slick graphics, and while being actively despised by a significant portion of its theoretical audience.</p>
+      <p>Most brand managers would look at that profile and see failure. I look at it and see textbook positioning.</p>
+      <h2>The generics do not stand a chance, but not for the reasons you think</h2>
+      <p>Go watch El Hiwar Sport. Go watch Ettasia Sport. Decent shows. Professional presenters. Guests who arrive in suits, speak in complete sentences, and will never, under any circumstances, tell you who actually runs Tunisian football and why they probably should not.</p>
+      <p>They are, in marketing terms, line extensions of each other. Competing on the same axis, for the same undifferentiated audience, using the same vocabulary of institutional respectability. The kind of strategy that makes sense on a PowerPoint deck and produces mediocrity in the market.</p>
+      <p>Meanwhile, Baccar is doing something entirely different. Not better production. Not more credible analysts. Not more refined presentation. He is doing something far more valuable: he is being specifically, unapologetically, irreversibly something. And that something has an audience. A real one. A loyal one.</p>
+      <h2>Know your customer. Actually know them.</h2>
+      <p>The fatal error most Tunisian media brands make is targeting everyone. Which, as any serious marketer will tell you, is a sophisticated way of reaching no one.</p>
+      <p>Baccar, accidentally or otherwise, does the opposite. His audience is older Tunisian men who watched football before the Premier League turned everyone into a tactical analyst. Men who remember the old players, the old clubs, the decades of federation politics. They do not need xG explained to them. They need someone to tell them what actually happened in the boardroom last Thursday.</p>
+      <p>And crucially: these are men who are institutionally suspicious. Not cynical for its own sake. They have earned it. They have watched Tunisian football administration long enough to know that the polished guest on the other channel, the one in the blazer using modern frameworks, is almost certainly not telling them everything.</p>
+      <p>The rubrique where Baccar visits old Tunisian players in their homes, those intimate interviews shot wherever these men actually live, is not filler. It is a precision targeting device. It signals, unmistakably, who this show is for and who it is not. Young men who want Champions League analysis will tune out immediately. Good. They were never the audience.</p>
+      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+      <h2>The Trickster as competitive advantage</h2>
+      <p>There is an archetype in brand strategy, the Rebel, sometimes the Trickster, that works by positioning against the establishment. Think early Ryanair. Think Red Bull before it became the establishment itself.</p>
+      <p>Mal3ab El Noujoum occupies this archetype almost perfectly in its category. The show has made corruption exposure its editorial spine. Federation mismanagement, buried dossiers, the people who run Tunisian football and the decisions they would rather you did not discuss on a Monday night at eight, this is the show's recurring subject matter.</p>
+      <p>This is not journalism exactly. But it does not need to be. It needs to be the thing that the other shows will not do. And it is.</p>
+      <p>The guests reinforce it. They are not formal. They do not dress like corporate spokespeople. They speak like people who know the cuisine interne and more importantly, they look like people who know it. That is not a production failure. That is an authenticity signal. The target audience reads it correctly every time.</p>
+      <h2>The hatred is the proof, not the problem</h2>
+      <p>Here is the part that most people miss, and that most brand managers would find uncomfortable.</p>
+      <p>The people who despise Mal3ab El Noujoum, the ones who find it dépassé, provincial, beneath serious attention, are not evidence that the show is failing. They are evidence that it is working.</p>
+      <p>A well-positioned brand is, by definition, wrong for a large segment of the market. That is not a bug. That is the mechanism. A brand that everyone tolerates is a brand that no one loves. The contempt of the wrong audience is the mirror image of the loyalty of the right one.</p>
+      <p>The show has survived ten years not despite the haters. Partly because of them.</p>
+      <div class="pull-quote"><p>Positioning is clarity. Clarity is the courage to be wrong for some people in order to be right for others. Most Tunisian media brands are so terrified of alienating anyone that they end up meaning nothing to everyone. The production quality is low. The positioning is immaculate.</p></div>
+      <div class="continue-reading">
+        <div class="cr-label">Continue the analysis</div>
+        <div class="cr-grid">
+          <a class="cr-card" href="torschi.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">Torschi Award</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="trust-gap.html"><span class="cr-tag">Consumer Behavior</span><div class="cr-title">The Trust Gap</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="hummel.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">Hummel Tunisia</div><span class="cr-arrow">Read →</span></a>
+        </div>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author">
+          <div class="author-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.style.display='none'"/></div>
+          <div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div>
+        </div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics applied to the Tunisian market.</p>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="this.textContent='✓ Done';this.style.background='#16a34a';this.disabled=true;">Subscribe</button></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text"><span class="af-name">Slim El Fatmi</span><span class="af-role">Follow on LinkedIn</span></div>
+  </a>
+  <script>
+    (function(){var b=document.getElementById('read-progress');window.addEventListener('scroll',function(){var h=document.body.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(window.scrollY/h*100,100):0)+'%';},{passive:true});}());
+    (function(){var badge=document.getElementById('authorFloat');window.addEventListener('scroll',function(){var p=window.scrollY/(document.body.scrollHeight-window.innerHeight);if(p>0.25)badge.classList.add('visible');else badge.classList.remove('visible');},{passive:true});}());
+  </script>
+</body>
+</html>

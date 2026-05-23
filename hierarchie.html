@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La hiérarchie du savoir : pourquoi tu lis beaucoup et comprends peu — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:72px 48px 56px;border-bottom:2px solid var(--ink);max-width:860px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper);padding:5px 12px;display:inline-block;margin-bottom:24px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;}
+    .article-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:64px 56px 80px 48px;border-right:2px solid var(--ink);max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:52px 0 18px;padding-top:36px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+    .article-img{margin:40px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform .4s ease;}
+    .article-img:hover img{transform:scale(1.02);}
+    .pull-quote{margin:48px 0;padding:32px 40px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .scroll-break{display:flex;align-items:center;gap:16px;margin:56px 0;opacity:0.35;}
+    .scroll-break::before,.scroll-break::after{content:'';flex:1;height:1px;background:var(--ink);}
+    .scroll-break-inner{display:flex;gap:6px;align-items:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--ink);}
+    .scroll-break-dot{width:4px;height:4px;border-radius:50%;background:var(--accent1);}
+    .article-sidebar{padding:64px 32px;}
+    .sidebar-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+    .sidebar-section:last-child{border-bottom:none;}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:#c0251a;overflow:hidden;flex-shrink:0;}
+    .author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:14px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color .2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:24px 20px;}
+    .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+    .back-btn:hover{background:var(--accent1);}
+    #read-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent1);z-index:9999;transition:width .1s linear;}
+    .author-float{position:fixed;bottom:28px;right:28px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:10px 16px 10px 10px;box-shadow:0 4px 24px rgba(13,13,13,0.18);z-index:500;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;text-decoration:none;}
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);background:#c0251a;}
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    .continue-reading{margin-top:72px;padding-top:40px;border-top:2px solid var(--ink);}
+    .cr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent1);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{background:var(--paper);padding:22px 20px;text-decoration:none;color:var(--ink);display:block;transition:background .2s;position:relative;overflow:hidden;}
+    .cr-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent1);transition:width .3s;}
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent1);margin-bottom:8px;display:block;}
+    .cr-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:var(--ink);}
+    .cr-arrow{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px;display:block;}
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 24px;}.article-hero{padding:48px 24px 40px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px 48px;border-right:none;}.article-body p{font-size:16px!important;line-height:1.82!important;}.article-sidebar{padding:40px 24px;border-top:2px solid var(--ink);}.article-footer{padding:32px 24px;}.cr-grid{grid-template-columns:1fr;}.author-float{bottom:16px;right:16px;}.pull-quote{margin:32px -20px!important;padding:24px 20px!important;border-left:none!important;border-top:3px solid var(--accent1)!important;border-bottom:3px solid var(--accent1)!important;}}
+  </style>
+</head>
+<body>
+  <div id="read-progress"></div>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">TIMN</a>
+    <a class="nav-back" href="index.html">← All Articles</a> <a class="nav-back" href="about.html" style="margin-left:16px;opacity:0.55;">About</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#7c3aed">Réflexion</span>
+    <h1>La hiérarchie du savoir : pourquoi tu lis beaucoup et comprends peu</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span>·</span>
+      <span>Avril 16, 2026</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYgqbeptebdCLgs3ki1vfMUG-w9d12ufCdUGKTcjXlwHMrW6B6mcHas5Kn4qN7MdJlLevAuah75H1g30QZoEQVohKQCCOroELEHnRDv9F55RsNEshufJxELHGGN9TiCcvaHfyEwuiNNZn55MWYcpAYmxAFL1CSjF41AwxADfZrKrozokYe2W_EKgI5rOOA/s797/09b0af0e5f32f33ed961d6e3a27cae42.jpg" alt="La hiérarchie du savoir : pourquoi tu lis beaucoup et comprends peu" loading="lazy"/></figure>
+      <p>La plupart des gens accumulent de la connaissance comme on remplit un entrepôt. Une case pour le management, une case pour le marketing, une case pour l'économie. Et ils s'étonnent ensuite de ne jamais trouver le levier.</p>
+      <p>Le problème n'est pas la quantité. C'est l'absence de hiérarchie.</p>
+      <h2>Le piège du cours magistral</h2>
+      <p>Imagine que tu suis un cours de théorie des organisations. On t'explique qu'il existe cinq types de structures organisationnelles. C'est exact. C'est même utile, dans ce contexte précis, pour cet examen précis.</p>
+      <p>Maintenant imagine que tu étudies la théorie des systèmes. Comment les systèmes émergent, se régulent, se décomposent.</p>
+      <p>Tout à coup, les cinq structures du cours précédent ne sont plus cinq cases à mémoriser. Elles deviennent des cas particuliers d'un principe général. Tu vois pourquoi elles existent, pas seulement qu'elles existent.</p>
+      <p>C'est ça, la connaissance éloquente : un modèle qui explique beaucoup de choses à la fois, dans beaucoup de domaines à la fois, avec un minimum de concepts.</p>
+      <h2>L'éloquence comme critère de sélection</h2>
+      <p>J'utilise le mot "éloquence" dans un sens précis : la capacité d'un concept à expliquer le maximum de phénomènes pertinents avec le minimum de mots.</p>
+      <p>La loi de Pareto est éloquente. La théorie des contraintes est éloquente. Le biais de confirmation est éloquent. Ils traversent les disciplines. Ils se réactivent dans des contextes que tu n'avais pas prévus.</p>
+      <p>À l'opposé, les cinq forces de Porter ne sont pas éloquentes. C'est un outil contextuel. Utile dans son domaine, aveugle hors de lui.</p>
+      <p>Le critère n'est pas : est-ce que je comprends ça ? Le critère est : est-ce que ça m'aide à comprendre autre chose ?</p>
+      <h2>Choisir ses sources par densité de sens</h2>
+      <p>On nous a appris à évaluer les sources par autorité : diplôme, titre, institution. C'est une heuristique paresseuse.</p>
+      <p>Le vrai critère : combien de sens est-ce que cette personne me transfère par unité de temps, multiplié par la pertinence de ce sens ? C'est une formule simple. Densité fois Pertinence.</p>
+      <p>Quelqu'un peut avoir un doctorat et un langage qui dilue. Quelqu'un peut ne jamais avoir enseigné et restructurer ta pensée en dix minutes. Tu juges par ce que tu repartiras avec, pas par ce qu'il a sur son CV.</p>
+      <div class="scroll-break"><div class="scroll-break-inner"><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span><span class="scroll-break-dot"></span></div></div>
+      <h2>La méthode concrète</h2>
+      <p>Voici comment j'opère en pratique, sur n'importe quel sujet nouveau.</p>
+      <p><strong>Étape 1 : les podcasts comme radar.</strong> Je cherche sur YouTube des podcasts longs sur le sujet qui m'intéresse. Dans ces formats, les vrais penseurs se distinguent vite des vendeurs de contenu. Et surtout, les noms circulent. Les auteurs se citent entre eux. Tu cartographies rapidement qui compte dans ce champ.</p>
+      <p><strong>Étape 2 : les listes de lecture comme signal d'alignement.</strong> Quand quelqu'un résonne avec ma façon de penser, je vais sur son site. Je cherche ses recommandations de livres. Ce qu'une personne a choisi de lire dit plus sur elle que ce qu'elle a choisi de publier. Des outils comme goodbooks.io agrègent les listes de lecture de dizaines de penseurs reconnus. C'est un signal de densité : si un livre revient dans cinq listes différentes d'auteurs sérieux, il mérite ta priorité.</p>
+      <p><strong>Étape 3 : la convergence comme critère de lecture.</strong> Je priorise les livres cités par plusieurs experts indépendants dans le même domaine. La convergence est un proxy de signal.</p>
+      <h2>Ce que tu cherches vraiment</h2>
+      <p>Tu ne cherches pas à tout savoir. Tu cherches des clés maîtresses, des concepts qui ouvrent plusieurs serrures à la fois.</p>
+      <p>La hiérarchie du savoir n'est pas un classement d'importance. C'est un classement d'éloquence.</p>
+      <p>Plus tu montes dans cette hiérarchie, moins tu mémorises, plus tu comprends. Et plus tu comprends dans un domaine, plus tu vois vite dans les autres.</p>
+      <div class="pull-quote"><p>Ce n'est pas de l'intelligence. C'est de la méthode.</p></div>
+      <p>Quelques livres qui m'ont donné ce genre de levier : Thinking in Systems de Donella Meadows, The Goal d'Eliyahu Goldratt, Poor Charlie's Almanack de Charlie Munger. Pas des livres de management. Des livres sur comment penser.</p>
+      <div class="continue-reading">
+        <div class="cr-label">Continue the analysis</div>
+        <div class="cr-grid">
+          <a class="cr-card" href="innovation.html"><span class="cr-tag">Market Analysis</span><div class="cr-title">Innovation Is Dead on the Shelf</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="100-ads.html"><span class="cr-tag">Advertising Research</span><div class="cr-title">100 Tunisian Ads</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="tuna-wars.html"><span class="cr-tag">Consumer Behavior</span><div class="cr-title">The Tuna Wars</div><span class="cr-arrow">Read →</span></a>
+        </div>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author">
+          <div class="author-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.style.display='none'"/></div>
+          <div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div>
+        </div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics applied to the Tunisian market.</p>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="this.textContent='✓ Done';this.style.background='#16a34a';this.disabled=true;">Subscribe</button></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text"><span class="af-name">Slim El Fatmi</span><span class="af-role">Follow on LinkedIn</span></div>
+  </a>
+  <script>
+    (function(){var b=document.getElementById('read-progress');window.addEventListener('scroll',function(){var h=document.body.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(window.scrollY/h*100,100):0)+'%';},{passive:true});}());
+    (function(){var badge=document.getElementById('authorFloat');window.addEventListener('scroll',function(){var p=window.scrollY/(document.body.scrollHeight-window.innerHeight);if(p>0.25)badge.classList.add('visible');else badge.classList.remove('visible');},{passive:true});}());
+  </script>
+</body>
+</html>
