@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Best Marketer in Tunisia Never Took a Marketing Class — TIMN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f5f0e8;--accent1:#e83a2f;--accent2:#f5a623;--muted:#7a7265;--border:#d9d0be;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.6;}
+    .ticker{background:var(--ink);color:var(--paper);padding:8px 0;overflow:hidden;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;white-space:nowrap;}
+    .ticker-inner{display:inline-block;animation:marquee 35s linear infinite;}
+    .ticker-inner span{margin:0 40px;}
+    .ticker-inner span::before{content:'◆  ';color:var(--accent1);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:100;}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+    .nav-back{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+    .nav-back:hover{color:var(--accent1);}
+    .article-hero{padding:72px 48px 56px;border-bottom:2px solid var(--ink);max-width:860px;}
+    .article-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper);padding:5px 12px;display:inline-block;margin-bottom:24px;}
+    .article-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;}
+    .article-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .article-meta span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+    .article-meta .author{color:var(--ink);font-weight:500;}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;}
+    .article-body{padding:64px 56px 80px 48px;border-right:2px solid var(--ink);max-width:720px;}
+    .article-body p{font-size:17px;line-height:1.85;margin-bottom:1.6em;color:#1a1a1a;letter-spacing:0.01em;}
+    .article-body h2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:52px 0 18px;padding-top:36px;border-top:2px solid var(--ink);}
+    .article-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:28px 0 12px;font-style:italic;color:var(--muted);}
+    .article-img{margin:40px 0;border:2px solid var(--ink);overflow:hidden;}
+    .article-img img{width:100%;display:block;transition:transform .4s ease;}
+    .article-img:hover img{transform:scale(1.02);}
+    .pull-quote{margin:48px 0;padding:32px 40px;border-left:4px solid var(--accent1);background:rgba(232,58,47,0.04);}
+    .pull-quote p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px!important;line-height:1.6!important;color:var(--ink)!important;margin:0!important;}
+    .scroll-break{display:flex;align-items:center;gap:16px;margin:56px 0;opacity:0.35;}
+    .scroll-break::before,.scroll-break::after{content:'';flex:1;height:1px;background:var(--ink);}
+    .scroll-break-inner{display:flex;gap:6px;align-items:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--ink);}
+    .scroll-break-dot{width:4px;height:4px;border-radius:50%;background:var(--accent1);}
+    .article-sidebar{padding:64px 32px;}
+    .sidebar-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+    .sidebar-section:last-child{border-bottom:none;}
+    .sidebar-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+    .sidebar-author{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;background:#c0251a;overflow:hidden;flex-shrink:0;}
+    .author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .author-info strong{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;}
+    .author-info span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent1);}
+    .sidebar-section p{font-size:13px;line-height:1.7;color:var(--muted);}
+    .related-item{padding:14px 0;border-bottom:1px solid var(--border);}
+    .related-item:last-child{border-bottom:none;padding-bottom:0;}
+    .related-item a{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--ink);text-decoration:none;transition:color .2s;}
+    .related-item a:hover{color:var(--accent1);}
+    .related-item .rel-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}
+    .nl-box{background:var(--ink);color:var(--paper);padding:24px 20px;}
+    .nl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+    .nl-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;}
+    .nl-box p{font-size:12px;line-height:1.6;color:#b0a898;margin-bottom:16px;}
+    .nl-form{display:flex;flex-direction:column;gap:8px;}
+    .nl-form input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:var(--paper);padding:10px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+    .nl-form input::placeholder{color:#7a7265;}
+    .nl-form button{background:var(--accent1);color:var(--paper);border:none;padding:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .nl-form button:hover{background:var(--accent2);}
+    .article-footer{border-top:2px solid var(--ink);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+    .article-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--muted);}
+    .back-btn{background:var(--ink);color:var(--paper);padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+    .back-btn:hover{background:var(--accent1);}
+    #read-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent1);z-index:9999;transition:width .1s linear;}
+    .author-float{position:fixed;bottom:28px;right:28px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:10px 16px 10px 10px;box-shadow:0 4px 24px rgba(13,13,13,0.18);z-index:500;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;text-decoration:none;}
+    .author-float.visible{opacity:1;transform:translateY(0);}
+    .author-float:hover{background:var(--accent1);}
+    .af-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(245,240,232,0.25);background:#c0251a;}
+    .af-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+    .af-name{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;display:block;}
+    .af-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);}
+    .continue-reading{margin-top:72px;padding-top:40px;border-top:2px solid var(--ink);}
+    .cr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent1);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+    .cr-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);}
+    .cr-card{background:var(--paper);padding:22px 20px;text-decoration:none;color:var(--ink);display:block;transition:background .2s;position:relative;overflow:hidden;}
+    .cr-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent1);transition:width .3s;}
+    .cr-card:hover{background:#ece7de;}
+    .cr-card:hover::after{width:100%;}
+    .cr-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent1);margin-bottom:8px;display:block;}
+    .cr-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:var(--ink);}
+    .cr-arrow{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px;display:block;}
+    .cr-card:hover .cr-arrow{color:var(--accent1);}
+    @media(max-width:860px){nav{padding:16px 24px;}.article-hero{padding:48px 24px 40px;}.article-layout{grid-template-columns:1fr;}.article-body{padding:32px 20px 48px;border-right:none;}.article-body p{font-size:16px!important;line-height:1.82!important;}.article-sidebar{padding:40px 24px;border-top:2px solid var(--ink);}.article-footer{padding:32px 24px;}.cr-grid{grid-template-columns:1fr;}.author-float{bottom:16px;right:16px;}.pull-quote{margin:32px -20px!important;padding:24px 20px!important;border-left:none!important;border-top:3px solid var(--accent1)!important;border-bottom:3px solid var(--accent1)!important;}}
+  </style>
+</head>
+<body>
+  <div id="read-progress"></div>
+  <div class="ticker"><div class="ticker-inner"><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span><span>The Tunisian Institute for Marketing Nonsense</span><span>Brand strategy &amp; advertising effectiveness</span><span>Behavioral economics applied to Tunisia</span><span>The untold stories of Tunisian brands</span><span>Est. 2025 · Slim El Fatmi</span></div></div>
+  <nav>
+    <a class="nav-logo" href="index.html">TIMN</a>
+    <a class="nav-back" href="index.html">← All Articles</a> <a class="nav-back" href="about.html" style="margin-left:16px;opacity:0.55;">About</a>
+  </nav>
+  <header class="article-hero">
+    <span class="article-tag" style="background:#e83a2f">Brand Strategy</span>
+    <h1>The Best Marketer in Tunisia Never Took a Marketing Class</h1>
+    <div class="article-meta">
+      <span class="author">Slim El Fatmi</span>
+      <span>·</span>
+      <span>May 20, 2026</span>
+    </div>
+  </header>
+  <div class="article-layout">
+    <article class="article-body">
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1OOonaEs_huBov3jBrmY8KwXiuRwN9ktssA0amtx6nS2iAMspBNuG7ghDU3WFrnirWyuHJkIGP37Idb0aHkjbu7pjeD1Npc341DYrMyciubCfHQZEfx4h4h0rldjA1kqIm9fI_Aj2D4FvfGjUHPVOhDOO7FHYf_JS94ELrhgy2bAMXgMBfi8U7W7c5nX-/s1368/1000015481.png" alt="Soltana" loading="lazy"/></figure>
+
+      <p>Every year, Tunisian brands spend millions on agencies, production crews, media buys, and strategy decks that nobody reads. They get forgettable TV spots, polished Instagram grids, and engagement rates that would embarrass a ghost. Meanwhile, a man in a restaurant is filming himself on a phone, naming his sandwiches after cardiac events, and has built an audience that most brand managers would trade their entire annual budget for. No retainer. No creative brief. No KPI dashboard. Just Chouligua, a kitchen, and a butcher named Ali who somehow became a recurring character in what is quietly turning into one of the most effective brand shows on Tunisian social media. The restaurant is Soltana. And it is worth studying.</p>
+
+      <p>This is not a piece about a funny guy who got lucky on TikTok. This is an anatomy of a street brand that works, and why it works.</p>
+
+      <h2>1. The Archetype Stack: Trickster Meets Everyman</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFSocbj_BFVaBvyM20Lp7UXy3OM77dORssASATF9qg18951GDVcSpoQJGyXpn49V09RQKo5qbowWoEZqGf3Y9HnPPdXheYBSEHUEnl0uIMBE1FgAVZgKr4an5BI9cVUiXDECXxWgDzm7P8KTsKJ3VxKlE7OzrDql-OWeumRqJXg_PQ4v0lxx-mxe_70Nxl/s597/1000015477.jpg" alt="Archetype" loading="lazy"/></figure>
+
+      <p>Most brands pick one archetype and stay in it. Chouligua runs two simultaneously, and the tension between them is precisely what makes him compelling.</p>
+
+      <p>He is the Trickster: unpredictable, norm-breaking, always doing something you didn't see coming. The origin story alone confirms this: a lunch pack sold to Tunisian prisoners, marketed openly, going viral because nobody expected it. That is not a product launch. That is a provocation. Every move after that followed the same logic: unusual sandwich names, absurd promotions, pranks with his crew. You cannot predict what he will do next, and that unpredictability is itself a reason to keep watching.</p>
+
+      <p>But he is also the Everyman. He speaks the language of ordinary people, not the sanitized language of brand communications. He doesn't perform relatability. He is it. His audience recognizes themselves in him and the jokes land because they're drawn from the same cultural pool.</p>
+
+      <p>Most brands are afraid to be the Trickster because it feels risky. Most brands fail at the Everyman because they try to engineer it from the outside. Chouligua is both, naturally, and that is almost impossible to replicate on purpose.</p>
+
+      <h2>2. Languaging: The Most Underrated Weapon in Brand Building</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirPNkW2I9jnOt4UCdEn4eZ0iWoNk0fUKwN30C-YtE0ZCkBpCPoQJS1gV19HlAd2jfhPB-WKKXpBkPBItSo-qz6zMjzDuIG4sMjwIUTFOtyYGJSYA85RtqDMuN2xVMTKkAWMtfiH5e_hg3C0wd0w3hEvRC9D0l-xNRLYlK0_e4XSiNSjxk6LFe_-xBsQLVS/s640/1000015478.jpg" alt="Languaging" loading="lazy"/></figure>
+
+      <p>Chouligua doesn't describe his products. He frames them.</p>
+
+      <p>This is the discipline of languaging: the idea that meaning is not in the thing itself but in how you name it. His sandwich isn't big. It's "jalta" — heart attack in Tunisian dialect. His ojja isn't spicy. It's "saroukh rbg." His promotion isn't limited time. It's "lliliri yamma." His kamounia isn't good. It's "7alet wafet."</p>
+
+      <p>To an outside observer, this sounds absurd. To his audience, it sounds exactly right.</p>
+
+      <p>This is what Rory Sutherland would call reframing: you don't change the product, you change the perceived meaning of the product. The name "jalta" doesn't describe a large sandwich — it creates an emotional experience around eating it. It makes the act of ordering feel like a statement. That is branding doing real work.</p>
+
+      <p>Most brands name their products to be clear. Chouligua names his to be felt.</p>
+
+      <h2>3. Certainty as a Conversion Mechanism</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWI9HqDZs4dOWgyOMvgBRFXFLejMhtgoYoeFir8WvB2AQ-R9hNYBkfCHRnCYyXjkm7YZvtcgnWwCaRHJ0-JhZ3Hv2o8bgc5kYwlY9YAlzEOi2hc3FDOogIGYkgqd9OeOBG7Qpy0jtLokHbTqoGH-oTv5H5D7rtuIWFIh_ztTCpMi0tQMuT9ttkNCnPzp6W/s597/1000015480.jpg" alt="Certainty" loading="lazy"/></figure>
+
+      <p>This one is underrated and almost never discussed in marketing education.</p>
+
+      <p>Watch any Chouligua video and pay attention to his energy. He doesn't present. He declares. There is no hedging, no softness, no "we think you'll enjoy this." He speaks with the certainty of someone who has no doubt about what he's offering.</p>
+
+      <p>This matters more than most marketers realize. Certainty is contagious. Jordan Belfort built an entire sales training system around this insight: that tonality and conviction transfer directly to the listener's emotional state. The best product storytellers on the internet, from Steve Jobs to the best DTC brand founders today, all share this quality. They don't sell. They affirm.</p>
+
+      <p>Chouligua has rhythm. He has energy. He speaks like a man who knows. And people cannot help but be moved by it.</p>
+
+      <h2>4. Consistency: Building Brand Codes Through Repetition</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjprflJqKXxinOueSZuScZQlTUCBfLxwaTBHOF-khJipfjrkSN0yil-NG50_ytObLYVPJUmzHfKVn3BWpW5c8Eqz8iSZ4Cbv0r6lxyZhqLqSdoWHm_BcyT_K4Rsf-WqCaftRVzlSnCPXLJCSJzVSY8u1QGdWWcuhL_rF9L0O3WdmJbyAbDvnJLunuwxg_-o/s597/1000015479.jpg" alt="Consistency" loading="lazy"/></figure>
+
+      <p>Byron Sharp and the Ehrenberg-Bass Institute call them "distinctive brand assets." Chouligua calls them nothing because he built them instinctively.</p>
+
+      <p>Phrases like "ga3ga3 louta" and "ali khlega deyra" are not just catchphrases. They are memory structures. Every time Chouligua repeats them, he deposits a small amount into a mental account his audience holds for him. Over time, the deposit compounds. Eventually, hearing the phrase alone is enough to recall the brand — no logo, no product, no context needed.</p>
+
+      <p>This is how brand codes work. Not through clever one-time campaigns, but through the patient, relentless repetition of the same signals until they become reflex.</p>
+
+      <h2>5. Characters and the Serial Logic of Attention</h2>
+
+      <figure class="article-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioiZddXr8WGE42cnVWn7BJIM7OZIAStIYqqLKymPoyEnOHS0FYb5WVe8St4f_16V33uwU5iJnO5CJLAtRxsBMOdFxLGVx1jlcz9I7xk3vBXSwqg8TO5p27Ak3g6UwvxACquXHCF0JOGioI7I4EIRRpB19M_D0osk_J3_Vtu3-Wv-aSXP35bnF-QD70WjpZ/s597/1000015473.jpg" alt="Characters" loading="lazy"/></figure>
+
+      <p>Here is where Chouligua is ahead of most brands operating at a fraction of his budget.</p>
+
+      <p>He has turned his content into a series. Chouligua and Ghanouchi are not just people in videos — they are characters. Ali the butcher is a recurring character. The students are recurring characters. There are pranks, challenges, free sodas for medical students, and running jokes that pay off across episodes.</p>
+
+      <p>This is not accidental. A series creates something a single video cannot: expectation. The brain is wired to crave narrative continuity. When you know a story is ongoing, you come back. Duolingo understands this. Ryanair understands this. Liquid Death understands this. And a restaurant in Tunisia understands this.</p>
+
+      <p>The big trend in social media marketing right now is the serialized brand. Most brands are still producing campaigns. Chouligua is producing a show.</p>
+
+      <h2>6. The Promotion Paradox</h2>
+
+      <p>Chouligua's promotions are, on paper, terrible business. Two ojja merguez for 30 dinars and a free rotisserie chicken. Five pizzas for 20 dinars. These are not margin-friendly offers.</p>
+
+      <p>But that is exactly the point. A modest promotion gets ignored. An outrageous promotion gets shared. The promotion is not a sales mechanism — it is an attention mechanism. People watch the video, they share the offer, they come to the restaurant. And once they're there, the brand has done its job.</p>
+
+      <p>This is the attention economy applied to a local food business. The promotion buys exposure at a price that most advertising budgets cannot match.</p>
+
+      <h2>The Thing You Cannot Buy</h2>
+
+      <p>There is one element in this anatomy that no budget can replicate, no agency can manufacture, and no strategy document can produce. Chouligua is genuinely funny. Not performed funny. Not scripted funny. Actually funny.</p>
+
+      <p>This is worth stating plainly because it explains why most attempts to create this kind of organic brand content fail. You cannot learn to be funny on demand. When you try to manufacture humor without the underlying comedic instinct, you don't get a neutral result — you get something that triggers disgust. A failed joke is worse than no joke at all.</p>
+
+      <p>Chouligua has it. And because he has it, everything else in this anatomy lands harder than it would for someone who doesn't.</p>
+
+      <div class="pull-quote"><p>The real lesson of Soltana is not that you should name your sandwich "jalta" or build a prison lunch promo. The real lesson is that authentic character, deployed with consistency, certainty, and creative language, is a more durable competitive advantage than anything a media budget can buy. Most brands are still trying to buy it. Chouligua is just being it.</p></div>
+    <div class="continue-reading">
+        <div class="cr-label">Continue the analysis</div>
+        <div class="cr-grid">
+          <a class="cr-card" href="yoyo.html"><span class="cr-tag">Brand Study</span><div class="cr-title">The Yoyo Story</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="trust-gap.html"><span class="cr-tag">Consumer Behavior</span><div class="cr-title">The Trust Gap</div><span class="cr-arrow">Read →</span></a>
+          <a class="cr-card" href="torschi.html"><span class="cr-tag">Brand Strategy</span><div class="cr-title">Torschi Award</div><span class="cr-arrow">Read →</span></a>
+        </div>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Written by</div>
+        <div class="sidebar-author">
+          <div class="author-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.style.display='none'"/></div>
+          <div class="author-info"><strong>Slim El Fatmi</strong><span>Marketing Strategist</span></div>
+        </div>
+        <p>Sharp analysis of advertising effectiveness, brand strategy, and behavioral economics applied to the Tunisian market.</p>
+      </div>
+      <div class="nl-box">
+        <div class="nl-label">Newsletter</div>
+        <h3>One insight per week.</h3>
+        <p>Sharp marketing analysis. No fluff.</p>
+        <div class="nl-form"><input type="email" placeholder="your@email.com"/><button onclick="this.textContent='✓ Done';this.style.background='#16a34a';this.disabled=true;">Subscribe</button></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="article-footer">
+    <p>© 2026 <strong>Slim El Fatmi</strong> · The Tunisian Institute for Marketing Nonsense</p>
+    <a class="back-btn" href="index.html">← Back to All Articles</a>
+  </footer>
+  <a class="author-float" href="https://www.linkedin.com/in/slim-el-fatmi-546281126/" target="_blank" rel="noopener" id="authorFloat">
+    <div class="af-avatar"><img src="photo.jpg" alt="Slim El Fatmi" onerror="this.parentElement.style.background='#c0251a';this.style.display='none'"/></div>
+    <div class="af-text"><span class="af-name">Slim El Fatmi</span><span class="af-role">Follow on LinkedIn</span></div>
+  </a>
+  <script>
+    (function(){var b=document.getElementById('read-progress');window.addEventListener('scroll',function(){var h=document.body.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(window.scrollY/h*100,100):0)+'%';},{passive:true});}());
+    (function(){var badge=document.getElementById('authorFloat');window.addEventListener('scroll',function(){var p=window.scrollY/(document.body.scrollHeight-window.innerHeight);if(p>0.25)badge.classList.add('visible');else badge.classList.remove('visible');},{passive:true});}());
+  </script>
+</body>
+</html>
